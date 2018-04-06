@@ -60,10 +60,26 @@ class FeatureEventComponent extends Component {
               <h3>Upcoming Events</h3>
               <div className="event-date">
                 <h2>23</h2>
-                <div>Aug '18</div>
+                <div>JUN '18</div>
               </div>
               <div className="event-info">
                 <h4>Crafts Courses and Party</h4>
+                <p>Tuesday, 8:00am | Tafawa Balewa Square, Lagos</p>
+              </div>
+              <div className="event-date">
+                <h2>17</h2>
+                <div>AUG '18</div>
+              </div>
+              <div className="event-info">
+                <h4>The Crafters Show</h4>
+                <p>Tuesday, 8:00am | Tafawa Balewa Square, Lagos</p>
+              </div>
+              <div className="event-date">
+                <h2>31</h2>
+                <div>NOV '18</div>
+              </div>
+              <div className="event-info">
+                <h4>Crafts Tourism - Ogbomosho</h4>
                 <p>Tuesday, 8:00am | Tafawa Balewa Square, Lagos</p>
               </div>
             </div>

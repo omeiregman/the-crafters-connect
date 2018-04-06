@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import HomeHeaderComponent from './HomeHeaderComponent';
 import FeatureEventComponent from './FeatureEventComponent';
+import ProjectComponent from './ProjectComponent';
+
 
 class HomeScreenComponent extends Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class HomeScreenComponent extends Component {
         <div>
           <HomeHeaderComponent/>
           <FeatureEventComponent/>
+          <ProjectComponent/>
         </div>
       );
     }
