@@ -53,10 +53,10 @@ class FeatureEventComponent extends Component {
 
         <section className="upcoming-events">
           <div className="row">
-            <div className="col-md-7">
+            <div className="col-lg-6">
 
             </div>
-            <div className="col-md-5 upcoming-details">
+            <div className="col-lg-6 upcoming-details">
               <h3>Upcoming Events</h3>
               <div className="event-date">
                 <h2>23</h2>

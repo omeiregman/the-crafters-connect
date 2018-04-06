@@ -130,7 +130,6 @@ header {
   max-height: 300px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  overflow: hidden;
 }
 
 .btn-readmore {
@@ -205,6 +204,7 @@ header {
 
 .event-info {
   margin-left: 2%;
+  margin-right: 2%;
   color: #fff;
   width: 70%;
   display: inline-block;
