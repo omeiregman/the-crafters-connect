@@ -67,7 +67,7 @@ header {
   padding: 10%;
 }
 
-/**HOMESCREEN CRAFTERS AND THEIKR CRAFT**/
+/**HOMESCREEN CRAFTERS AND THEIR CRAFT**/
 .crafters-craft {
   margin-top: 4%;
   background: linear-gradient(rgba(122, 73, 16, 0.7), rgba(122, 73, 16, 0.6)), url(../images/crafters-craft.jpg);
@@ -93,6 +93,9 @@ header {
   color: #ffffff;
   font-size: 2em;
 }
+
+
+/**HOMESCREEN FEATURED**/
 
 .featured-item {
 
@@ -139,10 +142,81 @@ header {
   font-size: 1.5em;
   border-radius: 7px;
   margin-left: 5%;
+  cursor: pointer;
+}
+
+.btn-readmore:hover {
+  background-color: rgba(253, 78, 20, 0.8);
 }
 
 .freebie {
   background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
   border-radius: 15px;
   height: 300px;
+}
+
+.freebie iframe {
+  width: 100%;
+  border-radius: 15px;
+  height: 100%;
+}
+
+/* .freebie-overlay {
+  position: absolute;
+  background: rgba(242, 153, 74, 0.1);
+  width: 100%;
+  height: 100%;
+} */
+
+/** UPCOMING EVENTS***/
+.upcoming-events {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/tcc-2018-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  background-position: bottom 30px;;
+}
+
+.upcoming-details {
+  background: linear-gradient(270deg, rgba(45, 156, 219, 0.3933) 71.59%, rgba(196, 196, 196, 0) 88.75%);
+  margin-top: 3%;
+}
+
+.upcoming-details h3 {
+  text-align: center;
+  color: #fff;
+}
+
+.event-date{
+  text-align: center;
+  background-color: #FD4E14;
+  width: 18%;
+  color: #fff;
+  float: left;
+}
+
+.event-date h2 {
+  font-size: 3em;
+  font-weight: 400;
+}
+
+.event-date p {
+}
+
+.event-info {
+  margin-left: 2%;
+  color: #fff;
+  width: 70%;
+  display: inline-block;
+  border: #FD4E14 2px solid;
+  text-align: center;
+  padding: 1%;
+}
+
+.event-info p {
+  font-weight: lighter;
+}
+
+.event-info h3 {
+
 }

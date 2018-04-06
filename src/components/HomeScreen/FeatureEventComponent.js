@@ -9,6 +9,8 @@ class FeatureEventComponent extends Component {
 
   }
 
+
+
   render() {
     return (
       <div>
@@ -18,8 +20,13 @@ class FeatureEventComponent extends Component {
               <div className="col-md-6">
                 <h3>Freebie of the week</h3>
                 <div className="freebie">
-                  
+                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hzRjX4ERWks?rel=0&amp;showinfo=0&amp;start=8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  <div className="freebie-overlay">
+                    <p>{/*This week Kolapo Adebayo
+                      teaches us how to make custom 4G phones from raffia. Grab a palm leaf, and come join us.*/}</p>
+                  </div>
                 </div>
+
               </div>
               <div className="col-md-6">
                 <h3>Craft Star of the week</h3>
@@ -43,6 +50,25 @@ class FeatureEventComponent extends Component {
         </section>
         <br/>
         <br/>
+
+        <section className="upcoming-events">
+          <div className="row">
+            <div className="col-md-7">
+
+            </div>
+            <div className="col-md-5 upcoming-details">
+              <h3>Upcoming Events</h3>
+              <div className="event-date">
+                <h2>23</h2>
+                <div>Aug '18</div>
+              </div>
+              <div className="event-info">
+                <h4>Crafts Courses and Party</h4>
+                <p>Tuesday, 8:00am | Tafawa Balewa Square, Lagos</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
