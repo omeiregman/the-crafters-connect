@@ -89,7 +89,7 @@ class ProjectComponent extends Component {
             <div className="row">
               <div className="col-md-3">
                 <h3>Community</h3>
-                <ul>
+                <ul className="footer-items">
                   <li>About Us</li>
                   <li>Refer a friend</li>
                   <li>Subscriptions</li>
@@ -98,7 +98,7 @@ class ProjectComponent extends Component {
               </div>
               <div className="col-md-3">
                 <h3>Blog</h3>
-                <ul>
+                <ul className="footer-items">
                   <li>Join a discussion</li>
                   <li>Connect with crafters</li>
                   <li>iReport Bucket</li>
@@ -108,17 +108,21 @@ class ProjectComponent extends Component {
               </div>
               <div className="col-md-3">
                 <h3>Collaborators</h3>
-                <ul>
+                <ul className="footer-items">
                   <li>Invest with us</li>
                   <li>Invite us for a tour</li>
                   <li>Advertise</li>
+                  <li>Hire a crafter</li>
+                  <li>Get hired</li>
                 </ul>
               </div>
               <div className="col-md-3">
-                <h3>Job Board</h3>
-                <ul>
-                  <li>Hire a Crafter</li>
-                  <li>Get Hired</li>
+                <h3>Social Media</h3>
+                <ul className="footer-items">
+                  <li>Facebook</li>
+                  <li>Instagram</li>
+                  <li>Twitter</li>
+                  <li>Youtube</li>
                 </ul>
               </div>
             </div>
