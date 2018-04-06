@@ -1,0 +1,148 @@
+
+
+/**HOMESCREEN HEADER**/
+
+header {
+    background: linear-gradient(rgba(250, 150, 32, 0.41), rgba(250, 150, 32, 0.41)), url(../images/header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    z-index: 2;
+    width: 100%;
+    height: 70vh;
+    padding-top: 0.5%;
+}
+
+.header-hero {
+  text-align: center;
+  font-size: 4em;
+  color: #fff;
+  margin-top: 10%;
+  font-family: 'Ubuntu'
+}
+
+.hero-text h3 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
+  font-family: 'Ubuntu';
+  font-weight: lighter;
+}
+
+
+/**HOMESCREEN ABOUT**/
+.about-section {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.about-section img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.about-section h3 {
+  margin-top: 7%;
+  color: #333333;
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 25px;
+}
+.about-section p {
+  margin-top: 5%;
+  font-size: 1.15em;
+  line-height: 20px;
+  font-weight: lighter;
+  color: #333333;
+}
+
+.about-section h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+.about-section-card {
+  margin-top: 5%;
+  border: #f1f1 0.5px solid;
+  padding: 10%;
+}
+
+/**HOMESCREEN CRAFTERS AND THEIKR CRAFT**/
+.crafters-craft {
+  margin-top: 4%;
+  background: linear-gradient(rgba(122, 73, 16, 0.7), rgba(122, 73, 16, 0.6)), url(../images/crafters-craft.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  height: 400px;
+  width: 100%;
+}
+
+.crafters-craft-content {
+  padding-top: 5%;
+}
+
+.crafters-craft-content h3 {
+  padding-top: 2%;
+  font-size: 3em;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.crafters-craft p {
+  color: #ffffff;
+  font-size: 2em;
+}
+
+.featured-item {
+
+}
+
+.featured-item h3 {
+  color: #333;
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.craft-star {
+  background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
+  border-radius: 15px;
+  height: 300px;
+}
+.craft-star-info {
+  margin-top: 7%;
+  padding: 5%;
+  text-align: left;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.craft-star-img {
+
+}
+
+.craft-star-img img {
+  max-width: 300px;
+  max-height: 300px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+
+.btn-readmore {
+  background-color: rgba(253, 78, 20, 1);
+  padding: 3%;
+  color: #fff;
+  width: 60%;
+  text-align: center;
+  font-size: 1.5em;
+  border-radius: 7px;
+  margin-left: 5%;
+}
+
+.freebie {
+  background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
+  border-radius: 15px;
+  height: 300px;
+}

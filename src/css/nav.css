@@ -1,0 +1,26 @@
+.navbar {
+    background-color: rgba(26, 13, 13, 0.4);
+    position: sticky;
+    padding: 0.8%;
+    margin: 2% 3% 3% 3%;
+    z-index: 3;
+    width: 95vw;
+}
+
+.nav-item {
+    margin-left: 30px;
+    color: #FCAC65;
+}
+
+.navbar-nav a:hover {
+    color: white;
+}
+
+.navbar-brand a {
+    color: #FADDC3;
+}
+
+.navbar-brand a:hover {
+    text-decoration: none;
+    color: white;
+}
