@@ -27,28 +27,42 @@ header {
   font-weight: lighter;
 }
 
+/**Media Query for Header section**/
+@media (max-width: 45em) {
+  .header-hero {
+    margin-top: 15%;
+    text-align: center;
+    font-size: 3em;
+  }
+  .hero-text h3 {
+    text-align: center;
+    font-size: 1.2em;
+  }
+}
+
+
+
 /**HOMESCREEN ABOUT**/
 .about-section {
-  margin-top: 5%;
+  margin-top: 2%;
   text-align: center;
 }
 
 .about-section img {
-  max-width: 100px;
-  max-height: 100px;
+  max-width: 80px;
+  max-height: 80px;
 }
 
 .about-section h3 {
   margin-top: 7%;
   color: #333333;
   font-style: normal;
-  font-size: 1.5em;
-  line-height: 25px;
+  font-size: 1.2em;
 }
 
 .about-section p {
   margin-top: 5%;
-  font-size: 1.15em;
+  font-size: 1em;
   line-height: 20px;
   font-weight: lighter;
   color: #333333;
@@ -61,13 +75,16 @@ header {
 
 .about-section-card {
   margin-top: 5%;
-  border: #f1f1 0.5px solid;
-  padding: 10%;
+  border: #f1f1f1 0.5px solid;
+  padding: 8%;
 }
 
-/**Media Query for Abous section**/
+/**Media Query for About section**/
 @media (max-width: 45em) {
-
+  .about-section h3 {
+    margin-top: 7%;
+    font-size: 1em;
+  }
 }
 
 /**HOMESCREEN CRAFTERS AND THEIR CRAFT**/
@@ -93,20 +110,28 @@ header {
 }
 
 .crafters-craft p {
-  color: #ffffff;
+  color: #f2f2f2;
   font-size: 2em;
 }
 
 /**Media Query for Crafters Craft Section**/
 @media (max-width: 45em) {
-
+  .crafters-craft-content h3 {
+    padding-top: 10%;
+    font-size: 2em;
+  }
+  .crafters-craft p {
+    margin-top: 10%;
+    font-size: 1.5em;
+  }
 }
 
 
 /**HOMESCREEN FEATURED**/
 
 .featured-item {
-
+  background-color: #f1f1f1;
+  padding: 5%;
 }
 
 .featured-item h3 {
@@ -118,7 +143,6 @@ header {
 
 .craft-star {
   background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
-  border-radius: 15px;
   height: 300px;
 }
 .craft-star-info {
@@ -136,8 +160,7 @@ header {
 .craft-star-img img {
   max-width: 300px;
   max-height: 300px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+
 }
 
 .btn-readmore {
@@ -158,13 +181,11 @@ header {
 
 .freebie {
   background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
-  border-radius: 15px;
   height: 300px;
 }
 
 .freebie iframe {
   width: 100%;
-  border-radius: 15px;
   height: 100%;
 }
 
@@ -231,7 +252,8 @@ header {
 
 .upcoming-details {
   background: linear-gradient(270deg, rgba(45, 156, 219, 0.3933) 71.59%, rgba(196, 196, 196, 0) 88.75%);
-  margin-top: 3%;
+  margin-top: 2%;
+  padding-right: 1%;
 }
 
 .upcoming-details h3 {

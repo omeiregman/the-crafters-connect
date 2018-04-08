@@ -57,8 +57,6 @@ class HomeHeaderComponent extends Component {
               <p>Meet esteemed Crafters and explore their world of crafts</p>
             </div>
           </section>
-          <br/>
-          <br/>
         </div>
       );
     }

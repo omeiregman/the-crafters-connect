@@ -48,8 +48,7 @@ class FeatureEventComponent extends Component {
             </div>
           </div>
         </section>
-        <br/>
-        <br/>
+
 
         <section className="upcoming-events">
           <div className="row">
