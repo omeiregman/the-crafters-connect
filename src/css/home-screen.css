@@ -247,13 +247,13 @@ header {
   background-size: cover;
   height: 400px;
   background-position: bottom 30px;;
-  width: 100vw;
+  width: 100%;
 }
 
 .upcoming-details {
   background: linear-gradient(270deg, rgba(45, 156, 219, 0.3933) 71.59%, rgba(196, 196, 196, 0) 88.75%);
-  margin-top: 2%;
-  padding-right: 1%;
+  margin-top: 1%;
+  margin-right: 0px;
 }
 
 .upcoming-details h3 {
@@ -286,7 +286,7 @@ header {
   display: inline-block;
   border: #FD4E14 2px solid;
   text-align: center;
-  padding: 1%;
+  padding: 0.7%;
 }
 
 .event-info p {
