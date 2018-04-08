@@ -21,7 +21,8 @@ class NavComponent extends Component {
                     <a class="nav-item nav-link" href="#">Courses</a>
                     <a class="nav-item nav-link" href="#">Blog</a>
                     <a class="nav-item nav-link" href="#">Gallery</a>
-                    <a class="nav-item nav-link" href="#">Login/Sign Up</a>
+                    <a class="nav-item nav-link" href="#">Login</a>
+                    <a class="nav-item nav-link" href="#">Sign Up</a>
                 </div>
             </div>
         </nav>
