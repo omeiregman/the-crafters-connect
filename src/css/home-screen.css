@@ -1,5 +1,3 @@
-
-
 /**HOMESCREEN HEADER**/
 
 header {
@@ -9,7 +7,7 @@ header {
     background-position: bottom;
     z-index: 2;
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     padding-top: 0.5%;
 }
 
@@ -29,7 +27,6 @@ header {
   font-weight: lighter;
 }
 
-
 /**HOMESCREEN ABOUT**/
 .about-section {
   margin-top: 5%;
@@ -48,6 +45,7 @@ header {
   font-size: 1.5em;
   line-height: 25px;
 }
+
 .about-section p {
   margin-top: 5%;
   font-size: 1.15em;
@@ -66,6 +64,7 @@ header {
   border: #f1f1 0.5px solid;
   padding: 10%;
 }
+
 /**Media Query for Abous section**/
 @media (max-width: 45em) {
 
@@ -98,7 +97,7 @@ header {
   font-size: 2em;
 }
 
-/**Media Query for Abous section**/
+/**Media Query for Crafters Craft Section**/
 @media (max-width: 45em) {
 
 }
@@ -176,20 +175,23 @@ header {
   height: 100%;
 } */
 
-/**Media Query for Abous section**/
+/**Media Query for CraftStar section**/
 @media (max-width: 45em) {
 
   .craft-star-img img {
     display: none;
   }
+
   .craft-star {
     background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
-    border-radius: 15px;
+    border-radius: 0px;
     height: 250px;
   }
+
   .craft-star-info {
     text-align: center;
   }
+
   .featured-item h3 {
     margin-top: 7%;
   }
@@ -202,7 +204,20 @@ header {
     cursor: pointer;
   }
 
+  .freebie {
+    background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
+    border-radius: 0px;
+    width: 100%;
+    height: 300px;
+  }
+
+  .freebie iframe {
+    width: 100%;
+    border-radius: 0px;
+    height: 100%;
+  }
 }
+
 
 /** UPCOMING EVENTS***/
 .upcoming-events {
@@ -259,6 +274,7 @@ header {
 .event-info h3 {
 
 }
+
 
 /**Media Query for Upcoming Events**/
 @media (max-width: 45em) {
@@ -365,6 +381,7 @@ header {
   text-align: center;
   color: #333;
 }
+
 /**Media Query for Support section**/
 
 @media (max-width: 45em) {
