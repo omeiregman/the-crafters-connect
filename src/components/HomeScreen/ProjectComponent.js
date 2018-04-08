@@ -22,31 +22,31 @@ class ProjectComponent extends Component {
           <div className="row">
             <div className="col-md-6 project-list">
               <div className="row">
-                <div className="col-sm-3">
+                <div className="col-3">
                   <img src={img_project1} alt="project"/>
                 </div>
-                <div className="col-sm-3">
+                <div className="col-3">
                   <img src={img_project2} alt="project"/>
                 </div>
-                <div className="col-sm-3">
+                <div className="col-3">
                   <img src={img_project3} alt="project"/>
                 </div>
-                <div className="col-sm-3">
+                <div className="col-3">
                   <img src={img_project4} alt="project"/>
                 </div>
               </div>
               <br/>
               <div className="row">
-                <div className="col-sm-3">
+                <div className="col-md-3">
                   <img src={img_project5} alt="project"/>
                 </div>
-                <div className="col-sm-3">
+                <div className="col-md-3">
                   <img src={img_project6} alt="project"/>
                 </div>
-                <div className="col-sm-3">
+                <div className="col-md-3">
                   <img src={img_project7} alt="project"/>
                 </div>
-                <div className="col-sm-3">
+                <div className="col-md-3">
                   <img src={img_project8} alt="project"/>
                 </div>
               </div>

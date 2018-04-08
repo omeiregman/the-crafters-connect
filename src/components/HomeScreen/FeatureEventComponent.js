@@ -31,8 +31,8 @@ class FeatureEventComponent extends Component {
               <div className="col-md-6">
                 <h3>Craft Star of the week</h3>
                 <div className="row craft-star">
-                  <div className="col-sm-6">
-                    <p className="craft-star-info">Our crafter of the week is the enigmatic Chibuzor Okeke, CEO something vetures.
+                  <div className="col-sm-6 craft-star-info">
+                    <p className="">Our crafter of the week is the enigmatic Chibuzor Okeke, CEO something vetures.
                       Here he shares experiences and teaches us how to make computer screens from dog food.</p>
                       <div className="btn-readmore">
                         Read More

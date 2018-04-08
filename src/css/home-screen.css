@@ -66,6 +66,10 @@ header {
   border: #f1f1 0.5px solid;
   padding: 10%;
 }
+/**Media Query for Abous section**/
+@media (max-width: 45em) {
+
+}
 
 /**HOMESCREEN CRAFTERS AND THEIR CRAFT**/
 .crafters-craft {
@@ -92,6 +96,11 @@ header {
 .crafters-craft p {
   color: #ffffff;
   font-size: 2em;
+}
+
+/**Media Query for Abous section**/
+@media (max-width: 45em) {
+
 }
 
 
@@ -167,6 +176,34 @@ header {
   height: 100%;
 } */
 
+/**Media Query for Abous section**/
+@media (max-width: 45em) {
+
+  .craft-star-img img {
+    display: none;
+  }
+  .craft-star {
+    background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
+    border-radius: 15px;
+    height: 250px;
+  }
+  .craft-star-info {
+    text-align: center;
+  }
+  .featured-item h3 {
+    margin-top: 7%;
+  }
+
+  .btn-readmore {
+    padding: 2%;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 0px;
+    cursor: pointer;
+  }
+
+}
+
 /** UPCOMING EVENTS***/
 .upcoming-events {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/tcc-2018-2.jpg);
@@ -223,6 +260,54 @@ header {
 
 }
 
+/**Media Query for Upcoming Events**/
+@media (max-width: 45em) {
+  .upcoming-events {
+    background: linear-gradient(270deg, rgba(45, 156, 219, 0.3933) 71.59%, rgba(196, 196, 196, 0) 88.75%), url(../images/tcc-2018-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-position: bottom 30px;;
+    width: 100%;
+  }
+
+  .upcoming-details {
+    background: none;
+    width: 100%;
+    height: 500px;
+  }
+
+  .upcoming-details h3 {
+    text-align: center;
+    color: #fff;
+  }
+
+  .event-date{
+    text-align: center;
+    background-color: #FD4E14;
+    width: 25%;
+    color: #fff;
+    float: left;
+  }
+
+  .event-date h2 {
+    font-size: 3em;
+    font-weight: 400;
+  }
+
+  .event-info {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    color: #fff;
+    width: 70%;
+    display: inline-block;
+    border: #FD4E14 2px solid;
+    text-align: center;
+    padding: 1%;
+  }
+}
+
 /**PROJECT SECTION**/
 .project-section {
   margin-top: 5%;
@@ -255,6 +340,13 @@ header {
   cursor: pointer;
 }
 
+/**Media Query for Project section**/
+@media (max-width: 45em) {
+  .project-section {
+    display: none;
+  }
+}
+
 
 /***SERVICE SUPPORT**/
 .service-support {
@@ -272,6 +364,17 @@ header {
   padding: 2%;
   text-align: center;
   color: #333;
+}
+/**Media Query for Support section**/
+
+@media (max-width: 45em) {
+  .service-support {
+    text-align: center;
+  }
+  .service-support img {
+    text-align: center;
+    padding: 2%;
+  }
 }
 
 /**FOOTER SECTION**/
