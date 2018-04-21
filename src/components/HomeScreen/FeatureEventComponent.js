@@ -4,10 +4,10 @@ import img_craftstar from '../../images/craft-star.jpeg';
 
 
 class FeatureEventComponent extends Component {
-  constructor(props){
-    super(props);
+  // constructor(props){
+  //   super(props);
 
-  }
+  // }
 
 
 
@@ -62,24 +62,24 @@ class FeatureEventComponent extends Component {
                 <div>JUN '18</div>
               </div>
               <div className="event-info">
-                <h4>Crafts Courses and Party</h4>
+                <h4>Crafts Party</h4>
                 <p>Tuesday, 8:00am | Tafawa Balewa Square, Lagos</p>
               </div>
               <div className="event-date">
-                <h2>17</h2>
-                <div>AUG '18</div>
+                <h2>01</h2>
+                <div>JUL '18</div>
               </div>
               <div className="event-info">
                 <h4>The Crafters Show</h4>
                 <p>Tuesday, 8:00am | Tafawa Balewa Square, Lagos</p>
               </div>
               <div className="event-date">
-                <h2>31</h2>
-                <div>NOV '18</div>
+                <h2>16</h2>
+                <div>AUG '18</div>
               </div>
               <div className="event-info">
-                <h4>Crafts Tourism - Ogbomosho</h4>
-                <p>Tuesday, 8:00am | Tafawa Balewa Square, Lagos</p>
+                <h4>Crafts Tourism - Dye Pit, Kano</h4>
+                <p>Tuesday, 8:00am | Kano Square, Kano</p>
               </div>
             </div>
           </div>
