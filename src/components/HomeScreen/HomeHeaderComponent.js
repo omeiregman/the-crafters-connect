@@ -16,7 +16,8 @@ class HomeHeaderComponent extends Component {
             <NavComponent/>
             <div className="hero-text">
             <h1 className="header-hero">The Crafters Connect</h1>
-            <h3>Lets Connect our Craft with the world</h3>
+            <h3>Crafting is an admirably unique expression of the human mind and Crafters are the creative doers; 
+              the bold explorers of the inherent features that are peculiar to them.<p>-Azeezat Sanni</p></h3>
           </div>
           </header>
 
@@ -27,24 +28,24 @@ class HomeHeaderComponent extends Component {
                 <div className="col-md-4">
                   <div className="about-section-card">
                     <img src={img_connect} alt="about"/>
-                    <h3>Connect With Crafters</h3>
+                    <h3>Mentorship</h3>
                     <p>
-                      Create and maintain an online platform for crafters
+                    Learn by doing, learn on the job
                     </p>
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="about-section-card">
                   <img src={img_promote} alt="about"/>
-                  <h3>Something Goes Here</h3>
-                  <p>To elaborte every Crafter and their Promoters</p>
+                  <h3>Partnership</h3>
+                  <p>Crafters, craft promoters, investors</p>
                 </div>
               </div>
                 <div className="col-md-4">
                   <div className="about-section-card">
                   <img src={img_learn} alt="about"/>
-                  <h3>Learn By Doing</h3>
-                  <p>To accommodate online crafts courses and webinars</p>
+                  <h3>Patronage</h3>
+                  <p>Connect with cratfers, explore an array of craft products and services</p>
                 </div>
               </div>
               </div>
