@@ -27,6 +27,17 @@ header {
   font-weight: lighter;
 }
 
+.hero-text p {
+  padding-top : 3%;
+  padding-right: 20%;
+  padding-left: 20%;
+  text-align: center;
+  font-size: 1em;
+  color: #fff;
+  font-family: 'Ubuntu';
+  font-weight: lighter;
+}
+
 /**Media Query for Header section**/
 @media (max-width: 45em) {
   .header-hero {

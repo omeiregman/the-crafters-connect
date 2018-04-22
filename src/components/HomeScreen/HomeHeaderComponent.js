@@ -16,8 +16,8 @@ class HomeHeaderComponent extends Component {
             <NavComponent/>
             <div className="hero-text">
             <h1 className="header-hero">The Crafters Connect</h1>
-            <h3>Crafting is an admirably unique expression of the human mind and Crafters are the creative doers; 
-              the bold explorers of the inherent features that are peculiar to them.<p>-Azeezat Sanni</p></h3>
+            <p>Crafting is an admirably unique expression of the human mind and Crafters are the creative doers; 
+              the bold explorers of the inherent features that are peculiar to them. <br></br> -Azeezat Sanni</p>
           </div>
           </header>
 
