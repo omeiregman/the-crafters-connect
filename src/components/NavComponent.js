@@ -19,7 +19,7 @@ class NavComponent extends Component {
                     <a class="nav-item nav-link" href="#">About</a>
                     <a class="nav-item nav-link" href="#">Crafters</a>
                     <a class="nav-item nav-link" href="#">Courses</a>
-                    <a class="nav-item nav-link" href="#">Blog</a>
+                    <a class="nav-item nav-link" href="http://www.blog.thecraftersconference.com" target="_blank">Blog</a>
                     <a class="nav-item nav-link" href="#">Gallery</a>
                     <a class="nav-item nav-link" href="#">Login</a>
                     <a class="nav-item nav-link" href="#">Sign Up</a>
