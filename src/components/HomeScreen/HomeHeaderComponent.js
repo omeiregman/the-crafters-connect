@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavComponent from '../NavComponent';
+//import Nav from '../NavComponent/Nav';
 import '../../css/home-screen.css';
 import img_learn from '../../images/learn.png';
 import img_connect from '../../images/connect.png';
@@ -13,10 +13,10 @@ class HomeHeaderComponent extends Component {
       return (
         <div>
           <header>
-            <NavComponent/>
+
             <div className="hero-text">
             <h1 className="header-hero">The Crafters Connect</h1>
-            <p>Crafting is an admirably unique expression of the human mind and Crafters are the creative doers; 
+            <p>Crafting is an admirably unique expression of the human mind and Crafters are the creative doers;
               the bold explorers of the inherent features that are peculiar to them. <br></br> -Azeezat Sanni</p>
           </div>
           </header>
