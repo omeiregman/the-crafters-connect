@@ -18,7 +18,7 @@ class FeatureEventComponent extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-6">
-                <h3>Freebie of the week</h3>
+                <h3>Video of the week</h3>
                 <div className="freebie">
                   <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hzRjX4ERWks?rel=0&amp;showinfo=0&amp;start=8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                   <div className="freebie-overlay">
@@ -29,11 +29,11 @@ class FeatureEventComponent extends Component {
 
               </div>
               <div className="col-md-6">
-                <h3>Craft Star of the week</h3>
+                <h3>CraftStar of the week</h3>
                 <div className="row craft-star">
                   <div className="col-sm-6 craft-star-info">
-                    <p className="">Our crafter of the week is the enigmatic Chibuzor Okeke, CEO something vetures.
-                      Here he shares experiences and teaches us how to make computer screens from dog food.</p>
+                    <p className="">Our Crafter of the week is the enigmatic Akorede Sodipe, CEO KOSH Beads.
+                      Here she shares her love for crafts in bead making, aso oke designing/weaving and business experiences.</p>
                       <div className="btn-readmore">
                         Read More
                       </div>
@@ -58,28 +58,28 @@ class FeatureEventComponent extends Component {
             <div className="col-md-7 upcoming-details">
               <h3>Upcoming Events</h3>
               <div className="event-date">
-                <h2>23</h2>
-                <div>JUN '18</div>
+                <h2></h2>
+                <div></div>
               </div>
               <div className="event-info">
                 <h4>Crafts Party</h4>
-                <p>Tuesday, 8:00am | Tafawa Balewa Square, Lagos</p>
+                <p>Lagos, Oyo, Plateau, Abuja, PortHarcourt</p>
               </div>
               <div className="event-date">
-                <h2>01</h2>
-                <div>JUL '18</div>
+                <h2></h2>
+                <div></div>
               </div>
               <div className="event-info">
-                <h4>The Crafters Show</h4>
-                <p>Tuesday, 8:00am | Tafawa Balewa Square, Lagos</p>
+                <h4>The Crafters Conference</h4>
+                <p>38th week of September, Lagos</p>
               </div>
               <div className="event-date">
-                <h2>16</h2>
-                <div>AUG '18</div>
+                <h2></h2>
+                <div></div>
               </div>
               <div className="event-info">
-                <h4>Crafts Tourism - Dye Pit, Kano</h4>
-                <p>Tuesday, 8:00am | Kano Square, Kano</p>
+                <h4>Crafts Tourism</h4>
+                <p>Dye Pit, Kofar Mata, Kano State, Nigeria</p>
               </div>
             </div>
           </div>
