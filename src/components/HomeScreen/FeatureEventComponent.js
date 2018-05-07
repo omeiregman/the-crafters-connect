@@ -32,7 +32,7 @@ class FeatureEventComponent extends Component {
                 <h3>CraftStar of the week</h3>
                 <div className="row craft-star">
                   <div className="col-sm-6 craft-star-info">
-                    <p className="">Our Crafter of the week is the enigmatic Akorede Sodipe, CEO KOSH Beads.
+                    <p className="">Our Crafter of the week is Akorede Sodipe, CEO KOSH Beads.
                       Here she shares her love for crafts in bead making, aso oke designing/weaving and business experiences.</p>
                       <div className="btn-readmore">
                         Read More

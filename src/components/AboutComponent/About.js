@@ -35,7 +35,7 @@ const About = () => {
               </div>
             </div>
             <div className="row">
-              <p>We are a firm formation on the background of TEAM work – Together Each Achieves More Here;
+              <p>We are a firm formation on the background of TEAM work – Together Each Achieves More. Here;
                 We create and maintain an online platform for crafters; craft-trainers/trainees, crafts employers/employees
                 (contract, internship, full time), crafters and clients
                 (wholesale/retail, seasonal, promotions), craft investors, crafts collaborators, and crafts connectors. </p>
@@ -91,7 +91,7 @@ const About = () => {
               </div>
               <div className="col-sm-10">
                 <h3 className="about-section-header">Mission</h3>
-                <p>Create a unique platform for crafters to network, learn, create, collaborate, inspire/make crafts, grow together and have fun growing together.
+                <p>Create a unique platform for crafters to network, learn, create, collaborate, inspire/make crafts, and have fun growing together.
                 </p>
               </div>
             </div>
@@ -109,7 +109,7 @@ const About = () => {
 
         <div className="about-section-five">
           <div className="container">
-            <h3 className="about-section-header">Meet our Founders</h3>
+            <h3 className="about-section-header">Brains Behind TCC</h3>
           </div>
         </div>
 
