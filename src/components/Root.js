@@ -7,6 +7,11 @@ import Crafters from './CraftersComponent/Crafters';
 import Gallery from './GalleryComponent/Gallery';
 import Courses from './CoursesComponent/Courses';
 import ExecutiveFounder from './AboutComponent/Founderone';
+import SignIn from './Auth/Signin';
+import SignUp from './Auth/Signup';
+import SignUpCrafter from './Auth/SignupCrafter';
+import SignUpEnthusiast from './Auth/SignupEnthusiast';
+
 
 const Root = () => {
   return(
@@ -17,7 +22,11 @@ const Root = () => {
       <Route path="/craftersandcrafts" component={Crafters}/>
       <Route path="/gallery" component={Gallery}/>
       <Route path="/courses" component={Courses}/>
-      <Route path="/about/executive_founder" component={ExecutiveFounder} />
+      <Route exact path="/about/executive_founder" component={ExecutiveFounder} />
+      <Route path="/signin" component={SignIn} />
+      <Route path="/signup" component={SignUp} />
+      <Route exact path="/signup_crafter" component={SignUpCrafter} />
+      <Route exact path="/signup_enthusiast" component={SignUpEnthusiast} />
       </Switch>
     </div>
   );

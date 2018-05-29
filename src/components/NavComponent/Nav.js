@@ -23,8 +23,8 @@ class Nav extends Component {
                     <Link to='/' className="nav-item nav-link">Courses</Link>
                     <Link className="nav-item nav-link" to="http://www.blog.thecraftersconference.com" target="_blank">Blog</Link>
                     <Link to='/' className="nav-item nav-link">Gallery</Link>
-                    <Link to='/' className="nav-item nav-link">Login</Link>
-                    <Link to='/' className="nav-item nav-link">Sign Up</Link>
+                    <Link to='/signin' className="nav-item nav-link">Sign In</Link>
+                    <Link to='/signup' className="nav-item nav-link">Sign Up</Link>
                 </div>
             </div>
         </nav>
