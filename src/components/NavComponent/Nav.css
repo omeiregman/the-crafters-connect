@@ -45,3 +45,9 @@
   color: rgb(255, 255, 255);
   padding-left: 5px;
 }
+
+@media (max-width: 45em) {
+  .hero-nav-text {
+    display: none;
+  }
+}
