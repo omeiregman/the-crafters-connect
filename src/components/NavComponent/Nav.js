@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 
-
+import img_logo from './logo.png';
 
 class Nav extends Component {
   render() {
@@ -10,7 +10,7 @@ class Nav extends Component {
       <div>
         <nav className="main-nav navbar navbar-expand-lg navbar-light">
             <div>
-                <Link to='./' className="nav-brand nav-link">The Crafters Connect</Link>
+                <Link to='./' className="nav-brand nav-link"><img src={img_logo} width="120" height="40"/>   The Crafters Connect</Link>
             </div>
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
