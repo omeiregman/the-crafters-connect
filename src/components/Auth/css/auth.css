@@ -245,9 +245,10 @@ a {
 
 @media (max-width: 45em) {
   .login-pane {
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 0;
+    margin-right: 0;
     width: 100%;
     border: 2px solid rgba(250, 150, 32, 0.6);
     background-color: #f1f1;
@@ -259,6 +260,7 @@ a {
     background-size: cover;
     padding: 2%;
     height: 20vh;
+    width: 100%;
   }
   .left-pane h2 {
     margin-top: 2%;
@@ -267,5 +269,14 @@ a {
     font-weight: normal;
     font-size: 2em;;
     color: #fff;
+  }
+  .login-pane .row {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .right-pane-up {
+    border-right: 0;
+    border-bottom: 1px solid rgba(250, 150, 32, 0.6);
   }
 }
