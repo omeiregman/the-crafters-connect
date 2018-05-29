@@ -8,6 +8,14 @@
   border: 2px solid rgba(250, 150, 32, 0.6);
   background-color: #f1f1;
 }
+.slug {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 0.8em;
+  color: #F5F5F5;
+}
 
 .left-pane {
   background: linear-gradient(rgba(250, 150, 32, 0.6), rgba(250, 150, 32, 0.6)), url('../img/login-left.png');
@@ -148,7 +156,7 @@
 
 
 .left-pane-down {
-  border-right: 1px solid rgba(250, 150, 32, 0.6);
+
   padding: 2%;
 }
 
@@ -177,6 +185,14 @@
   font-size: 0.85em;
 }
 
+.right-pane-up {
+  border-right: 1px solid rgba(250, 150, 32, 0.6);
+}
+
+.right-pane-down {
+  padding: 5%;
+}
+
 .category-btn {
   margin-left: 3%;
   margin-top: 2%;
@@ -194,4 +210,23 @@
 
 a {
   text-decoration: none;
+}
+
+
+@media (max-width: 45em) {
+  .left-pane {
+    background: linear-gradient(rgba(250, 150, 32, 0.6), rgba(250, 150, 32, 0.6)), url('../img/login-left.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2%;
+    height: 20vh;
+  }
+  .left-pane h2 {
+    margin-top: 2%;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2em;;
+    color: #fff;
+  }
 }

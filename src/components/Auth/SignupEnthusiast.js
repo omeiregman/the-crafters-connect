@@ -22,7 +22,7 @@ class SignupEnthusiast extends Component {
               <div className="left-pane">
                 <img src={img_logo} alt="Crafters Connect" />
                 <h2>The Crafters Connect</h2>
-                <p>Connecting Crafters</p>
+                <p className="slug">Connecting Crafters</p>
               </div>
             </div>
             <div className="col-sm-6">
