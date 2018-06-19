@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return(
@@ -9,6 +10,8 @@ const Footer = () => {
             <h3>Community</h3>
             <ul className="footer-items">
               <li>About Us</li>
+              <li>Join a discussion</li>
+              <li>Connect with crafters</li>
               <li>Refer a friend</li>
               <li>Subscriptions</li>
               <li>Free Classes</li>
@@ -17,10 +20,10 @@ const Footer = () => {
           <div className="col-md-3">
             <h3>Blog</h3>
             <ul className="footer-items">
-              <li>Join a discussion</li>
-              <li>Connect with crafters</li>
+              <li><Link to="http://www.blog.thecraftersconference.com" target="_blank">TCC Blog</Link></li>
               <li>iReport Bucket</li>
               <li>Recent Stories</li>
+              <li>Upcoming Events</li>
               <li>Top Stories</li>
             </ul>
           </div>

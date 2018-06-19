@@ -21,6 +21,7 @@ class Nav extends Component {
                     <Link to='/about' className="nav-item nav-link">About</Link>
                     <Link to='/' className="nav-item nav-link">Crafters</Link>
                     <Link to='/' className="nav-item nav-link">Courses</Link>
+                    <Link to='/' className="nav-item nav-link">Events</Link>
                     <Link className="nav-item nav-link" to="http://www.blog.thecraftersconference.com" target="_blank">Blog</Link>
                     <Link to='/' className="nav-item nav-link">Gallery</Link>
                     <Link to='/signin' className="nav-item nav-link">Sign In</Link>

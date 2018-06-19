@@ -20,7 +20,7 @@ class FeatureEventComponent extends Component {
               <div className="col-md-6">
                 <h3>Video of the week</h3>
                 <div className="freebie">
-                  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hzRjX4ERWks?rel=0&amp;showinfo=0&amp;start=8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/M7e93BhppIk?start=8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                   <div className="freebie-overlay">
                     <p>{/*This week Kolapo Adebayo
                       teaches us how to make custom 4G phones from raffia. Grab a palm leaf, and come join us.*/}</p>

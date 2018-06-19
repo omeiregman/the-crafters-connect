@@ -1,3 +1,11 @@
+Link {
+  text-decoration: none !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
 /**HOMESCREEN HEADER**/
 
 header {
@@ -445,7 +453,7 @@ header {
 
 .footer-items {
   list-style: none;
-  color: #f5f5f5;
+  color: #f5f5f5 !important;
   font-size: 1em;
   font-weight: lighter;
   margin-top: 10%;
@@ -455,6 +463,19 @@ header {
 
 .footer-items li {
   margin-top: 2%;
+  text-decoration: none !important;
+  color: #f5f5f5 !important;
+}
+
+.footer-items li:hover {
+  text-decoration: none !important;
+  color: #f5f5f5 !important;
+}
+
+.footer-items li a {
+  text-decoration: none;
+  text-decoration: none !important;
+  color: #f5f5f5 !important;
 }
 
 .copyright {
