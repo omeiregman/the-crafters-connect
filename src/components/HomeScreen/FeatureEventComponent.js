@@ -62,8 +62,8 @@ class FeatureEventComponent extends Component {
                 <div></div>
               </div>
               <div className="event-info">
-                <h4>Crafts Party</h4>
-                <p>Lagos, Oyo, Plateau, Abuja, PortHarcourt</p>
+                <h4>TCC Hangout - The Crafters Chat-out</h4>
+                <p>Lagos, Abuja, Jos, Port-Harcourt, Kogi, Oyo</p>
               </div>
               <div className="event-date">
                 <h2></h2>
