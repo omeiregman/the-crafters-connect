@@ -18,38 +18,30 @@ class Signup extends Component {
       <section className="login-pane">
        <div className="">
           <div className="row">
-
             <div className="col-sm-6">
-              <div className="right-pane-up">
-                <div className="left-pane-up">
-                  <img src={img_logo} alt="Crafters Connect" />
-                  <h2>The Crafters Connect</h2>
-                  <p className="slug">Connecting Crafters</p>
-                </div>
-                <br></br>
-                <div className="right-pane-down">
-                  <h3>Welcome, <br></br>Please Select a Category</h3>
-                  <br></br>
-
-                  <Link to='/signup_crafter'><div className="category-btn">SIGN UP AS A CRAFTER</div></Link>
-                  <br></br>
-                  <Link to='/signup_enthusiast'><div className="category-btn">SIGN UP AS AN ENTHUSIAST</div></Link>
-
-                  <br></br>
-                  <p>Already have an account? <Link to='/signin'>Sign In</Link></p>
-                </div>
+              <div className="left-pane">
+                <img src={img_logo} alt="Crafters Connect" />
+                <h2>The Crafters Connect</h2>
+                <p className="slug">Connecting Crafters</p>
               </div>
             </div>
             <div className="col-sm-6">
-
-              <div className="left-pane-down">
-                <h3>Our User Categories</h3>
+              <div className="right-pane">
+                <h3>Sign Up</h3>
+                <p>Some story here</p>
                 <br></br>
-                <h4>Sign Up as a Crafter</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi libero eos cumque, reiciendis natus delectus molestiae accusamus dignissimos possimus quas. Obcaecati quae dolore reprehenderit voluptates officiis perferendis natus iure nisi.</p>
+                <h4>Kindly fill in your details</h4>
                 <br></br>
-                <h4>Sign Up as a Craft Enthusiast</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum maxime laborum cupiditate, vel sint delectus corporis accusantium ab dolorum quidem. Magni maiores accusamus voluptate commodi iste, est ea quam quia!</p>
+                <p>email</p>
+                <input type="email" placeholder="Enter Email"/>
+                <br></br>
+                <p>password</p>
+                <input type="password" placeholder="Enter Password"/>
+                <br></br>
+                <input type="submit" value="Sign Up"/>
+                <br></br>
+                <p>Already Signed Up? <Link to='/signin'>Sign In</Link></p>
+                <p>Want to support TCC? <Link to='/signup/volunteer'>Register as a Volunteer</Link></p>
               </div>
             </div>
           </div>

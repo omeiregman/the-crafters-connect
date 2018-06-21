@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import './css/auth.css';
 import img_logo from './img/logo.png';
 
-class SignupEnthusiast extends Component {
+class RegisterVolunteer extends Component {
   constructor(props){
     super(props);
 
@@ -15,20 +15,18 @@ class SignupEnthusiast extends Component {
 
   render () {
     return (
-      <section className="login-pane">
-       <div className="">
-          <div className="row">
-            <div className="col-sm-6">
-              <div className="left-pane">
-                <img src={img_logo} alt="Crafters Connect" />
-                <h2>The Crafters Connect</h2>
-                <p className="slug">Connecting Crafters</p>
-              </div>
+      <section className="">
+       <div className="row">
+          <div className="login-pane">
+            <div className="middle-pane">
+              <img src={img_logo} alt="Crafters Connect" />
+              <h2>The Crafters Connect</h2>
+              <p className="slug">Connecting Crafters</p>
             </div>
             <div className="col-sm-6">
               <div className="right-pane">
-                <h3>Sign Up as an Enthusiast</h3>
-                <p>or go back to <Link to='/signup'>Sign Up Options</Link></p>
+                <h3>Register as a Volunteer</h3>
+                <p>or go back to <Link to='/signup'>Sign Up</Link></p>
                 <br></br>
                 <h4>Kindly fill in your details</h4>
                 <br></br>
@@ -40,7 +38,7 @@ class SignupEnthusiast extends Component {
                 <br></br>
                 <input type="submit" value="Sign Up"/>
                 <br></br>
-                <p>Already have an account? <Link to='/signup'>Sign In</Link></p>
+
               </div>
             </div>
           </div>
@@ -51,4 +49,4 @@ class SignupEnthusiast extends Component {
 }
 
 
-export default SignupEnthusiast;
+export default RegisterVolunteer;

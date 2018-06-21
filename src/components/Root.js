@@ -7,10 +7,11 @@ import Crafters from './CraftersComponent/Crafters';
 import Gallery from './GalleryComponent/Gallery';
 import Courses from './CoursesComponent/Courses';
 import ExecutiveFounder from './AboutComponent/Founderone';
+import FounderTwo from './AboutComponent/Foundertwo';
 import SignIn from './Auth/Signin';
 import SignUp from './Auth/Signup';
 import SignUpCrafter from './Auth/SignupCrafter';
-import SignUpEnthusiast from './Auth/SignupEnthusiast';
+import RegisterVolunteer from './Auth/RegisterVolunteer';
 
 
 const Root = () => {
@@ -18,15 +19,16 @@ const Root = () => {
     <div>
       <Switch>
       <Route exact path='/' component={Home}/>
-      <Route path='/about' component={About}/>
+      <Route exact path='/about' component={About}/>
       <Route path="/craftersandcrafts" component={Crafters}/>
       <Route path="/gallery" component={Gallery}/>
       <Route path="/courses" component={Courses}/>
-      {/* <Route exact path="/about/executive_founder" component={ExecutiveFounder} /> */}
+      <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
+      <Route path="/about/executive-founder" component={FounderTwo} />
       <Route path="/signin" component={SignIn} />
-      <Route path="/signup" component={SignUp} />
-      <Route exact path="/signup_crafter" component={SignUpCrafter} />
-      <Route exact path="/signup_enthusiast" component={SignUpEnthusiast} />
+      <Route exact path="/signup" component={SignUp} />
+      <Route path="/signup/crafter" component={SignUpCrafter} />
+      <Route path="/signup/volunteer" component={RegisterVolunteer} />
       </Switch>
     </div>
   );
