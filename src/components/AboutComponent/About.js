@@ -109,6 +109,7 @@ const About = () => {
 
         <div className="about-section-five">
           <div className="container">
+            <div>
             <h3 className="about-section-header">Brains Behind TCC</h3>
           </div>
         </div>

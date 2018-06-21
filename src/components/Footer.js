@@ -40,10 +40,10 @@ const Footer = () => {
           <div className="col-md-3">
             <h3>Social Media</h3>
             <ul className="footer-items">
-              <li>Facebook</li>
-              <li>Instagram</li>
-              <li>Twitter</li>
-              <li>Youtube</li>
+              <li><Link to="https://web.facebook.com/thecraftersc/" target="_blank">Facebook</Link></li>
+              <li><Link to="https://www.instagram.com/thecraftersc/" target="_blank">Instagram</Link></li>
+              <li><Link to="https://twitter.com/thecraftersc" target="_blank">Twitter</Link></li>
+              <li><Link to="https://www.youtube.com/channel/UCYeEOx90yuC-vUBEDCGQe4w?view_as=subscriber" target="_blank">Youtube</Link></li>
             </ul>
           </div>
         </div>
