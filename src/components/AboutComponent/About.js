@@ -113,6 +113,7 @@ const About = () => {
             <h3 className="about-section-header">Brains Behind TCC</h3>
           </div>
         </div>
+      </div>
 
         <div className="about-section-six">
           <div className="container">
