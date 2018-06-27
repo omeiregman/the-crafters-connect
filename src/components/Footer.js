@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="col-md-3">
             <h3>Blog</h3>
             <ul className="footer-items">
-              <li><Link to="https://thetccmagazine.com/" target="_blank">TCC Blog</Link></li>
+              <li><Link to="https://thetccmagazine.com/" target="_blank">TCC Magazine</Link></li>
               <li>iReport Bucket</li>
               <li>Recent Stories</li>
               <li>Upcoming Events</li>
