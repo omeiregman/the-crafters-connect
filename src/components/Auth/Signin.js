@@ -9,8 +9,28 @@ class Signin extends Component {
     super(props);
 
     this.state = {
-      isLogged: false
+      email: '',
+      password: '',
+      errors: {}
     }
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const newUser = {
+      email: this.state.email,
+      password: this.state.password
+    }
+    console.log(newUser);
   }
 
   render () {
@@ -25,23 +45,21 @@ class Signin extends Component {
                 <p className="slug">Connecting Crafters</p>
               </div>
             </div>
-            <div className="col-sm-6">
-              <div className="right-pane">
+            <div className="col-sm-6 right-pane">
+              <form onSubmit={this.onSubmit}>
                 <h3>Welcome back,</h3>
                 <br></br>
                 <h4>Please Sign In to Continue</h4>
-                <br></br>
                 <p>email</p>
-                <input type="email" placeholder="Enter Email"/>
-                <br></br>
+                <input type="email" name="email" value={this.state.email} onChange={this.onChange}/>
                 <p>password</p>
-                <input type="password" placeholder="Enter Password"/>
+                <input type="password" name="password" value={this.state.password} onChange={this.onChange}/>
                 <p className="extra-note"><Link to='/signin'>forgot password?</Link></p>
                 <br></br>
                 <input type="submit" value="Sign In"/>
                 <br></br>
                 <p>New to TCC? <Link to='/signup'>Sign Up</Link></p>
-              </div>
+              </form>
             </div>
           </div>
       </div>

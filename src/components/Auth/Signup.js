@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import classnames from 'classnames';
 
 import './css/auth.css';
 import img_logo from './img/logo.png';
@@ -9,11 +11,38 @@ class Signup extends Component {
     super(props);
 
     this.state = {
-      isLogged: false
+      name: '',
+      email: '',
+      password: '',
+      password2: '',
+      errors: {}
     }
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
+    }
+    axios.post('/api/users/register', newUser)
+    .then(res => console.log(res.data))
+    .catch(err => this.setState({ errors: err.response.data }))
   }
 
   render () {
+    const { errors } = this.state;
     return (
       <section className="login-pane">
        <div className="">
@@ -25,24 +54,27 @@ class Signup extends Component {
                 <p className="slug">Connecting Crafters</p>
               </div>
             </div>
-            <div className="col-sm-6">
-              <div className="right-pane">
-                <h3>Sign Up</h3>
-                <p>Some story here</p>
-                <br></br>
-                <h4>Kindly fill in your details</h4>
-                <br></br>
-                <p>email</p>
-                <input type="email" placeholder="Enter Email"/>
-                <br></br>
-                <p>password</p>
-                <input type="password" placeholder="Enter Password"/>
+            <div className="col-sm-6 right-pane">
+              <h3>Sign Up</h3>
+              <form noValidate onSubmit={this.onSubmit}>
+                <p>Full Name</p>
+                <input className={classnames('', {'input-invalid': errors.name})} type="text" name="name" value={this.state.name} onChange={this.onChange}/>
+                {errors.name && (<div className="invalid-response">{errors.name}</div>)}
+                <p>Email</p>
+                <input className={classnames('', {'input-invalid': errors.email})} type="email" name="email" value={this.state.email} onChange={this.onChange}/>
+                {errors.email && (<div className="invalid-response">{errors.email}</div>)}
+                <p>Password</p>
+                <input className={classnames('', {'input-invalid': errors.password})} type="password" name="password" value={this.state.password} onChange={this.onChange}/>
+                {errors.password && (<div className="invalid-response">{errors.password}</div>)}
+                <p>Confirm Password</p>
+                <input className={classnames('', {'input-invalid': errors.password2})} type="password"  name="password2" value={this.state.password2} onChange={this.onChange}/>
+                {errors.password2 && (<div className="invalid-response">{errors.passsword2}</div>)}
                 <br></br>
                 <input type="submit" value="Sign Up"/>
                 <br></br>
                 <p>Already Signed Up? <Link to='/signin'>Sign In</Link></p>
                 <p>Want to support TCC? <Link to='/signup/volunteer'>Register as a Volunteer</Link></p>
-              </div>
+              </form>
             </div>
           </div>
       </div>
