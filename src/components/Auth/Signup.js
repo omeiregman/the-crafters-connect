@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
 import classnames from 'classnames';
+import { connect } from 'react-redux';
+import { registerUser } from '../../actions/authActions';
 
 import './css/auth.css';
 import img_logo from './img/logo.png';
@@ -22,6 +24,12 @@ class Signup extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   onChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -36,13 +44,14 @@ class Signup extends Component {
       password: this.state.password,
       password2: this.state.password2
     }
-    axios.post('/api/users/register', newUser)
-    .then(res => console.log(res.data))
-    .catch(err => this.setState({ errors: err.response.data }))
+
+    this.props.registerUser(newUser);
+
   }
 
   render () {
     const { errors } = this.state;
+
     return (
       <section className="login-pane">
        <div className="">
@@ -68,7 +77,7 @@ class Signup extends Component {
                 {errors.password && (<div className="invalid-response">{errors.password}</div>)}
                 <p>Confirm Password</p>
                 <input className={classnames('', {'input-invalid': errors.password2})} type="password"  name="password2" value={this.state.password2} onChange={this.onChange}/>
-                {errors.password2 && (<div className="invalid-response">{errors.passsword2}</div>)}
+                {errors.password2 && (<div className="invalid-response">{errors.password2}</div>)}
                 <br></br>
                 <input type="submit" value="Sign Up"/>
                 <br></br>
@@ -83,5 +92,16 @@ class Signup extends Component {
   }
 }
 
+Signup.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
 
-export default Signup;
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export default connect(mapStateToProps, { registerUser })(Signup);

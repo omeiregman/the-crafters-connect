@@ -6,9 +6,7 @@ import img_connect from '../../images/connect.png';
 import img_promote from '../../images/promote.png';
 
 class HomeHeaderComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
     render() {
       return (
         <div>
