@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
@@ -45,7 +46,7 @@ class Signup extends Component {
       password2: this.state.password2
     }
 
-    this.props.registerUser(newUser);
+    this.props.registerUser(newUser, this.props.history);
 
   }
 
@@ -104,4 +105,4 @@ const mapStateToProps = (state) => ({
   errors: state.errors
 })
 
-export default connect(mapStateToProps, { registerUser })(Signup);
+export default connect(mapStateToProps, { registerUser })(withRouter(Signup));
