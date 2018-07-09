@@ -5,13 +5,13 @@ import jwt_decode from 'jwt-decode';
 import { GET_ERRORS, SET_CURRENT_USER } from './types';
 
 
-//const BASE_URL = "https://thecraftersconnectapi.herokuapp.com/api/";
+const BASE_URL = "https://thecraftersconnectapi.herokuapp.com/api/";
 //const BASE_URL = "http://localhost:5000/api/";
 //Register User
 
 export const registerUser = (userData, history) => dispatch => {
-  //axios.post(`${BASE_URL}users/register`, userData)
-  axios.post("api/users/register", userData)
+  axios.post(`${BASE_URL}users/register`, userData)
+  //axios.post("api/users/register", userData)
   .then(res => history.push('/signin'))
   .catch(err => dispatch({
     type: GET_ERRORS,
@@ -23,8 +23,8 @@ export const registerUser = (userData, history) => dispatch => {
 //Login - Get User Token
 
 export const loginUser = (userData) => dispatch => {
-  //axios.post(`${BASE_URL}users/login`, userData)
-  axios.post("api/users/login", userData)
+  axios.post(`${BASE_URL}users/login`, userData)
+  //axios.post("api/users/login", userData)
   .then(res => {
     //save to local storage
     const { token } = res.data;
