@@ -22,8 +22,6 @@ class FeatureEventComponent extends Component {
                 <div className="freebie">
                   <iframe title="CraftStar" width="560" height="315" src="https://www.youtube.com/embed/M7e93BhppIk?start=8" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
                   <div className="freebie-overlay">
-                    <p>{/*This week Kolapo Adebayo
-                      teaches us how to make custom 4G phones from raffia. Grab a palm leaf, and come join us.*/}</p>
                   </div>
                 </div>
 
