@@ -9,7 +9,7 @@
 }
 
 .nav-items{
-  margin-left: 35%;
+  margin-left: 25%;
   font-size: 0.857em;
   font-family: 'Ubuntu', sans-serif;
   color: #fff !important;
@@ -45,6 +45,37 @@
   color: rgb(255, 255, 255);
   padding-left: 5px;
 }
+
+.nav-avatar {
+  border-radius: 50px;
+}
+
+.auth-nav-items {
+  float: right;
+  margin-top: 4px;
+  margin-left: 15px;
+  border: 1.5px solid #FF6600;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.auth-nav-item {
+  color: #f2f2f2 !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.auth-signup {
+  background: #FF6600;
+  background-size: cover;
+  padding-top: 7px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+}
+
+
 
 @media (max-width: 45em) {
   .hero-nav-text {

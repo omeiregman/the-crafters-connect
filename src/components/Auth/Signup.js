@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
+import { BarLoader } from 'react-spinners';
 
 import './css/auth.css';
 import img_logo from './img/logo.png';
@@ -18,16 +19,26 @@ class Signup extends Component {
       email: '',
       password: '',
       password2: '',
-      errors: {}
+      errors: {},
+      loading: false
     }
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated) {
+      this.props.history.push('/');
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
+      this.setState({
+        errors: nextProps.errors,
+        loading:false
+      });
     }
   }
 
@@ -39,6 +50,7 @@ class Signup extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    this.setState({ loading: true });
     const newUser = {
       name: this.state.name,
       email: this.state.email,
@@ -47,7 +59,6 @@ class Signup extends Component {
     }
 
     this.props.registerUser(newUser, this.props.history);
-
   }
 
   render () {
@@ -80,6 +91,13 @@ class Signup extends Component {
                 <input className={classnames('', {'input-invalid': errors.password2})} type="password"  name="password2" value={this.state.password2} onChange={this.onChange}/>
                 {errors.password2 && (<div className="invalid-response">{errors.password2}</div>)}
                 <br></br>
+                <div>
+                  <BarLoader
+                    color={'#FBB062'}
+                    loading={this.state.loading}
+                    width={225}
+                  />
+                </div>
                 <input type="submit" value="Sign Up"/>
                 <br></br>
                 <p>Already Signed Up? <Link to='/signin'>Sign In</Link></p>

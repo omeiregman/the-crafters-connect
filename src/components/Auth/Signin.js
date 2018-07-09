@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 import { loginUser } from '../../actions/authActions';
+import { BarLoader } from 'react-spinners';
 
 import {Link} from 'react-router-dom';
 
@@ -16,11 +17,18 @@ class Signin extends Component {
     this.state = {
       email: '',
       password: '',
-      errors: {}
+      errors: {},
+      loading: false
     }
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    if(this.props.auth.isAuthenticated) {
+      this.props.history.push('/');
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,7 +37,10 @@ class Signin extends Component {
     }
 
     if(nextProps.errors) {
-      this.setState({ errors: nextProps.errors})
+      this.setState({
+        errors: nextProps.errors,
+        loading:false
+      })
     }
   }
 
@@ -41,6 +52,7 @@ class Signin extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    this.setState({ loading: true });
     const userData = {
       email: this.state.email,
       password: this.state.password
@@ -64,7 +76,7 @@ class Signin extends Component {
               </div>
             </div>
             <div className="col-sm-6 right-pane">
-              <form onSubmit={this.onSubmit}>
+              <form noValidate onSubmit={this.onSubmit}>
                 <h3>Welcome back,</h3>
                 <br></br>
                 <h4>Please Sign In to Continue</h4>
@@ -76,7 +88,14 @@ class Signin extends Component {
                 {errors.password && (<div className="invalid-response">{errors.password}</div>)}
                 <p className="extra-note"><Link to='/signin'>forgot password?</Link></p>
                 <br></br>
-                <input className={classnames('', {'input-invalid': errors.password})} type="submit" value="Sign In"/>
+                <div>
+                  <BarLoader
+                    color={'#FBB062'}
+                    loading={this.state.loading}
+                    width={225}
+                  />
+                </div>
+                <input type="submit" value="Sign In"/>
                 <br></br>
                 <p>New to TCC? <Link to='/signup'>Sign Up</Link></p>
               </form>
