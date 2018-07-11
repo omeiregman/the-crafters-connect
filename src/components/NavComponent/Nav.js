@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
+import { clearCurrentCrafter } from '../../actions/crafterActions';
 
 import './Nav.css';
 
@@ -12,6 +13,7 @@ class Nav extends Component {
 
   onLogoutClick(e) {
       e.preventDefault();
+      this.props.clearCurrentCrafter();
       this.props.logoutUser();
   }
 
@@ -49,7 +51,7 @@ class Nav extends Component {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="nav-items navbar-nav">
                     <Link to='/about' className="nav-item nav-link">About</Link>
-                    <Link to='/' className="nav-item nav-link">Crafters</Link>
+                    <Link to='/craftersandcrafts' className="nav-item nav-link">Crafters</Link>
                     <Link to='/' className="nav-item nav-link">Courses</Link>
                     <Link to='/' className="nav-item nav-link">Events</Link>
                     <Link className="nav-item nav-link" to="https://thetccmagazine.com/" target="_blank">Magazine</Link>
@@ -70,4 +72,4 @@ Nav.propTypes = {
 const mapStateToProps = (state) => ({
   auth: state.auth
 });
-export default connect(mapStateToProps, { logoutUser })(Nav);
+export default connect(mapStateToProps, { logoutUser, clearCurrentCrafter })(Nav);

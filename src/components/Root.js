@@ -3,14 +3,14 @@ import { Switch, Route } from 'react-router-dom';
 
 import Home from './HomeScreen/HomeScreenComponent';
 import About from './AboutComponent/About.js';
-import Crafters from './CraftersComponent/Crafters';
+import Crafters from './CraftersComponent/CraftersComponent';
 import Gallery from './GalleryComponent/Gallery';
 import Courses from './CoursesComponent/Courses';
 import ExecutiveFounder from './AboutComponent/Founderone';
 import FounderTwo from './AboutComponent/Foundertwo';
 import SignIn from './Auth/Signin';
 import SignUp from './Auth/Signup';
-import SignUpCrafter from './Auth/SignupCrafter';
+import RegisterCrafter from './CraftersComponent/CrafterRegistration';
 import RegisterVolunteer from './Auth/RegisterVolunteer';
 
 
@@ -27,8 +27,8 @@ const Root = () => {
       <Route path="/about/executive-founder" component={FounderTwo} />
       <Route path="/signin" component={SignIn} />
       <Route exact path="/signup" component={SignUp} />
-      <Route path="/signup/crafter" component={SignUpCrafter} />
       <Route path="/signup/volunteer" component={RegisterVolunteer} />
+      <Route path="/crafters/register" component={RegisterCrafter} />
       </Switch>
     </div>
   );

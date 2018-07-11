@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 import { loginUser } from '../../actions/authActions';
 import { BarLoader } from 'react-spinners';
+import TextFieldGroup from '../common/TextFieldGroup';
 
 import {Link} from 'react-router-dom';
 
@@ -81,11 +82,21 @@ class Signin extends Component {
                 <br></br>
                 <h4>Please Sign In to Continue</h4>
                 <p>email</p>
-                <input className={classnames('', {'input-invalid': errors.email})} type="email" name="email" value={this.state.email} onChange={this.onChange}/>
-                {errors.email && (<div className="invalid-response">{errors.email}</div>)}
+                <TextFieldGroup
+                  name="email"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.email}/>
+
                 <p>password</p>
-                <input type="password" name="password" value={this.state.password} onChange={this.onChange}/>
-                {errors.password && (<div className="invalid-response">{errors.password}</div>)}
+                <TextFieldGroup
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}/>
+                
                 <p className="extra-note"><Link to='/signin'>forgot password?</Link></p>
                 <br></br>
                 <div>

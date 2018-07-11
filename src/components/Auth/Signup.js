@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
 import { BarLoader } from 'react-spinners';
+import TextFieldGroup from '../common/TextFieldGroup';
 
 import './css/auth.css';
 import img_logo from './img/logo.png';
@@ -79,17 +80,37 @@ class Signup extends Component {
               <h3>Sign Up</h3>
               <form noValidate onSubmit={this.onSubmit}>
                 <p>Full Name</p>
-                <input className={classnames('', {'input-invalid': errors.name})} type="text" name="name" value={this.state.name} onChange={this.onChange}/>
-                {errors.name && (<div className="invalid-response">{errors.name}</div>)}
+                <TextFieldGroup
+                  name="name"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.name}/>
+
                 <p>Email</p>
-                <input className={classnames('', {'input-invalid': errors.email})} type="email" name="email" value={this.state.email} onChange={this.onChange}/>
-                {errors.email && (<div className="invalid-response">{errors.email}</div>)}
+                <TextFieldGroup
+                  name="email"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.email}/>
+
                 <p>Password</p>
-                <input className={classnames('', {'input-invalid': errors.password})} type="password" name="password" value={this.state.password} onChange={this.onChange}/>
-                {errors.password && (<div className="invalid-response">{errors.password}</div>)}
+                <TextFieldGroup
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}/>
+
                 <p>Confirm Password</p>
-                <input className={classnames('', {'input-invalid': errors.password2})} type="password"  name="password2" value={this.state.password2} onChange={this.onChange}/>
-                {errors.password2 && (<div className="invalid-response">{errors.password2}</div>)}
+                <TextFieldGroup
+                  name="password2"
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.onChange}
+                  error={errors.password2}/>
+
                 <br></br>
                 <div>
                   <BarLoader

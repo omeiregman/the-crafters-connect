@@ -3,6 +3,7 @@ import { BrowserRouter as Router} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
+import { clearCurrentCrafter } from './actions/crafterActions';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -25,8 +26,12 @@ if(localStorage.jwtToken) {
   //Check for expired Token
   const currentTime = Date.now() / 1000;
   if(decoded.exp < currentTime) {
+    //Logout user
     store.dispatch(logoutUser());
+
     //clear current profile
+    store.dispatch(clearCurrentCrafter());
+
 
     //redirect to login
     window.location.href = './signup';
