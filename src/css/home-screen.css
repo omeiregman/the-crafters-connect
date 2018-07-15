@@ -74,7 +74,7 @@ header {
 
 .about-section h3 {
   margin-top: 7%;
-  color: #333333;
+  color: #ff6600;
   font-style: normal;
   font-size: 1.2em;
 }
@@ -84,18 +84,19 @@ header {
   font-size: 1em;
   line-height: 20px;
   font-weight: lighter;
-  color: #333333;
+  color: #EA5800;
 }
 
 .about-section h2 {
-  font-size: 2em;
-  color: #333;
+  font-size: 1.65em;
+  color: #EA5822;
 }
 
 .about-section-card {
   margin-top: 5%;
-  border: #f1f1f1 0.5px solid;
+  border: #EA5800 0.5px solid;
   padding: 8%;
+  height: 220px;
 }
 
 /**Media Query for About section**/

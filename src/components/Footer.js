@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="col-md-3">
             <h3>Community</h3>
             <ul className="footer-items">
-              <li>About Us</li>
+              <li><Link to='/about'>About Us</Link></li>
               <li>Join a discussion</li>
               <li>Connect with crafters</li>
               <li>Refer a friend</li>

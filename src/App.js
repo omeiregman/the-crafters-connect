@@ -4,6 +4,7 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentCrafter } from './actions/crafterActions';
+import { getEvents } from './actions/eventActions';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -29,7 +30,7 @@ if(localStorage.jwtToken) {
     //Logout user
     store.dispatch(logoutUser());
 
-    //clear current profile
+    //clear current crafter
     store.dispatch(clearCurrentCrafter());
 
 
@@ -38,7 +39,15 @@ if(localStorage.jwtToken) {
   }
 }
 
+
+
 class App extends Component {
+  componentDidMount () {
+
+    //Load EVENTS
+    store.dispatch(getEvents());
+  }
+
   render() {
     return (
       <Provider store={ store }>

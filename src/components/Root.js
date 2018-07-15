@@ -12,6 +12,7 @@ import SignIn from './Auth/Signin';
 import SignUp from './Auth/Signup';
 import RegisterCrafter from './CraftersComponent/CrafterRegistration';
 import RegisterVolunteer from './Auth/RegisterVolunteer';
+import Events from './EventComponent/Event';
 
 
 const Root = () => {
@@ -29,6 +30,8 @@ const Root = () => {
       <Route exact path="/signup" component={SignUp} />
       <Route path="/signup/volunteer" component={RegisterVolunteer} />
       <Route path="/crafters/register" component={RegisterCrafter} />
+      <Route exact path="/events" component={Events} />
+      {/* <Route exact path="/events/:name" render={ props => <SingleEvent {...props} }/> */}
       </Switch>
     </div>
   );

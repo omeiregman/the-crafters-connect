@@ -53,7 +53,7 @@ class Nav extends Component {
                     <Link to='/about' className="nav-item nav-link">About</Link>
                     <Link to='/craftersandcrafts' className="nav-item nav-link">Crafters</Link>
                     <Link to='/' className="nav-item nav-link">Courses</Link>
-                    <Link to='/' className="nav-item nav-link">Events</Link>
+                    <Link to='/events' className="nav-item nav-link">Events</Link>
                     <Link className="nav-item nav-link" to="https://thetccmagazine.com/" target="_blank">Magazine</Link>
                     <Link to='/' className="nav-item nav-link">Gallery</Link>
                     { isAuthenticated ? authLinks : guestLinks }
