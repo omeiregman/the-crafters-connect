@@ -13,6 +13,7 @@ import SignUp from './Auth/Signup';
 import RegisterCrafter from './CraftersComponent/CrafterRegistration';
 import RegisterVolunteer from './Auth/RegisterVolunteer';
 import Events from './EventComponent/Event';
+import SingleEvent from './EventComponent/SingleEvent';
 
 
 const Root = () => {
@@ -31,7 +32,7 @@ const Root = () => {
       <Route path="/signup/volunteer" component={RegisterVolunteer} />
       <Route path="/crafters/register" component={RegisterCrafter} />
       <Route exact path="/events" component={Events} />
-      {/* <Route exact path="/events/:name" render={ props => <SingleEvent {...props} }/> */}
+      <Route exact path="/events/:name" render={ props => <SingleEvent {...props} /> }/>
       </Switch>
     </div>
   );

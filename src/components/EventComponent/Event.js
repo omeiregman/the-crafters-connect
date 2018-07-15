@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getEvents } from '../../actions/eventActions';
-import { MoonLoader } from 'react-spinners';
+import { PulseLoader } from 'react-spinners';
 
 import EventCard from './EventCard';
 
@@ -24,23 +24,23 @@ class Event extends Component {
   }
 
   render() {
-
     const { events, loading } = this.props.events
     let eventData;
 
     if (loading) {
       return (<div className="event-loader">
-        <MoonLoader
+        <span><PulseLoader
         color={'#EA5800'}
         loading={loading}
-      />
+      /></span>
       <p>Loading Events</p>
-      </div>)
+    </div>);
     } else {
-
-      if (events.length>1) {
+      if (events.length>0) {
         eventData = events.map(function(event, i){
           return <EventCard
+                  key={event._id}
+                  url={event.url}
                   name={event.name}
                   startDate={event.startDate}
                   location={event.location}

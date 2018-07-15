@@ -37,12 +37,19 @@ class Nav extends Component {
       </div>
     );
 
+    let heroText;
+    if (isAuthenticated) {
+      heroText = <span className="hero-nav-text"></span>
+    } else {
+      heroText = <span className="hero-nav-text"></span>
+    }
+
 
     return(
       <div>
         <nav className="main-nav navbar navbar-expand-lg navbar-light">
             <div>
-                <Link to='/' className="nav-brand nav-link"><img src={img_logo} width="100" height="30" alt=""/><span className="hero-nav-text">The Crafters Connect</span></Link>
+                <Link to='/' className="nav-brand nav-link"><img src={img_logo} width="100" height="30" alt=""/>{heroText}</Link>
             </div>
 
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +58,7 @@ class Nav extends Component {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="nav-items navbar-nav">
                     <Link to='/about' className="nav-item nav-link">About</Link>
-                    <Link to='/craftersandcrafts' className="nav-item nav-link">Crafters</Link>
+                    <Link to='/' className="nav-item nav-link">Crafters</Link>
                     <Link to='/' className="nav-item nav-link">Courses</Link>
                     <Link to='/events' className="nav-item nav-link">Events</Link>
                     <Link className="nav-item nav-link" to="https://thetccmagazine.com/" target="_blank">Magazine</Link>

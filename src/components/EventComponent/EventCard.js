@@ -9,10 +9,11 @@ const EventCard = ({
   eventImage,
   location,
   startDate,
+  url
 }) => {
   return(
     <div className="col-sm-4">
-      <Link to='/' key={name}>
+      <Link to={`/events/${url}`} key={url}>
       <div className="event-card">
         <img src={eventImage} alt="event image"/>
         <h4>{startDate}</h4>
@@ -31,6 +32,7 @@ EventCard.PropTypes = {
   image: PropTypes.string.isRequired,
   startDate: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 }
 
 export default EventCard;

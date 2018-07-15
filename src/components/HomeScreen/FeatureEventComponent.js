@@ -70,7 +70,7 @@ class FeatureEventComponent extends Component {
               </div>
               <div className="event-info">
                 <h4>The Crafters Conference</h4>
-                <p>38th week of September, Lagos</p>
+                <p>38th week of 2018, Lagos</p>
               </div>
               <div className="event-date">
                 <h2></h2>
