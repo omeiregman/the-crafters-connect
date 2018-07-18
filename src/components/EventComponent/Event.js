@@ -5,18 +5,12 @@ import { getEvents } from '../../actions/eventActions';
 import { PulseLoader } from 'react-spinners';
 
 import EventCard from './EventCard';
-
 import './css/event.css';
 
 
 class Event extends Component {
   constructor(props){
     super(props);
-
-  }
-
-  componentWillMount() {
-
   }
 
   componentDidMount() {
@@ -68,6 +62,7 @@ class Event extends Component {
     );
   }
 }
+
 Event.propTypes = {
   getEvents: PropTypes.func.isRequired,
   events: PropTypes.object.isRequired

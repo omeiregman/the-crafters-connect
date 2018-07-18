@@ -253,6 +253,16 @@ a {
   margin-left: 3%;
 }
 
+.btn-reg-crafter {
+  text-align: center;
+  width: 70%;
+  border-radius: 0;
+  background-color: rgba(250, 150, 32, 0.9);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
 /**END SIGNUP AS A CRAFTER**/
 
 @media (max-width: 45em) {

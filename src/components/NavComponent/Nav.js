@@ -58,7 +58,7 @@ class Nav extends Component {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="nav-items navbar-nav">
                     <Link to='/about' className="nav-item nav-link">About</Link>
-                    <Link to='/' className="nav-item nav-link">Crafters</Link>
+                    <Link to='/craftersandcrafts' className="nav-item nav-link">Crafters</Link>
                     <Link to='/' className="nav-item nav-link">Courses</Link>
                     <Link to='/events' className="nav-item nav-link">Events</Link>
                     <Link className="nav-item nav-link" to="https://thetccmagazine.com/" target="_blank">Magazine</Link>

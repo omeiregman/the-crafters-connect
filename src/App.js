@@ -29,13 +29,10 @@ if(localStorage.jwtToken) {
   if(decoded.exp < currentTime) {
     //Logout user
     store.dispatch(logoutUser());
-
     //clear current crafter
     store.dispatch(clearCurrentCrafter());
-
-
     //redirect to login
-    window.location.href = './signup';
+    window.location.href = './signin';
   }
 }
 

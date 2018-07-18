@@ -4,10 +4,11 @@ import { GET_CRAFTER, CRAFTER_LOADING, GET_ERRORS, CLEAR_CURRENT_CRAFTER } from 
 
 const BASE_URL = "https://thecraftersconnectapi.herokuapp.com/api/";
 
-//Get Current profile
+//Get Current crafter
 export const getCurrentCrafter = () => dispatch => {
     dispatch(setCrafterLoading());
-    axios.get(`${BASE_URL}crafter`)
+    console.log("Get current crafter running from Actions");
+    axios.get(`${BASE_URL}crafters`)
     .then(res =>
       dispatch({
         type: GET_CRAFTER,

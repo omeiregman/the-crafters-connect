@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import PrivateRoute from './common/PrivateRoute';
+
 import Home from './HomeScreen/HomeScreenComponent';
 import About from './AboutComponent/About.js';
 import Crafters from './CraftersComponent/CraftersComponent';
@@ -14,6 +16,9 @@ import RegisterCrafter from './CraftersComponent/CrafterRegistration';
 import RegisterVolunteer from './Auth/RegisterVolunteer';
 import Events from './EventComponent/Event';
 import SingleEvent from './EventComponent/SingleEvent';
+import CraftersDashboard from './CraftersComponent/CraftersDashboard';
+
+
 
 
 const Root = () => {
@@ -27,12 +32,13 @@ const Root = () => {
       <Route path="/courses" component={Courses}/>
       <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
       <Route path="/about/executive-founder" component={FounderTwo} />
-      <Route path="/signin" component={SignIn} />
+      <Route exact path="/signin" component={SignIn} />
       <Route exact path="/signup" component={SignUp} />
       <Route path="/signup/volunteer" component={RegisterVolunteer} />
-      <Route path="/crafters/register" component={RegisterCrafter} />
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" render={ props => <SingleEvent {...props} /> }/>
+      <PrivateRoute exact path="/crafters/register" component={RegisterCrafter} />
+      <PrivateRoute exact path="/crafters/dashboard" component={CraftersDashboard} />
       </Switch>
     </div>
   );
