@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import img_craftstar from '../../images/craft-star.jpeg';
-
+import { Link } from 'react-router-dom';
 
 class FeatureEventComponent extends Component {
   // constructor(props){
@@ -32,7 +32,7 @@ class FeatureEventComponent extends Component {
                   <div className="col-sm-6 craft-star-info">
                     <p className="">Our CraftStar of the week is <br></br><b>Akorede Sodipe,</b> CEO KOSH Beads.
                       Here she shares her love for crafts in bead making, aso oke designing/weaving and business experiences.</p>
-                      <p>Read More >>></p>
+                      <Link to='https://thetccmagazine.com/akorede-shodipe-kosh/' target="_blank">Read More >>></Link>
                       {/* <div className="btn-readmore">
                         Read More
                       </div> */}
