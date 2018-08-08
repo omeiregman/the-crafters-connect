@@ -22,6 +22,18 @@ export const getCurrentCrafter = () => dispatch => {
     );
 }
 
+//Create Crafter
+export const createCrafter = (crafterData, history) => dispatch => {
+  axios.post(`${BASE_URL}crafters`, crafterData)
+  .then(res => history.push("crafters/dashboard"))
+  .catch(err => 
+  dispatch({
+    type: GET_ERRORS,
+    payload: err.response.data
+    })
+  );
+};
+
 //Crafter Loading
 export const setCrafterLoading = () => {
   return {

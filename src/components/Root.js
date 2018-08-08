@@ -5,7 +5,7 @@ import PrivateRoute from './common/PrivateRoute';
 
 import Home from './HomeScreen/HomeScreenComponent';
 import About from './AboutComponent/About.js';
-import Crafters from './CraftersComponent/CraftersComponent';
+import Crafters from './CraftersComponent/Crafters';
 import Gallery from './GalleryComponent/Gallery';
 import Courses from './CoursesComponent/Courses';
 import ExecutiveFounder from './AboutComponent/Founderone';
@@ -21,24 +21,31 @@ import CraftersDashboard from './CraftersComponent/CraftersDashboard';
 
 
 
+
 const Root = () => {
   return(
     <div>
       <Switch>
       <Route exact path='/' component={Home}/>
+
       <Route exact path='/about' component={About}/>
-      <Route path="/craftersandcrafts" component={Crafters}/>
-      <Route path="/gallery" component={Gallery}/>
-      <Route path="/courses" component={Courses}/>
       <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
       <Route path="/about/executive-founder" component={FounderTwo} />
+
+      <Route exact path="/craftersandcrafts" component={Crafters}/>
+      <PrivateRoute exact path="/crafters/register" component={RegisterCrafter} />
+      <PrivateRoute exact path="/crafters/dashboard" component={CraftersDashboard} />
+
+      <Route path="/gallery" component={Gallery}/>
+      <Route path="/courses" component={Courses}/>
+      
       <Route exact path="/signin" component={SignIn} />
       <Route exact path="/signup" component={SignUp} />
       <Route path="/signup/volunteer" component={RegisterVolunteer} />
+
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" render={ props => <SingleEvent {...props} /> }/>
-      <PrivateRoute exact path="/crafters/register" component={RegisterCrafter} />
-      <PrivateRoute exact path="/crafters/dashboard" component={CraftersDashboard} />
+      
       </Switch>
     </div>
   );

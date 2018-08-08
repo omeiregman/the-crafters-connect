@@ -5,7 +5,7 @@ import { getCurrentCrafter } from '../../actions/crafterActions';
 import { PulseLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 
-import './css/auth.css';
+import './css/crafters.css';
 
 class CraftersDashboard extends Component {
   componentDidMount() {
@@ -29,7 +29,7 @@ class CraftersDashboard extends Component {
     } else {
       //Check if logged in user has a crafters profile
       if(Object.keys(crafter).length > 0) {
-        dashboardContent = <h4>TODO: DISPLAY PROFILE</h4>
+        dashboardContent = <h3 className="event-loader">Welcome <Link to='' >{user.name}</Link>,</h3>
       } else {
         //User is logged in but has no crafters profile
         dashboardContent = <div>

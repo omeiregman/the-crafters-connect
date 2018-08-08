@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import classnames from 'classnames';
 import { loginUser } from '../../actions/authActions';
 import { BarLoader } from 'react-spinners';
 import TextFieldGroup from '../common/TextFieldGroup';
@@ -103,7 +102,7 @@ class Signin extends Component {
                   <BarLoader
                     color={'#FBB062'}
                     loading={this.state.loading}
-                    width={225}
+                    width={218}
                   />
                 </div>
                 <input type="submit" value="Sign In"/>
