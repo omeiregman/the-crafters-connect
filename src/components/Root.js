@@ -17,6 +17,7 @@ import RegisterVolunteer from './Auth/RegisterVolunteer';
 import Events from './EventComponent/Event';
 import SingleEvent from './EventComponent/SingleEvent';
 import CraftersDashboard from './CraftersComponent/CraftersDashboard';
+import EditCrafter from './CraftersComponent/EditCrafter';
 
 
 
@@ -35,6 +36,7 @@ const Root = () => {
       <Route exact path="/craftersandcrafts" component={Crafters}/>
       <PrivateRoute exact path="/crafters/register" component={RegisterCrafter} />
       <PrivateRoute exact path="/crafters/dashboard" component={CraftersDashboard} />
+      <PrivateRoute exact path="/crafters/edit" component={EditCrafter} />
 
       <Route path="/gallery" component={Gallery}/>
       <Route path="/courses" component={Courses}/>

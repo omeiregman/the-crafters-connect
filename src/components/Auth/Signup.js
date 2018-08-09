@@ -83,7 +83,7 @@ class Signup extends Component {
                 <TextFieldGroup
                   name="name"
                   type="text"
-                  value={this.state.email}
+                  value={this.state.name}
                   onChange={this.onChange}
                   error={errors.name}/>
 
