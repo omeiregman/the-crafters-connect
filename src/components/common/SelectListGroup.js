@@ -35,7 +35,7 @@ const SelectListGroup = ({
   );
 }
 
-SelectListGroup.PropTypes = {
+SelectListGroup.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,

@@ -18,18 +18,18 @@ const TextAreaFieldGroup = ({
         name={name}
         value={value}
         onChange={onChange}/>
+        {error && (<div className="invalid-response">{error}</div>)}
         {info && <small className="form-text text-muted">{info}</small>}
-      {error && (<div className="invalid-response">{error}</div>)}
     </div>
   );
 }
 
-TextAreaFieldGroup.PropTypes = {
+TextAreaFieldGroup.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
-  info: PropTypes.string,
   error: PropTypes.string,
+  info: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 }
 

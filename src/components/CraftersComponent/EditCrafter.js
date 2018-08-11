@@ -9,10 +9,11 @@ import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
+import AddExperience from './AddExperience';
 
 import './css/regcrafter.css';
-import img_logo from './img/logo.png';
 import isEmpty from './../../validation/is-empty';
+import CrafterHeader from './CrafterHeader';
 
 
 class CrafterRegistration extends Component {
@@ -53,6 +54,7 @@ class CrafterRegistration extends Component {
     let crafterData = {
      handle: this.state.handle,
      company: this.state.company,
+     bio: this.state.bio,
      website: this.state.website,
      location: this.state.location,
      status: this.state.majorCraft,
@@ -82,19 +84,36 @@ class CrafterRegistration extends Component {
     if(nextProps.crafter.crafter) {
         const crafter = nextProps.crafter.crafter;
 
-        //Convery skills array back to string 
-
-        const skillscSV = crafter.skills.join(',');
+        //Convert skills array back to string 
+        const otherCraftsCSV = crafter.crafts.join(',');
 
         //If crafter field doesnt exist, make empty string
-        crafter.company = !isEmpty(crafter) ? crafter.company : '';
-        crafter.website = !isEmpty(crafter) ? crafter.website : '';
-        crafter.bio = !isEmpty(crafter) ? crafter.bio : '';
-        crafter.status = !isEmpty(crafter) ? crafter.status : '';
-        crafter.youtube = !isEmpty(crafter) ? crafter.youtube : '';
-        crafter.facebook = !isEmpty(crafter) ? crafter.facebook : '';
-        crafter.twitter = !isEmpty(crafter) ? crafter.twitter : '';
-        crafter.instagram = !isEmpty(crafter) ? crafter.instagram : '';
+        crafter.company = !isEmpty(crafter.company) ? crafter.company : '';
+        crafter.location = !isEmpty(crafter.location) ? crafter.location: '';
+        crafter.website = !isEmpty(crafter.website) ? crafter.website : '';
+        crafter.bio = !isEmpty(crafter.bio) ? crafter.bio : '';
+        crafter.status = !isEmpty(crafter.status) ? crafter.status : '';
+
+        crafter.social = !isEmpty(crafter.social) ? crafter.social : {};
+        crafter.youtube = !isEmpty(crafter.social.youtube) ? crafter.social.youtube : '';
+        crafter.facebook = !isEmpty(crafter.social.facebook) ? crafter.social.facebook : '';
+        crafter.twitter = !isEmpty(crafter.social.twitter) ? crafter.social.twitter : '';
+        crafter.instagram = !isEmpty(crafter.social.instagram) ? crafter.social.instagram : '';
+
+        //set compontent field, state
+        this.setState({
+            handle: crafter.handle,
+            company: crafter.company,
+            website: crafter.website,
+            location: crafter.location,
+            status: crafter.majorCraft,
+            crafts: otherCraftsCSV,
+            bio: crafter.bio,
+            youtube: crafter.youtube,
+            twitter: crafter.twitter,
+            instagram: crafter.instagram,
+            facebook: crafter.facebook
+        })
     }
   }
 
@@ -104,7 +123,7 @@ class CrafterRegistration extends Component {
   render () {
     const { errors } = this.state;
     const options = [
-      { label: 'Select Major Craft' },
+      { label: 'Select Major Craft', value: 'Crafter'},
       { label: 'Bag Crafter', value: 'Bag Crafter'},
       { label: 'Paper Crafter', value: 'Paper Crafter'},
       { label: 'Body Art Crafter', value: 'Body Art Crafter'},
@@ -117,11 +136,12 @@ class CrafterRegistration extends Component {
 
     return (
       <section className="">
+      <CrafterHeader/>
        <div className="row">
-          <div className="login-pane">
+          <div className="registration-pane">
             <div className="col-sm-12">
               <div className="right-pane">
-                <h3>Edit Crafter Profile</h3>
+                <h3>Edit Profile</h3>
                 <p>or go back to <Link to='/crafters/dashboard'>Dashboard</Link></p>
                 <br></br>
 
@@ -130,12 +150,12 @@ class CrafterRegistration extends Component {
                     <div className="col">
                       <p>username(handle)</p>
                       <TextFieldGroup
+                      disabled
                       name="handle"
                       value={this.state.handle}
                       onChange={this.onChange}
                       error={errors.handle}
-                      info="A unique handle for your crafters profile, handle must be between 6 to 10 characters,
-                      handle can contain alphabets and numbers. (This CAN'T be changed later)"/>
+                      info="This CAN'T be changed"/>
                     </div>
                     <div className="col">
                       <p>location</p>
@@ -179,7 +199,7 @@ class CrafterRegistration extends Component {
                       value={this.state.majorCraft}
                       onChange={this.onChange}
                       options={options}
-                      error={errors.craftSet}
+                      error={errors.status}
                       />
                     </div>
                     <div className="col">
@@ -188,7 +208,8 @@ class CrafterRegistration extends Component {
                         name="otherCrafts"
                         value={this.state.otherCrafts}
                         onChange={this.onChange}
-                        error={errors.otherCrafts}
+                        error={errors.crafts}
+                        info="List of other ctafts seperated by a comma (,)"
                       />
 
                     </div>
@@ -202,10 +223,7 @@ class CrafterRegistration extends Component {
                     errors={errors.bio}
                     info="A short bio of yourself, should not be more than 200 characters"
                     />
-                  <hr></hr>
-                  {/* Experience */}
-                  <p>Add Experience Here</p>
-
+                  
                   <hr></hr>
 
                   {/*Social Media accounts*/}
@@ -253,6 +271,12 @@ class CrafterRegistration extends Component {
                         errors={errors.youtube}/>
                     </div>
                   </div>
+
+                  <hr></hr>
+                  {/* Experience */}
+                  
+                  <AddExperience />
+
                 <br></br>
                 <div>
                   <BarLoader

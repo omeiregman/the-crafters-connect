@@ -7,7 +7,6 @@ const BASE_URL = "https://thecraftersconnectapi.herokuapp.com/api/";
 //Get Current crafter
 export const getCurrentCrafter = () => dispatch => {
     dispatch(setCrafterLoading());
-    console.log("Get current crafter running from Actions");
     axios.get(`${BASE_URL}crafters`)
     .then(res =>
       dispatch({

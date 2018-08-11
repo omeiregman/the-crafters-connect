@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import CrafterHeader from './CrafterHeader';
 
 
 class Crafters extends Component {
   render() {
     return(
-      <div>
-        <h2>Crafters and their Crafts</h2>
-        <p>Register as a crafter</p>
-        <Link to='/crafters/register'><button>Register</button></Link>
-        <Link to='/crafters/dashboard'><button>Profile</button></Link>
-
+      <section>
+      <CrafterHeader/>
+      <div className="container">
+      <p>Register as a crafter</p>
+      <Link to='/crafters/register'><button>Register</button></Link>
+      <Link to='/crafters/dashboard'><button>Profile</button></Link>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       </div>
+        
+      </section>
     )
   }
 }

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import CrafterActions from './CrafterDashbordActions'; 
 
 import './css/crafters.css';
+import CrafterHeader from './CrafterHeader';
 
 class CraftersDashboard extends Component {
   componentDidMount() {
@@ -52,9 +53,12 @@ class CraftersDashboard extends Component {
     }
 
     return (
-      <div className="container">
-        {dashboardContent}
-      </div>
+      <section>
+        <CrafterHeader/>
+        <div className="container">
+          {dashboardContent}
+        </div>
+      </section>
     );
   }
 }

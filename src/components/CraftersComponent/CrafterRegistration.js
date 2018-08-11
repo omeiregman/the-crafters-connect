@@ -9,9 +9,9 @@ import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
+import CrafterHeader from './CrafterHeader';
 
 import './css/regcrafter.css';
-import img_logo from './img/logo.png';
 
 class CrafterRegistration extends Component {
   constructor(props){
@@ -55,6 +55,7 @@ class CrafterRegistration extends Component {
      location: this.state.location,
      status: this.state.majorCraft,
      crafts: this.state.otherCrafts,
+     bio: this.state.bio,
      youtube: this.state.youtube,
      twitter: this.state.twitter,
      instagram: this.state.instagram,
@@ -93,14 +94,16 @@ class CrafterRegistration extends Component {
 
     return (
       <section className="">
-       <div className="row">
-          <div className="login-pane">
+      <CrafterHeader/>
+       <div className="container">
+          <div className="registration-pane">
             <div className="col-sm-12">
               <div className="right-pane">
-                <h3>Sign Up as a Crafter</h3>
+                <h3>Register as a Crafter</h3>
                 <p>or go back to <Link to='/craftersandcrafts'>crafters page</Link></p>
                 <br></br>
-                <h4>Complete your Crafters profile</h4>
+                <h4>Create your Crafters profile</h4>
+                
 
                 <form noValidate onSubmit={this.onSubmit}>
                   <div className="form-row">
@@ -156,7 +159,7 @@ class CrafterRegistration extends Component {
                       value={this.state.majorCraft}
                       onChange={this.onChange}
                       options={options}
-                      error={errors.craftSet}
+                      error={errors.status}
                       />
                     </div>
                     <div className="col">
@@ -165,7 +168,8 @@ class CrafterRegistration extends Component {
                         name="otherCrafts"
                         value={this.state.otherCrafts}
                         onChange={this.onChange}
-                        error={errors.otherCrafts}
+                        error={errors.crafts}
+                        info="List of other ctafts seperated by a comma (,)"
                       />
 
                     </div>
@@ -179,10 +183,6 @@ class CrafterRegistration extends Component {
                     errors={errors.bio}
                     info="A short bio of yourself, should not be more than 200 characters"
                     />
-                  <hr></hr>
-                  {/* Experience */}
-                  <p>Add Experience Here</p>
-
                   <hr></hr>
 
                   {/*Social Media accounts*/}
