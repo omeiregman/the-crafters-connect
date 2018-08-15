@@ -27,6 +27,7 @@ class CrafterRegistration extends Component {
         location: '',
         majorCraft: '',
         otherCrafts: '',
+        otherCraftsSelect: [],
         bio: '',
         youtube: '',
         twitter: '',
@@ -45,6 +46,14 @@ class CrafterRegistration extends Component {
     });
   }
 
+  onOtherCraftChange = (e) => {
+    let changeArr = this.state.otherCraftsSelect;
+    changeArr.push(e.target.value);
+    this.setState({
+      otherCraftSelect: changeArr
+    });
+  }
+
   onSubmit(e) {
     e.preventDefault();
     this.setState({ loading: true });
@@ -54,7 +63,7 @@ class CrafterRegistration extends Component {
      website: this.state.website,
      location: this.state.location,
      status: this.state.majorCraft,
-     crafts: this.state.otherCrafts,
+     crafts: this.state.otherCraftsSelect.join(","),
      bio: this.state.bio,
      youtube: this.state.youtube,
      twitter: this.state.twitter,
@@ -62,7 +71,7 @@ class CrafterRegistration extends Component {
      facebook: this.state.facebook
     }
     
-    this.props.createCrafter(crafterData, this.props.history);
+    //this.props.createCrafter(crafterData, this.props.history);
     console.log(crafterData);
   }
 
@@ -79,17 +88,37 @@ class CrafterRegistration extends Component {
 
 
   render () {
+    
     const { errors } = this.state;
-    const options = [
-      { label: 'Select Major Craft' },
-      { label: 'Bag Crafter', value: 'Bag Crafter'},
-      { label: 'Paper Crafter', value: 'Paper Crafter'},
-      { label: 'Body Art Crafter', value: 'Body Art Crafter'},
-      { label: 'Nail Crafter', value: 'Nail Crafter'},
-      { label: 'Face Artist', value: 'Face Artist'},
-      { label: 'Food Artist', value: 'Food Artist'},
-      { label: 'Rubber Maker', value: 'Rubber Maker'},
-      { label: 'Leather Twister', value: 'Leather Twister'}
+
+    let otherCrafts = this.state.otherCraftsSelect;
+
+    const otherCraftList = otherCrafts.map(craft => {
+     return <p key={craft}>{craft}<span>x</span></p>
+    });
+
+       const options = [
+      { label: 'Select Craft' },
+      { label: 'Paper Crafts', value: 'Paper Crafts'},
+      { label: 'Nail Crafts', value: 'Nail Crafts'},
+      { label: 'Hair Crafts', value: 'Hair Crafts'},
+      { label: 'Fabric Crafts', value: 'Fabric Crafts'},
+      { label: 'Bamboo Crafts', value: 'Bamboo Crafts'},
+      { label: 'Plastic Crafts', value: 'Plastic Crafts'},
+      { label: 'Wood Crafts', value: 'Wood Crafts'},
+      { label: 'Cane Crafts', value: 'Cane Crafts'},
+      { label: 'Metal Crafts', value: 'Metal Crafts'},
+      { label: 'Food Crafts', value: 'Food Crafts'},
+      { label: 'Fruit Crafts', value: 'Fruit Crafts'},
+      { label: 'Drink Crafts', value: 'Drink Crafts'},
+      { label: 'Cake Crafts', value: 'Cake Crafts'},
+      { label: 'General Arts', value: 'General Arts'},
+      { label: 'Visual Arts', value: 'Visual Arts'},
+      { label: 'Body Arts', value: 'Body Arts'},
+      { label: 'Pottery', value: 'Pottery'},
+      { label: 'Calligraphy', value: 'Calligraphy'},
+      { label: 'Knitting', value: 'Crocheting'},
+      { label: 'Other', value: 'Other'},
     ]
 
     return (
@@ -163,14 +192,25 @@ class CrafterRegistration extends Component {
                       />
                     </div>
                     <div className="col">
-                      <p>other crafts</p>
-                      <TextAreaFieldGroup
+                      <p>other crafts you practice</p>
+                      <div>
+                        {otherCraftList}
+                      </div>
+                      <SelectListGroup
+                      name="otherCraftSelect"
+                      id="exampleFormControlSelect1"
+                      value={this.state.otherCraftSelect}
+                      onChange={this.onOtherCraftChange}
+                      options={options}
+                      error={errors.status}
+                      />
+                      {/**<TextAreaFieldGroup
                         name="otherCrafts"
                         value={this.state.otherCrafts}
                         onChange={this.onChange}
                         error={errors.crafts}
-                        info="List of other ctafts seperated by a comma (,)"
-                      />
+                        info="List of other crafts seperated by a comma (,)"
+                      />**/}
 
                     </div>
                   </div>
