@@ -46,10 +46,6 @@
   color: #fff;
 }
 
-.left-pane h3 {
-
-}
-
 .left-pane img {
   max-width: 60%;
   margin-top: 3%;
@@ -92,7 +88,7 @@
 .registration-pane input {
   box-sizing: border-box;
   display: block;
-  width: 80%;
+  width: 100%;
   border: 0.5px solid rgb(250, 231, 219);
   padding: 3px;
   outline: 0;
@@ -324,6 +320,25 @@ a {
 
 .experience-pane h6 {
   font-size: 0.85em;
+}
+
+.craftList li {
+  padding: 1%;
+  border: 0.3px solid #EA5800; 
+  margin-right: 1%;
+  margin-bottom: 1%;
+  float: left;
+  list-style: none;
+}
+
+.craftList {
+  display: inline;
+}
+
+
+.craftList span {
+  cursor: pointer;
+  color: #EA5800;
 }
 
 /**END SIGNUP AS A CRAFTER**/

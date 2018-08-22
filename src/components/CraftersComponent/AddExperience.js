@@ -65,7 +65,7 @@ class AddExperience extends Component {
                 <h5>Kolich Dez</h5>
                 <date><span>29-10-2014</span> - <span>05-07-2015</span></date>
                 <h6>Lagos, Nigeria</h6>
-                <i class="far fa-trash-alt"></i><i class="far fa-edit"></i>
+                <i className="far fa-trash-alt"></i><i class="far fa-edit"></i>
             </div>
             </div>
           </div>

@@ -10,10 +10,12 @@ import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import AddExperience from './AddExperience';
+import { SelectOptions } from './CrafterSelectOptions';
 
 import './css/regcrafter.css';
 import isEmpty from './../../validation/is-empty';
 import CrafterHeader from './CrafterHeader';
+import OtherCraftItems from './OtherCraftItems';
 
 
 class CrafterRegistration extends Component {
@@ -22,24 +24,24 @@ class CrafterRegistration extends Component {
 
 
     this.state = {
-        loading: false,
-        status: 'crafter',
-        handle: '',
-        company: '',
-        website: '',
-        location: '',
-        majorCraft: '',
-        otherCrafts: '',
-        bio: '',
-        youtube: '',
-        twitter: '',
-        instagram: '',
-        facebook: '',
-        errors: {}
+      loading: false,
+      status: '',
+      handle: '',
+      company: '',
+      website: '',
+      location: '',
+      otherCraftsSelect: [],
+      bio: '',
+      youtube: '',
+      twitter: '',
+      instagram: '',
+      facebook: '',
+      errors: {}
     }
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.deleteOtherCraftItem = this.deleteOtherCraftItem.bind(this);
   }
 
   onChange(e) {
@@ -51,14 +53,20 @@ class CrafterRegistration extends Component {
   onSubmit(e) {
     e.preventDefault();
     this.setState({ loading: true });
+
+    const otherCraft = [];
+    this.state.otherCraftsSelect.map((craft) => {
+      return otherCraft.push(craft.text);
+    });
+
     let crafterData = {
      handle: this.state.handle,
      company: this.state.company,
-     bio: this.state.bio,
      website: this.state.website,
      location: this.state.location,
-     status: this.state.majorCraft,
-     crafts: this.state.otherCrafts,
+     status: this.state.status,
+     crafts: otherCraft.join(","),
+     bio: this.state.bio,
      youtube: this.state.youtube,
      twitter: this.state.twitter,
      instagram: this.state.instagram,
@@ -85,8 +93,7 @@ class CrafterRegistration extends Component {
         const crafter = nextProps.crafter.crafter;
 
         //Convert skills array back to string 
-        const otherCraftsCSV = crafter.crafts.join(',');
-
+   
         //If crafter field doesnt exist, make empty string
         crafter.company = !isEmpty(crafter.company) ? crafter.company : '';
         crafter.location = !isEmpty(crafter.location) ? crafter.location: '';
@@ -100,14 +107,30 @@ class CrafterRegistration extends Component {
         crafter.twitter = !isEmpty(crafter.social.twitter) ? crafter.social.twitter : '';
         crafter.instagram = !isEmpty(crafter.social.instagram) ? crafter.social.instagram : '';
 
+        crafter.crafts = !isEmpty(crafter.crafts) ? crafter.crafts : '';
+
+        
+        if (crafter.crafts !== '') {
+          const list = crafter.crafts;
+          let mapCrafts = mapCrafts = list.map((item, i) => {
+            return {
+              text: item,
+              key: i
+            }
+          });
+          this.setState({
+            otherCraftsSelect: mapCrafts
+          });
+        }
+
+        
         //set compontent field, state
         this.setState({
             handle: crafter.handle,
             company: crafter.company,
             website: crafter.website,
             location: crafter.location,
-            status: crafter.majorCraft,
-            crafts: otherCraftsCSV,
+            status: crafter.status,
             bio: crafter.bio,
             youtube: crafter.youtube,
             twitter: crafter.twitter,
@@ -117,22 +140,37 @@ class CrafterRegistration extends Component {
     }
   }
 
+  onOtherCraftChange = (e) => {
+    const newCraft = {
+      text: e.target.value,
+      key: Date.now()
+    };
+
+    this.setState((prevState) => {
+      return {
+        otherCraftsSelect: prevState.otherCraftsSelect.concat(newCraft)
+      };
+    });
+  }
+
+  deleteOtherCraftItem(key) {
+    const filteredItems = this.state.otherCraftsSelect.filter( (item) => {
+      return (item.key !== key);
+    });
+
+    this.setState({
+      otherCraftsSelect: filteredItems
+    });
+  }
+
 
 
 
   render () {
     const { errors } = this.state;
-    const options = [
-      { label: 'Select Major Craft', value: 'Crafter'},
-      { label: 'Bag Crafter', value: 'Bag Crafter'},
-      { label: 'Paper Crafter', value: 'Paper Crafter'},
-      { label: 'Body Art Crafter', value: 'Body Art Crafter'},
-      { label: 'Nail Crafter', value: 'Nail Crafter'},
-      { label: 'Face Artist', value: 'Face Artist'},
-      { label: 'Food Artist', value: 'Food Artist'},
-      { label: 'Rubber Maker', value: 'Rubber Maker'},
-      { label: 'Leather Twister', value: 'Leather Twister'}
-    ]
+    const options = SelectOptions;
+
+    const entries = this.state.otherCraftsSelect;
 
     return (
       <section className="">
@@ -147,23 +185,29 @@ class CrafterRegistration extends Component {
 
                 <form noValidate onSubmit={this.onSubmit}>
                   <div className="form-row">
-                    <div className="col">
+                    <div className="col-sm-4">
+                      <p>profile photo</p>
+                    </div>
+                    <div className="col-sm-4">
                       <p>username(handle)</p>
                       <TextFieldGroup
-                      disabled
+                      disabled={true}
                       name="handle"
                       value={this.state.handle}
                       onChange={this.onChange}
                       error={errors.handle}
                       info="This CAN'T be changed"/>
                     </div>
-                    <div className="col">
+                    <div className="col-sm-4">
                       <p>location</p>
                       <TextFieldGroup
                       name="location"
                       value={this.state.location}
                       onChange={this.onChange}
                       error={errors.location}/>
+                    </div>
+                    <div className="col-sm-4">
+                      <p>profile photo</p>
                     </div>
                   </div>
 
@@ -192,26 +236,28 @@ class CrafterRegistration extends Component {
                   <div className="form-row">
                     <div className="col">
                       <p>major craft</p>
+                      <p>{this.state.majorCraft}</p>
                       <SelectListGroup
-                      name="majorCraft"
+                      name="status"
                       id="exampleFormControlSelect1"
                       placeholder="Major Craft"
-                      value={this.state.majorCraft}
+                      value={this.state.status}
                       onChange={this.onChange}
                       options={options}
                       error={errors.status}
                       />
                     </div>
                     <div className="col">
-                      <p>other crafts</p>
-                      <TextAreaFieldGroup
-                        name="otherCrafts"
-                        value={this.state.otherCrafts}
-                        onChange={this.onChange}
-                        error={errors.crafts}
-                        info="List of other ctafts seperated by a comma (,)"
+                      <p>other crafts you practice</p>
+                      <OtherCraftItems entries={entries} delete={this.deleteOtherCraftItem} />
+                      <SelectListGroup
+                      name="otherCraftSelect"
+                      id="exampleFormControlSelect1"
+                      value={this.state.otherCraftsSelect}
+                      onChange={this.onOtherCraftChange}
+                      options={options}
+                      error={errors.crafts}
                       />
-
                     </div>
                   </div>
                   <hr></hr>
@@ -274,8 +320,7 @@ class CrafterRegistration extends Component {
 
                   <hr></hr>
                   {/* Experience */}
-                  
-                  <AddExperience />
+            
 
                 <br></br>
                 <div>

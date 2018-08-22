@@ -5,11 +5,15 @@ import {Link, withRouter } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
 import { createCrafter } from '../../actions/crafterActions';
 
+
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import InputGroup from '../common/InputGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import CrafterHeader from './CrafterHeader';
+import OtherCraftItems from './OtherCraftItems';
+import { SelectOptions } from './CrafterSelectOptions';
+
 
 import './css/regcrafter.css';
 
@@ -20,13 +24,11 @@ class CrafterRegistration extends Component {
 
     this.state = {
         loading: false,
-        status: 'crafter',
+        status: '',
         handle: '',
         company: '',
         website: '',
         location: '',
-        majorCraft: '',
-        otherCrafts: '',
         otherCraftsSelect: [],
         bio: '',
         youtube: '',
@@ -38,6 +40,7 @@ class CrafterRegistration extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.deleteOtherCraftItem = this.deleteOtherCraftItem.bind(this);
   }
 
   onChange(e) {
@@ -47,23 +50,45 @@ class CrafterRegistration extends Component {
   }
 
   onOtherCraftChange = (e) => {
-    let changeArr = this.state.otherCraftsSelect;
-    changeArr.push(e.target.value);
-    this.setState({
-      otherCraftSelect: changeArr
+    const newCraft = {
+      text: e.target.value,
+      key: Date.now()
+    };
+
+    this.setState((prevState) => {
+      return {
+        otherCraftsSelect: prevState.otherCraftsSelect.concat(newCraft)
+      };
     });
   }
+
+  deleteOtherCraftItem(key) {
+    const filteredItems = this.state.otherCraftsSelect.filter( (item) => {
+      return (item.key !== key);
+    });
+
+    this.setState({
+      otherCraftsSelect: filteredItems
+    });
+  }
+
 
   onSubmit(e) {
     e.preventDefault();
     this.setState({ loading: true });
+
+    const otherCraft = [];
+    this.state.otherCraftsSelect.map((craft) => {
+      return otherCraft.push(craft.text);
+    });
+    console.log(otherCraft);
     let crafterData = {
      handle: this.state.handle,
      company: this.state.company,
      website: this.state.website,
      location: this.state.location,
-     status: this.state.majorCraft,
-     crafts: this.state.otherCraftsSelect.join(","),
+     status: this.state.status,
+     crafts: otherCraft.join(","),
      bio: this.state.bio,
      youtube: this.state.youtube,
      twitter: this.state.twitter,
@@ -71,9 +96,9 @@ class CrafterRegistration extends Component {
      facebook: this.state.facebook
     }
     
-    //this.props.createCrafter(crafterData, this.props.history);
-    console.log(crafterData);
+    this.props.createCrafter(crafterData, this.props.history);
   }
+
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.errors) {
@@ -91,35 +116,7 @@ class CrafterRegistration extends Component {
     
     const { errors } = this.state;
 
-    let otherCrafts = this.state.otherCraftsSelect;
-
-    const otherCraftList = otherCrafts.map(craft => {
-     return <p key={craft}>{craft}<span>x</span></p>
-    });
-
-       const options = [
-      { label: 'Select Craft' },
-      { label: 'Paper Crafts', value: 'Paper Crafts'},
-      { label: 'Nail Crafts', value: 'Nail Crafts'},
-      { label: 'Hair Crafts', value: 'Hair Crafts'},
-      { label: 'Fabric Crafts', value: 'Fabric Crafts'},
-      { label: 'Bamboo Crafts', value: 'Bamboo Crafts'},
-      { label: 'Plastic Crafts', value: 'Plastic Crafts'},
-      { label: 'Wood Crafts', value: 'Wood Crafts'},
-      { label: 'Cane Crafts', value: 'Cane Crafts'},
-      { label: 'Metal Crafts', value: 'Metal Crafts'},
-      { label: 'Food Crafts', value: 'Food Crafts'},
-      { label: 'Fruit Crafts', value: 'Fruit Crafts'},
-      { label: 'Drink Crafts', value: 'Drink Crafts'},
-      { label: 'Cake Crafts', value: 'Cake Crafts'},
-      { label: 'General Arts', value: 'General Arts'},
-      { label: 'Visual Arts', value: 'Visual Arts'},
-      { label: 'Body Arts', value: 'Body Arts'},
-      { label: 'Pottery', value: 'Pottery'},
-      { label: 'Calligraphy', value: 'Calligraphy'},
-      { label: 'Knitting', value: 'Crocheting'},
-      { label: 'Other', value: 'Other'},
-    ]
+    const options = SelectOptions;
 
     return (
       <section className="">
@@ -136,7 +133,7 @@ class CrafterRegistration extends Component {
 
                 <form noValidate onSubmit={this.onSubmit}>
                   <div className="form-row">
-                    <div className="col">
+                    <div className="col-sm-6">
                       <p>username(handle)</p>
                       <TextFieldGroup
                       name="handle"
@@ -146,7 +143,7 @@ class CrafterRegistration extends Component {
                       info="A unique handle for your crafters profile, handle must be between 6 to 10 characters,
                       handle can contain alphabets and numbers. (This CAN'T be changed later)"/>
                     </div>
-                    <div className="col">
+                    <div className="col-sm-6">
                       <p>location</p>
                       <TextFieldGroup
                       name="location"
@@ -181,11 +178,12 @@ class CrafterRegistration extends Component {
                   <div className="form-row">
                     <div className="col">
                       <p>major craft</p>
+                      <p> </p>
                       <SelectListGroup
-                      name="majorCraft"
+                      name="status"
                       id="exampleFormControlSelect1"
                       placeholder="Major Craft"
-                      value={this.state.majorCraft}
+                      value={this.state.status}
                       onChange={this.onChange}
                       options={options}
                       error={errors.status}
@@ -193,25 +191,15 @@ class CrafterRegistration extends Component {
                     </div>
                     <div className="col">
                       <p>other crafts you practice</p>
-                      <div>
-                        {otherCraftList}
-                      </div>
+                      <OtherCraftItems entries={this.state.otherCraftsSelect} delete={this.deleteOtherCraftItem} />
                       <SelectListGroup
                       name="otherCraftSelect"
                       id="exampleFormControlSelect1"
-                      value={this.state.otherCraftSelect}
+                      value={this.state.otherCraftsSelect}
                       onChange={this.onOtherCraftChange}
                       options={options}
-                      error={errors.status}
+                      error={errors.crafts}
                       />
-                      {/**<TextAreaFieldGroup
-                        name="otherCrafts"
-                        value={this.state.otherCrafts}
-                        onChange={this.onChange}
-                        error={errors.crafts}
-                        info="List of other crafts seperated by a comma (,)"
-                      />**/}
-
                     </div>
                   </div>
                   <hr></hr>
