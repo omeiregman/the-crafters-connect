@@ -88,7 +88,7 @@
 .registration-pane input {
   box-sizing: border-box;
   display: block;
-  width: 100%;
+  width: 80%;
   border: 0.5px solid rgb(250, 231, 219);
   padding: 3px;
   outline: 0;
@@ -101,7 +101,7 @@
 .registration-pane textarea {
   box-sizing: border-box;
   display: block;
-  width: 90%;
+  width: 95%;
   border: 0.5px solid rgb(250, 231, 219);
   padding: 3px;
   outline: 0;
@@ -113,10 +113,10 @@
 .registration-pane select {
   box-sizing: border-box;
   display: block;
-  width: 90%;
+  width: 80%;
   border: 0.5px solid rgb(250, 231, 219);
-  padding: 3px;
-  outline: 0;
+  padding: 2px;
+  outline: 2;
   font-family: inherit;
   font-size: 0.95em;
   border-radius: 3px;
@@ -147,7 +147,6 @@
 }
 
 .registration-pane input[type="submit"] {
-  margin: 0 auto;
   text-align: center;
   font-size: 1em;
   width: 30%;

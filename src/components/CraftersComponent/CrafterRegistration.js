@@ -259,6 +259,7 @@ class CrafterRegistration extends Component {
                     </div>
                   </div>
                 <br></br>
+                <br></br>
                 <div>
                   <BarLoader
                     color={'#FBB062'}

@@ -333,6 +333,7 @@ class CrafterRegistration extends Component {
                 <input type="submit" value="Update"/>
                 </form>
                 <br></br>
+                <br></br>
               </div>
             </div>
           </div>

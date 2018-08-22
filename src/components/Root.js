@@ -42,6 +42,7 @@ const Root = () => {
       <Route path="/courses" component={Courses}/>
       
       <Route exact path="/signin" component={SignIn} />
+      <Route exact path="/crafters/signin" component={SignIn} />
       <Route exact path="/signup" component={SignUp} />
       <Route path="/signup/volunteer" component={RegisterVolunteer} />
 
