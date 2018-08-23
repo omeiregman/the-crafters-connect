@@ -5,7 +5,7 @@ import { loginUser } from '../../actions/authActions';
 import { BarLoader } from 'react-spinners';
 import TextFieldGroup from '../common/TextFieldGroup';
 
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 import './css/auth.css';
 import img_logo from './img/logo.png';
@@ -62,6 +62,14 @@ class Signin extends Component {
   }
 
   render () {
+
+    const { from } = this.props.location.state || { from: { pathname: '/' }}
+    const { info } = this.props.location.state || { info: ""}
+
+    if(this.props.auth.isAuthenticated) {
+      return(<Redirect to={from}/> )
+    }
+
     const { errors } = this.state;
 
     return (

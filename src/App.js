@@ -32,7 +32,7 @@ if(localStorage.jwtToken) {
     //clear current crafter
     store.dispatch(clearCurrentCrafter());
     //redirect to login
-    window.location.href = './signin';
+    window.location.href = '/signin';
   }
 }
 

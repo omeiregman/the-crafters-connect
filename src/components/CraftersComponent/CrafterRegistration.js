@@ -99,6 +99,11 @@ class CrafterRegistration extends Component {
     this.props.createCrafter(crafterData, this.props.history);
   }
 
+  componentWillMount() {
+    if(this.props.crafter) {
+      this.props.history.push('/crafters/dashboard');
+    }
+  }
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.errors) {
