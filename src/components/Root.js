@@ -18,6 +18,7 @@ import Events from './EventComponent/Event';
 import SingleEvent from './EventComponent/SingleEvent';
 import CraftersDashboard from './CraftersComponent/CraftersDashboard';
 import EditCrafter from './CraftersComponent/EditCrafter';
+import AdminDashboard from './AdminDashboard/AdminDashboard';
 
 
 
@@ -48,6 +49,8 @@ const Root = () => {
 
       <Route exact path="/events" component={Events} />
       <Route exact path="/events/:name" render={ props => <SingleEvent {...props} /> }/>
+
+      <PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} />
       
       </Switch>
     </div>

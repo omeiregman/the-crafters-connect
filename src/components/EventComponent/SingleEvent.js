@@ -13,7 +13,6 @@ class SingleEvent extends Component {
     this.state = {
       selectedEvent : {}
     }
-
     }
 
     componentWillMount() {

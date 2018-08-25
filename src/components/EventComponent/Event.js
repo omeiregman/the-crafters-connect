@@ -9,9 +9,6 @@ import './css/event.css';
 
 
 class Event extends Component {
-  constructor(props){
-    super(props);
-  }
 
   componentDidMount() {
     this.props.getEvents();

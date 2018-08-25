@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_CRAFTER, CRAFTER_LOADING, GET_ERRORS, CLEAR_CURRENT_CRAFTER, SET_CURRENT_USER } from './types';
+import { GET_CURRENT_CRAFTER, GET_ALL_CRAFTERS, CRAFTER_LOADING, GET_ERRORS, CLEAR_CURRENT_CRAFTER, SET_CURRENT_USER } from './types';
 
 const BASE_URL = "https://thecraftersconnectapi.herokuapp.com/api/";
 
@@ -10,12 +10,12 @@ export const getCurrentCrafter = () => dispatch => {
     axios.get(`${BASE_URL}crafters`)
     .then(res =>
       dispatch({
-        type: GET_CRAFTER,
+        type: GET_CURRENT_CRAFTER,
         payload: res.data
       })
     ).catch(err =>
       dispatch({
-        type: GET_CRAFTER,
+        type: GET_CURRENT_CRAFTER,
         payload: {}
       })
     );
@@ -32,6 +32,24 @@ export const createCrafter = (crafterData, history) => dispatch => {
     })
   );
 };
+
+
+//GET ALL CRAFTERS
+export const getAllCrafters = () => dispatch => {
+  dispatch(setCrafterLoading());
+  axios.get(`${BASE_URL}crafters/all`)
+  .then(res => {
+    dispatch({
+      type: GET_ALL_CRAFTERS,
+      payload: res.data
+    });
+  })
+  .catch(err => dispatch ({
+    type: GET_ALL_CRAFTERS,
+    payload: {}
+  }) 
+  );
+}
 
 //Delete Account and Crafter
 export const deleteAccount = () => dispatch => {
@@ -51,12 +69,15 @@ export const deleteAccount = () => dispatch => {
   }
 };
 
+
+
 //Crafter Loading
 export const setCrafterLoading = () => {
   return {
     type: CRAFTER_LOADING
   }
 }
+
 
 //Clear Crafter
 export const clearCurrentCrafter = () => {

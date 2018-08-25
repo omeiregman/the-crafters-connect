@@ -1,9 +1,10 @@
-import { GET_CRAFTER, CRAFTER_LOADING, CLEAR_CURRENT_CRAFTER } from '../actions/types';
+import { GET_CURRENT_CRAFTER, GET_ALL_CRAFTERS, CRAFTER_LOADING, CLEAR_CURRENT_CRAFTER } from '../actions/types';
 
 const initialState = {
   crafter: null,
   crafters: null,
-  loading: false
+  loading: false,
+  allCrafters: {}
 }
 
 export default function(state = initialState, action) {
@@ -13,7 +14,7 @@ export default function(state = initialState, action) {
       ...state,
       loading: true
     };
-    case GET_CRAFTER:
+    case GET_CURRENT_CRAFTER:
     return {
       ...state,
       crafter: action.payload,
@@ -23,6 +24,12 @@ export default function(state = initialState, action) {
     return {
       ...state,
       crafter: null
+    }
+    case GET_ALL_CRAFTERS:
+    return {
+      ...state,
+      allCrafters: action.payload,
+      loading: false
     }
     default:
       return state;

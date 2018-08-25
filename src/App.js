@@ -5,6 +5,8 @@ import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentCrafter } from './actions/crafterActions';
 import { getEvents } from './actions/eventActions';
+import dotenv from 'dotenv';
+
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -14,6 +16,8 @@ import Nav from './components/NavComponent/Nav';
 import Root from './components/Root';
 import Footer from './components/Footer';
 import './index.css';
+
+require('dotenv').config();
 
 //check for Token
 if(localStorage.jwtToken) {
@@ -42,7 +46,7 @@ class App extends Component {
   componentDidMount () {
 
     //Load EVENTS
-    store.dispatch(getEvents());
+    
   }
 
   render() {

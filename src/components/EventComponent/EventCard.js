@@ -15,7 +15,7 @@ const EventCard = ({
     <div className="col-sm-4">
       <Link to={`/events/${url}`} key={url}>
       <div className="event-card">
-        <img src={eventImage} alt="event image"/>
+        <img src={eventImage} alt="event"/>
         <h4>{startDate}</h4>
         <h3>{name}</h3>
         <h5>{location}</h5>
