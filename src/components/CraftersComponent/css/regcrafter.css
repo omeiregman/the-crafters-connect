@@ -349,9 +349,11 @@ a {
 
 /**END SIGNUP AS A CRAFTER**/
 
+
+
 @media (max-width: 45em) {
   .registration-pane {
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
@@ -385,4 +387,49 @@ a {
     border-right: 0;
     border-bottom: 1px solid rgba(250, 150, 32, 0.6);
   }
+
+  right-pane h3 {
+    text-align: center;
+  }
+
+  .craft-header img {
+    margin-top: 30px;
+    width: 70%;
+  }
+
+  .registration-pane input[type="submit"] {
+    width: 50%;
+  }
+
+  .registration-pane input {
+    box-sizing: border-box;
+    display: block;
+    width: 80%;
+    border: 0.5px solid rgb(250, 231, 219);
+    padding: 3px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+    border-radius: 3px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  }
+  
+  
+  
+  .input-group input {
+    width: 80% !important;
+  }
+
+  .registration-pane input
+   {
+    width: 100%;
+  }
+  
+  .registration-pane textarea, 
+  .registration-pane select {
+    width: 100%;
+  }
+
+  
+
 }

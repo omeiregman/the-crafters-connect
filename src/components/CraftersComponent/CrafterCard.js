@@ -33,7 +33,7 @@ const CrafterCard = ({
                 <p>{bio}</p>
             </div>
             <div className="profile-links col-sm-4">
-                <i className="fas fa-desktop"></i><Link to={website} target="_blank">{website}</Link>
+                <i className="fas fa-desktop"></i>
                 <br></br>
                 <i className="fab fa-twitter"></i>
                 <i className="fab fa-instagram"></i>

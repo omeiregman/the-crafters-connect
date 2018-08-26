@@ -46,7 +46,7 @@ class Crafters extends Component {
                   location={crafter.location}
                   bio={crafter.bio}
                   majorCraft={crafter.status}
-                  website={crafter.website}
+                  
                   instagram={crafter.instagram}
                   facebook={crafter.facebook}
                   youtube={crafter.youtubee}
@@ -76,7 +76,9 @@ class Crafters extends Component {
                            </Link>)}
       <br></br>
       <br></br>
-      </div>
+    </div>
+
+      
       <div className="container">
 
           <div className="row">

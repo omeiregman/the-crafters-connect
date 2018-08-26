@@ -159,7 +159,7 @@ class CrafterRegistration extends Component {
                   </div>
 
                   <div className="form-row">
-                    <div className="col">
+                    <div className="col-sm-6">
                       <p>company</p>
                       <TextFieldGroup
                       name="company"
@@ -168,7 +168,7 @@ class CrafterRegistration extends Component {
                       error={errors.company}/>
                     </div>
 
-                    <div className="col">
+                    <div className="col-sm-6">
                       <p>website</p>
                       <TextFieldGroup
                       name="website"
@@ -181,7 +181,7 @@ class CrafterRegistration extends Component {
                   <hr></hr>
                   <p>crafts</p>
                   <div className="form-row">
-                    <div className="col">
+                    <div className="col-sm-6">
                       <p>major craft</p>
                       <p> </p>
                       <SelectListGroup
@@ -221,7 +221,7 @@ class CrafterRegistration extends Component {
                   {/*Social Media accounts*/}
                   <p>Social Media handles</p>
                   <div className="form-row">
-                    <div className="col">
+                    <div className="col-sm-6">
                       <p>instagram</p>
                       <InputGroup
                         name="instagram"
@@ -231,7 +231,7 @@ class CrafterRegistration extends Component {
                         error={errors.instagram}/>
                     </div>
 
-                    <div className="col">
+                    <div className="col-sm-6">
                       <p>twitter</p>
                       <InputGroup
                         name="twitter"
@@ -243,7 +243,7 @@ class CrafterRegistration extends Component {
                   </div>
 
                   <div className="form-row">
-                    <div className="col">
+                    <div className="col-sm-6">
                       <p>facebook</p>
                       <InputGroup
                         name="facebook"
@@ -253,7 +253,7 @@ class CrafterRegistration extends Component {
                         error={errors.facebook}/>
                     </div>
 
-                    <div className="col">
+                    <div className="col-sm-6">
                       <p>youtube</p>
                       <InputGroup
                         name="youtube"

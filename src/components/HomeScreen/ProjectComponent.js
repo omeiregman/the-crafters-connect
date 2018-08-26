@@ -79,6 +79,9 @@ class ProjectComponent extends Component {
                 <img src={img_partner4} alt="service support"/>
               </div>
             </div>
+            <div>
+            
+            </div>
           </div>
           <br/>
           <br/>

@@ -64,7 +64,7 @@ class Signin extends Component {
   render () {
 
     const { from } = this.props.location.state || { from: { pathname: '/' }}
-    const { info } = this.props.location.state || { info: ""}
+    //const { info } = this.props.location.state || { info: ""}
 
     if(this.props.auth.isAuthenticated) {
       return(<Redirect to={from}/> )
