@@ -19,8 +19,7 @@ import SingleEvent from './EventComponent/SingleEvent';
 import CraftersDashboard from './CraftersComponent/CraftersDashboard';
 import EditCrafter from './CraftersComponent/EditCrafter';
 import AdminDashboard from './AdminDashboard/AdminDashboard';
-
-
+import CraftersProfileLink from './CraftersComponent/CraftersProfileLink';
 
 
 
@@ -28,30 +27,30 @@ const Root = () => {
   return(
     <div>
       <Switch>
-      <Route exact path='/' component={Home}/>
+        <Route exact path='/' component={Home}/>
 
-      <Route exact path='/about' component={About}/>
-      <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
-      <Route path="/about/executive-founder" component={FounderTwo} />
+        <Route exact path='/about' component={About}/>
+        <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
+        <Route path="/about/executive-founder" component={FounderTwo} />
 
-      <Route exact path="/craftersandcrafts" component={Crafters}/>
-      <PrivateRoute exact path="/crafters/register" component={RegisterCrafter} />
-      <PrivateRoute exact path="/crafters/dashboard" component={CraftersDashboard} />
-      <PrivateRoute exact path="/crafters/edit" component={EditCrafter} />
+        <Route exact path="/craftersandcrafts" component={Crafters}/>
+        <Route exact path="/crafter/:handle" component={CraftersProfileLink}/>
+        <PrivateRoute exact path="/crafters/register" component={RegisterCrafter} />
+        <PrivateRoute exact path="/crafters/dashboard" component={CraftersDashboard} />
+        <PrivateRoute exact path="/crafters/edit" component={EditCrafter} />
 
-      <Route path="/gallery" component={Gallery}/>
-      <Route path="/courses" component={Courses}/>
-      
-      <Route exact path="/signin" component={SignIn} />
-      <Route exact path="/crafters/signin" component={SignIn} />
-      <Route exact path="/signup" component={SignUp} />
-      <Route path="/signup/volunteer" component={RegisterVolunteer} />
+        <Route path="/gallery" component={Gallery}/>
+        <Route path="/courses" component={Courses}/>
+        
+        <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/crafters/signin" component={SignIn} />
+        <Route exact path="/signup" component={SignUp} />
+        <Route path="/signup/volunteer" component={RegisterVolunteer} />
 
-      <Route exact path="/events" component={Events} />
-      <Route exact path="/events/:name" render={ props => <SingleEvent {...props} /> }/>
+        <Route exact path="/events" component={Events} />
+        <Route exact path="/events/:name" render={ props => <SingleEvent {...props} /> }/>
 
-      <PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} />
-      
+        <PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} />
       </Switch>
     </div>
   );

@@ -271,10 +271,6 @@ a {
   color: #fff;
 }
 
-.middle-pane h3 {
-
-}
-
 .middle-pane img {
   max-width: 30%;
   margin-top: 3%;
@@ -282,13 +278,24 @@ a {
 }
 
 .btn-reg-crafter {
-  text-align: center;
-  width: 70%;
-  border-radius: 0;
-  background-color: rgba(250, 150, 32, 0.9);
-  border-color: transparent;
   color: #fff;
-  cursor: pointer;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #EA5800;
+    padding: 0.5% 1%;
+    margin-left: 5px;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 1em;
+}
+
+.btn-reg-crafter:hover {
+    color: #EA5800;
+    border: 1px solid #EA5800;
+    background: #fff;
 }
 
 .input-group-text {

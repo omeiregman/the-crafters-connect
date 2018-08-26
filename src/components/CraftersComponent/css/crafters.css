@@ -1,3 +1,16 @@
+.loader{
+    margin: 20%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .loader p {
+    color: #EA5800;
+    font-size: 18px;
+  }
+  
+
 .crafter-home {
     background: #f3f3f3;
 }

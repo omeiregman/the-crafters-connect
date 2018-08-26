@@ -26,7 +26,7 @@ class Crafters extends Component {
 
     if(loading) {
       return(
-        <div>
+        <div className="loader">
             <span>
               <PulseLoader
               color={'#EA5800'}
@@ -43,7 +43,6 @@ class Crafters extends Component {
                   key={crafter._id}
                   url={crafter.handle}
                   name={crafter.user.name}
-                  handle={crafter.handle}
                   location={crafter.location}
                   bio={crafter.bio}
                   majorCraft={crafter.status}

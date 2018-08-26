@@ -48,6 +48,8 @@ class CraftersDashboard extends Component {
         dashboardContent = <div>
           <h3 className="">Hello {user.name}, you are not registered as a crafter yet....</h3>
           <Link to="/crafters/register" className="btn-reg-crafter">Register as a Crafter</Link>
+          <br></br>
+          <br></br>
         </div>
       }
     }

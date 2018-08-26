@@ -266,7 +266,7 @@ class CrafterRegistration extends Component {
                     name="bio"
                     value={this.state.bio}
                     onChange={this.onChange}
-                    errors={errors.bio}
+                    error={errors.bio}
                     info="A short bio of yourself, should not be more than 200 characters"
                     />
                   
@@ -282,7 +282,7 @@ class CrafterRegistration extends Component {
                         icon="fab fa-instagram"
                         value={this.state.instagram}
                         onChange={this.onChange}
-                        errors={errors.instagram}/>
+                        error={errors.instagram}/>
                     </div>
 
                     <div className="col">
@@ -292,7 +292,7 @@ class CrafterRegistration extends Component {
                         icon="fab fa-twitter"
                         value={this.state.twitter}
                         onChange={this.onChange}
-                        errors={errors.twitter}/>
+                        error={errors.twitter}/>
                     </div>
                   </div>
 
@@ -304,7 +304,7 @@ class CrafterRegistration extends Component {
                         icon="fab fa-facebook"
                         value={this.state.facebook}
                         onChange={this.onChange}
-                        errors={errors.facebook}/>
+                        error={errors.facebook}/>
                     </div>
 
                     <div className="col">
@@ -314,7 +314,7 @@ class CrafterRegistration extends Component {
                         icon="fab fa-youtube"
                         value={this.state.youtube}
                         onChange={this.onChange}
-                        errors={errors.youtube}/>
+                        error={errors.youtube}/>
                     </div>
                   </div>
 

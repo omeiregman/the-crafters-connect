@@ -20,7 +20,7 @@ const CrafterCard = ({
     twitter,
     profileImage
 }) => {
-    return(
+    return( 
         <div>
         <div className="row crafter-card">
             <div className="col-sm-2">
@@ -40,7 +40,7 @@ const CrafterCard = ({
                 <i className="fab fa-facebook"></i>
                 <i className="fab fa-youtube"></i>
                 <br></br>
-                <input className="profile-btn" type="submit" value="View Profile" />
+                <Link to={`/crafter/${url}`}><input className="profile-btn" type="submit" value="View Profile" /></Link>
             </div>  
         </div>
         </div>
