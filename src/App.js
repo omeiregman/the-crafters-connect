@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
-import { setCurrentUser, logoutUser } from './actions/authActions';
-import { clearCurrentCrafter } from './actions/crafterActions';
-import { getEvents } from './actions/eventActions';
-import dotenv from 'dotenv';
-
-
 import { Provider } from 'react-redux';
 import store from './store';
-
+import { setCurrentUser, logoutUser } from './actions/authActions';
+import { clearCurrentCrafter } from './actions/crafterActions';
 
 import Nav from './components/NavComponent/Nav';
 import Root from './components/Root';
@@ -41,13 +36,8 @@ if(localStorage.jwtToken) {
 }
 
 
-
 class App extends Component {
-  componentDidMount () {
 
-    //Load EVENTS
-    
-  }
 
   render() {
     return (

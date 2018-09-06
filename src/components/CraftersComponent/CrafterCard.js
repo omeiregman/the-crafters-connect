@@ -50,7 +50,7 @@ const CrafterCard = ({
 CrafterCard.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   majorCraft: PropTypes.string.isRequired,
   bio: PropTypes.string,
   website: PropTypes.string,

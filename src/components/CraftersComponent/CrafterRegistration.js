@@ -145,7 +145,7 @@ class CrafterRegistration extends Component {
                       value={this.state.handle}
                       onChange={this.onChange}
                       error={errors.handle}
-                      info="A unique handle for your crafters profile, handle must be between 6 to 10 characters,
+                      info="A unique handle for your crafters profile, handle must be between 6 to 12 characters,
                       handle can contain alphabets and numbers. (This CAN'T be changed later)"/>
                     </div>
                     <div className="col-sm-6">
@@ -220,6 +220,7 @@ class CrafterRegistration extends Component {
 
                   {/*Social Media accounts*/}
                   <p>Social Media handles</p>
+                  <small>Fill Social handles in this format (www.twitter.com/yourhandle)</small>
                   <div className="form-row">
                     <div className="col-sm-6">
                       <p>instagram</p>
@@ -228,7 +229,8 @@ class CrafterRegistration extends Component {
                         icon="fab fa-instagram"
                         value={this.state.instagram}
                         onChange={this.onChange}
-                        error={errors.instagram}/>
+                        error={errors.instagram}
+                        />
                     </div>
 
                     <div className="col-sm-6">
