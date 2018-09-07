@@ -42,7 +42,7 @@ class Crafters extends Component {
           return <CrafterCard
                   key={crafter._id}
                   url={crafter.handle}
-                  name={crafter.user["name"]}
+                  name={crafter.user.name}
                   location={crafter.location}
                   bio={crafter.bio}
                   majorCraft={crafter.status}
