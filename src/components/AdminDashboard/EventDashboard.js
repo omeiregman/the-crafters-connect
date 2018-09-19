@@ -7,16 +7,16 @@ import { getEvents } from '../../actions/eventActions';
 
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
-import { uploadFile } from 'react-s3';
+//import { uploadFile } from 'react-s3';
 
  
-const config = {
-    bucketName: process.env.REACT_APP_S3_BUCKET_NAME,
-    dirName: 'events',
-    region: 'us-west-1',
-    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
-}
+// const config = {
+//     bucketName: process.env.REACT_APP_S3_BUCKET_NAME,
+//     dirName: 'events',
+//     region: 'us-west-1',
+//     accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+//     secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+// }
 
 
 
@@ -39,22 +39,22 @@ class EventDashboard extends Component {
 
        
 
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
-        this.upload = this.upload.bind(this);
+        // this.onChange = this.onChange.bind(this);
+        // this.onSubmit = this.onSubmit.bind(this);
+        // this.upload = this.upload.bind(this);
 
     }
 
-    componentDidMount () {
-        this.props.getEvents();
-    }
+    // componentDidMount () {
+    //     this.props.getEvents();
+    // }
 
 
-    upload(e) {
-        this.setState({
-            file: e.target.files[0]
-        })
-    }
+    // upload(e) {
+    //     this.setState({
+    //         file: e.target.files[0]
+    //     })
+    // }
 
     onChange(e) {
         this.setState({
@@ -62,38 +62,38 @@ class EventDashboard extends Component {
         });
       }
 
-    onSubmit(e) {
-        e.preventDefault();
+    // onSubmit(e) {
+    //     e.preventDefault();
        
-        if (this.state.name && this.state.startDate && this.state.time && this.state.description
-            && this.state.info && this.state.location) {
-                uploadFile(this.state.file, config).then(data => {
-                    console.log("Entered upload");
-                this.setState({
-                    eventImage: data.location
-                    });
-                })
-                .then(() => {
-                    const eventData = {
-                    name: this.state.name,
-                    startDate: this.state.startDate,
-                    endDate: this.state.endDate,
-                    url: this.state.name.replace(/\s+/g, '').toLowerCase(),
-                    time: this.state.time,
-                    description: this.state.description,
-                    info: this.state.info,
-                    location: this.state.location,
-                    eventImage: this.state.eventImage, 
-                }
-                console.log(eventData);
-                }            
-                )
-                .catch(err => console.error("An Error Occured ", err));
+    //     if (this.state.name && this.state.startDate && this.state.time && this.state.description
+    //         && this.state.info && this.state.location) {
+    //             uploadFile(this.state.file, config).then(data => {
+    //                 console.log("Entered upload");
+    //             this.setState({
+    //                 eventImage: data.location
+    //                 });
+    //             })
+    //             .then(() => {
+    //                 const eventData = {
+    //                 name: this.state.name,
+    //                 startDate: this.state.startDate,
+    //                 endDate: this.state.endDate,
+    //                 url: this.state.name.replace(/\s+/g, '').toLowerCase(),
+    //                 time: this.state.time,
+    //                 description: this.state.description,
+    //                 info: this.state.info,
+    //                 location: this.state.location,
+    //                 eventImage: this.state.eventImage, 
+    //             }
+    //             console.log(eventData);
+    //             }            
+    //             )
+    //             .catch(err => console.error("An Error Occured ", err));
             
-            } else {
-                alert("Please fill in the required fields to create an event");
-            }
-    }
+    //         } else {
+    //             alert("Please fill in the required fields to create an event");
+    //         }
+    // }
 
     render() {
         return(

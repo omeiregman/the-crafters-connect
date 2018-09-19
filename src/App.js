@@ -12,7 +12,7 @@ import Root from './components/Root';
 import Footer from './components/Footer';
 import './index.css';
 
-require('dotenv').config();
+//require('dotenv').config();
 
 //check for Token
 if(localStorage.jwtToken) {

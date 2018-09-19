@@ -1,17 +1,18 @@
 
 .teaser {
     /* background: linear-gradient(rgba(250, 150, 32, 0.41), rgba(250, 150, 32, 0.41)), url(../img/collage.jpg); */
-    background-color: #ec6a1e;
-    background-repeat: repeat;
+    background-color: #E96A2D;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
-    padding: 7%;
-}
-
-.teaser h1 {
-    color: #fff;
+    padding: 1%;
     text-align: center;
 }
+
+.teaser img {
+    width: 45%;
+}
+
 
 .teaser p {
     color: #333;
