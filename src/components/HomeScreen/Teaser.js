@@ -17,7 +17,7 @@ const Teaser = () => {
                 <h4>Coming Soon ...</h4>
             </div>
             <br></br>
-            <p>TCC Magazine: <a href="https://www.thetccmaagazine.com" target="_blank">www.thetccmagazine.com</a></p>
+            <p>TCC Magazine: <a href="https://www.thetccmagazine.com" target="_blank">www.thetccmagazine.com</a></p>
         </section>
     );
 }
