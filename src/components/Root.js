@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 import PrivateRoute from './common/PrivateRoute';
 
 import Home from './HomeScreen/HomeScreenComponent';
-import Teaser from './HomeScreen/Teaser';
 import About from './AboutComponent/About.js';
 import Crafters from './CraftersComponent/Crafters';
 import Gallery from './GalleryComponent/Gallery';
@@ -28,9 +27,9 @@ const Root = () => {
   return(
     <div>
       <Switch>
-        <Route exact path='/' component={Teaser}/>
+        <Route exact path='/' component={Home}/>
 
-        {/*<Route exact path='/about' component={About}/>
+        <Route exact path='/about' component={About}/>
         <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
         <Route path="/about/executive-founder" component={FounderTwo} />
 
@@ -51,7 +50,7 @@ const Root = () => {
         <Route exact path="/events" component={Events} />
         <Route exact path="/events/:name" render={ props => <SingleEvent {...props} /> }/>
 
-  <PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} />*/}
+        <PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} />
       </Switch>
     </div>
   );
