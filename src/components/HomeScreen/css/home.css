@@ -15,24 +15,15 @@
 
 
 .teaser p {
-    color: #333;
+    color: #e4e4e4;
     text-align: center;
 }
 
 .teaser a {
-    color: #555;
+    color: #e6e6e6;
 }
 
 
-.teaser-info {
-    font-family: 'ubuntu';
-    text-align: center;
-    background: #fff;
-    margin: 0 auto;
-    width: 60%;
-    padding: 4%;
-    border-radius: 10px;
-}
 
 .teaser-info h2 {
     color: #ec7d3c;
@@ -40,21 +31,14 @@
     font-weight: 400;
 }
 
-.teaser-info h3 {
-    color: #ec7d3c;
-    font-size: 1.3em;
-    font-weight: 400;
-}
-
-.teaser-info h4 {
-    color: #ec7d3c;
-    font-size: 1.35em;
-    font-weight: 400;
-}
 
 
 @media (max-width: 45em) {
     .teaser-info {
+        width: 100%;
+    }
+
+    .teaser img {
         width: 100%;
     }
 
