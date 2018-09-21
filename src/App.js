@@ -44,9 +44,9 @@ class App extends Component {
       <Provider store={ store }>
         <Router>
           <div>
-            <Nav />
-            <Root/>
-            <Footer />
+          <Root/>
+           {/*} <Nav />
+    <Footer /> */}
           </div>
         </Router>
       </Provider>
