@@ -62,8 +62,7 @@ class Crafters extends Component {
     return(
       <section className="crafter-home">
       <CrafterHeader/>
-      
-   
+
       <div className="crafter-status">
       {this.props.auth.isAuthenticated ? (<Link to='crafters/register'><button>Register as a Crafter</button></Link>)
              : (<Link to={{ pathname: '/signin', state: { from: `/crafters/register`, info:"You need to be Signed in to Register as a Crafter" }}}>

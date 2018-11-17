@@ -5,7 +5,7 @@ const CrafterHeader = () => {
 
         return (
             <header className="craft-header" >
-                <img src={img_craft} alt="crafters"/>>
+                <img src={img_craft} alt="crafters"/>
             </header>
         );    
 }
