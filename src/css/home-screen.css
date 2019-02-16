@@ -274,8 +274,12 @@ header {
   height: 400px;
   background-position: bottom 30px;
   width: 100%;
-  margin-left: 0px;
-  margin-right: 0px;
+
+}
+
+.upcoming-events .row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .upcoming-details {
