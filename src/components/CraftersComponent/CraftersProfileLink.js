@@ -27,20 +27,18 @@ class CraftersProfileLink extends Component {
 
         const crafterUrl = this.props.match.params.handle;
         if (this.props.match.params.handle) {
-            this.props.getCrafterFromHandle
+            this.props.getCrafterFromHandle(crafterUrl);
         }
-        this.props.getCrafterFromHandle(crafterUrl);
         this.setState({
             crafterDetail: this.props.singleCrafter
         });
-
     }
 
 
     render() {
-console.log(this.props);
-       const { loading } = this.props;
-    
+        const { loading, singleCrafter } = this.props;
+    console.log(this.props);
+
         return(
             <section className="crafter-profile-page">
                 <CrafterHeader />
@@ -56,11 +54,12 @@ console.log(this.props);
               </div>}
 
               
-                {!loading && <section className="">
-                    <section className="container">
-                        <div>
-                            <p>Back</p>
-                        </div>
+                {(!loading) &&
+                    <section className="">
+                        <section className="container">
+                            <div>
+                                <p>Back</p>
+                            </div>
                         <section className="col-md-8">
                             <section>
                                 <div className="row crafter-basic-info">
@@ -68,13 +67,14 @@ console.log(this.props);
                                         <img className="profile-image" src={profileImage} alt="profile" />
                                     </div>
                                     <div className="profile-info col-sm-8">
-                                         <h2>{"SS"}</h2>
-                                        <small>{"Fashion Designer"}</small>
-                                        <p className="location"><i className="fas fa-map-marker-alt"></i><span>{"Lagos, Nigeria"}</span></p>
+                                         <h2>{"S"}</h2>
+                                         {/* {console.log(singleCrafter.user.name)} */}
+                                        <small>{singleCrafter.status}</small>
+                                        <p className="location"><i className="fas fa-map-marker-alt"></i><span>{singleCrafter.location}</span></p>
                                         <div className="row">
                                             <div className="col-sm-6">
-                                            <p><i className="fas fa-desktop"></i><span>www.something.com</span></p>
-                                            <p><i className="fab fa-twitter"></i><span>twitter</span></p>
+                                            <p><i className="fas fa-desktop"></i><span></span></p>
+                                            <p><i className="fab fa-twitter"></i><span>{"crafter.social.twitter"}</span></p>
                                             <p><i className="fab fa-instagram"></i><span>instagram</span></p>
                                             </div>
                                             <div className="col-sm-6">
@@ -83,7 +83,7 @@ console.log(this.props);
                                             </div>
                                         </div>     
                                     </div>
-                                    <p>{"I am driven by passion to create and bring into existence my undaunted imaginations, I love crafts, I play with papers and make every paper fulfil its purpose"}</p>
+                                    <p>{singleCrafter.bio}</p>
                                 </div>
                             </section>
                             <section className="row crafter-activity-info">
@@ -126,11 +126,11 @@ console.log(this.props);
 
 CraftersProfileLink.propTypes = {
   getCrafterFromHandle: PropTypes.func.isRequired,
-  crafter: PropTypes.object.isRequired, 
+  singleCrafter: PropTypes.object, 
   }
 
 const mapStateToProps = (state) => ({
-    singleCrafter: state.crafter
+    singleCrafter: state.crafter.singleCrafter
   });
 
 

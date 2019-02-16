@@ -6,15 +6,15 @@ import ProjectComponent from './ProjectComponent';
 
 class HomeScreenComponent extends Component {
 
-    render() {
-      return (
-        <div>
-          <HomeHeaderComponent/>
-          <FeatureEventComponent/>
-          <ProjectComponent/>
-        </div>
-      );
-    }
+  render() {
+    return (
+      <div>
+        <HomeHeaderComponent />
+        <FeatureEventComponent />
+        {/* <ProjectComponent/> */}
+      </div>
+    );
+  }
 }
 
 export default HomeScreenComponent;

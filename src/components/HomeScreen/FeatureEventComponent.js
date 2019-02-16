@@ -27,19 +27,19 @@ class FeatureEventComponent extends Component {
 
               </div>
               <div className="col-md-6">
-                <h3>CraftStar of the week</h3>
+                <h3>Craft Star</h3>
                 <div className="row craft-star">
                   <div className="col-sm-6 craft-star-info">
                     <p className="">Our CraftStar of the week is <br></br><b>Akorede Sodipe,</b> CEO KOSH Beads.
                       Here she shares her love for crafts in bead making, aso oke designing/weaving and business experiences.</p>
-                      <Link to='https://thetccmagazine.com/akorede-shodipe-kosh/' target="_blank">Read More >>></Link>
-                      {/* <div className="btn-readmore">
+                    <Link to='https://thetccmagazine.com/akorede-shodipe-kosh/' target="_blank">Read More >>></Link>
+                    {/* <div className="btn-readmore">
                         Read More
                       </div> */}
                   </div>
                   <div className="col-sm-6">
                     <div className="craft-star-img">
-                      <img src={img_craftstar} alt="craft star"/>
+                      <img src={img_craftstar} alt="craft star" />
                     </div>
                   </div>
                 </div>
@@ -70,7 +70,7 @@ class FeatureEventComponent extends Component {
               </div>
               <div className="event-info">
                 <h4>The Crafters Conference</h4>
-                <p>38th week of 2018, Lagos</p>
+                <p>38th week of 2019, Lagos</p>
               </div>
               <div className="event-date">
                 <h2></h2>
