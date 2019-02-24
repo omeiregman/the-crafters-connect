@@ -7,9 +7,15 @@ import img_abt_three from './img/about-img-3.png';
 import img_mission from './img/mission.png';
 import img_vision from './img/vision.png';
 
+import azeezat from './img/azeezat.jpg';
+import moyosola from './img/Moyosola.jpg';
+import oluwatomi from './img/Oluwatomi.jpg';
+import jomi from './img/Jomi.jpg';
+import pascaline from './img/Pascaline.jpg';
+
 
 const About = () => {
-  return(
+  return (
     <div className="">
       <div className="section-about">
         <div className="about-header">
@@ -46,16 +52,16 @@ const About = () => {
         <div className="about-section-two">
           <div className="row">
             <div className="col-sm-3">
-              <img src={img_abt_one} alt="About Us"/>
+              <img src={img_abt_one} alt="About Us" />
             </div>
             <div className="col-sm-3">
-              <img src={img_abt_two} alt="About Us"/>
+              <img src={img_abt_two} alt="About Us" />
             </div>
             <div className="col-sm-3">
-              <img src={img_abt_three} alt="About Us"/>
+              <img src={img_abt_three} alt="About Us" />
             </div>
             <div className="col-sm-3">
-              <img src={img_abt_three} alt="About Us"/>
+              <img src={img_abt_three} alt="About Us" />
             </div>
           </div>
         </div>
@@ -64,17 +70,15 @@ const About = () => {
           <div className="container">
             <div className="row">
               <ul className="about-section-three-items">
-                <li className="about-items">We accommodate online craft courses and webinars for empowerment opportunities.
-</li>
-                <li className="about-items">We celebrate crafters and craft promoters to encourage creativity for economy growth.
-</li>
-                <li className="about-items">We inspire and ensure capacity building cum empowerment programmes.
-</li>
+                <li className="about-items">We accommodate online craft courses and webinars for empowerment opportunities.</li>
+                <li className="about-items">We celebrate crafters and craft promoters to encourage creativity for economy growth.</li>
+                <li className="about-items">We inspire and ensure capacity building cum empowerment programmes.</li>
                 <li className="about-items">We are100% entrepreneurs – call us Craftpreneurs please!</li>
               </ul>
             </div>
           </div>
         </div>
+
 
         <div className="about-section-four">
           <div className="container">
@@ -87,7 +91,7 @@ const About = () => {
             </div>
             <div className="row">
               <div className="col-sm-2">
-                <img src={img_mission} alt="Mission"/>
+                <img src={img_mission} alt="Mission" />
               </div>
               <div className="col-sm-10">
                 <h3 className="about-section-header">Mission</h3>
@@ -97,7 +101,7 @@ const About = () => {
             </div>
             <div className="row">
               <div className="col-sm-2">
-                <img src={img_vision} alt="Vision"/>
+                <img src={img_vision} alt="Vision" />
               </div>
               <div className="col-sm-10">
                 <h3 className="about-section-header">Vision</h3>
@@ -110,10 +114,15 @@ const About = () => {
         <div className="about-section-five">
           <div className="container">
             <div>
-            <h3 className="about-section-header">Brains Behind TCC</h3>
+              <h3 className="about-section-header">Brains Behind TCC</h3>
+              <div className="row">
+                <div className="col-sm-4 col-md-3 col-lg-3 col-xs-6">
+                  {/* <img src={} alt=""/> */}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
         <div className="about-section-six">
           <div className="container">
@@ -145,7 +154,7 @@ const About = () => {
           </div>
         </div>
       </div>
-        <br></br>
+      <br></br>
     </div>
 
 
