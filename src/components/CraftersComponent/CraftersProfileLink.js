@@ -24,12 +24,17 @@ class CraftersProfileLink extends Component {
         }
     }
 
+
+    componentWillMount(){
+        this.props.getAllCrafters();
+    }
     componentDidMount() {
 
         const crafterUrl = this.props.match.params.handle;
         if (this.props.match.params.handle) {
+            
             this.props.getCrafterFromHandle(crafterUrl);
-           this.props.getAllCrafters();
+             
         }
         this.setState({
             crafterDetail: this.props.singleCrafter
@@ -39,14 +44,18 @@ class CraftersProfileLink extends Component {
 
     render() {
         const { loading,singleCrafter,allCrafter } = this.props;
-        console.log(this.props)
+       // console.log("ok..",this.props)
         let style={
             color:"#762C14"
         } 
        let relatedCrafters;
-       console.log("ok...",allCrafter.allCrafters)
+      // console.log("ok...",allCrafter.allCrafters)
        if(!isEmpty(allCrafter.allCrafters)){
-        relatedCrafters=allCrafter.allCrafters.slice(0,12).map(profile=><div key={profile.id} className="row">
+           let x=0;
+         
+        relatedCrafters=allCrafter.allCrafters.slice(0,12).map(profile=>
+        
+        <div key={x+=1} className="row">
             <div style={{color:"#A97C6C"}} className="col-md-12">
                 <div style={{margin:"15px 0px 15px 5px"}} className="row">
                     <div style={{marginRight:"-27px"}} className="col-md-4">
