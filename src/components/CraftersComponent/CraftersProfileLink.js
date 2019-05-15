@@ -52,17 +52,22 @@ class CraftersProfileLink extends Component {
       // console.log("ok...",allCrafter.allCrafters)
        if(!isEmpty(allCrafter.allCrafters)){
            let x=0;
-         
+
+        //The related crafters colum i.e shows a list of all the other crafters
         relatedCrafters=allCrafter.allCrafters.slice(0,12).map(profile=>
-        
         <div key={x+=1} className="row">
-            <div style={{color:"#A97C6C"}} className="col-md-12">
-                <div style={{margin:"15px 0px 15px 5px"}} className="row">
-                    <div style={{marginRight:"-27px"}} className="col-md-4">
-                       <img  className="profile-image" src={profileImage} alt="profile" />
+            <div className="col-md-12 profilecontainer">
+                <div  className="row profilecontainerRow">
+                    <div className="col-md-4 other_crafters_profile_image">
+                       <img  className="profile-image r-profile-image" src={profileImage} alt="profile" />
                     </div>
                     <div className="col-md-8">
-                        {!isEmpty(profile.user)?<p style={{margin:"0px"}}><a style={style} href={`/crafter/${profile.handle}`}>{profile.user.name}</a></p>:"Loading..."}
+                        {!isEmpty(profile.user)?<p className="othercraftersprofilehandle"><a className="othercraftersprofilehandle" href={`/crafter/${profile.handle}`}>{profile.user.name}</a></p>:<span>
+                    <PulseLoader
+                    color={'#EA5800'}
+                    loading={loading}
+                    />
+                  </span>}
                         <small>{profile.status}</small>
                     </div>                 
                 </div>
@@ -88,8 +93,8 @@ class CraftersProfileLink extends Component {
               
                 {(!loading) &&
                         <section className="container">
-                            <div>
-                                <Link to="/craftersandcrafts">Back</Link>
+                            <div className="back">
+                                <Link className="backlink" to="/craftersandcrafts"> <i className="material-icons arrowback">arrow_back</i><span>Back</span></Link>
                             </div>
                     <section className="row">
                         <section className="col-md-8">
@@ -99,11 +104,15 @@ class CraftersProfileLink extends Component {
                                         <img className="profile-image" src={profileImage} alt="profile" />
                                     </div>
                                     <div className=" col-sm-8">
-                                         <h2 style={{marginBottom:"0px"}}>{!(isEmpty(singleCrafter.user))?singleCrafter.user.name:"loading..."}</h2>
+                                         <h2 className="singleCrafterUserName" >{!(isEmpty(singleCrafter.user))?singleCrafter.user.name: <PulseLoader
+                                            color={'#EA5800'}
+                                            loading={loading}
+                                            />}
+                                         </h2>
                                           
                                       <small>{singleCrafter.status}</small> 
 
-                                        <h2 style={{marginLeft:"0px"}} className="location"><i className="fas fa-map-marker-alt"></i>{singleCrafter.location}</h2>
+                                        <h2 className="location"><i className="fas fa-map-marker-alt"></i>{singleCrafter.location}</h2>
                                         <br/>
                                         <div className="row">
                                             <div className="col-sm-6">
@@ -175,46 +184,56 @@ class CraftersProfileLink extends Component {
                                 </div>
                             </section>
                             <section className="row crafter-gallery">
+                           
                                 <div>
                                     <h3>Gallery</h3>
                                     <br></br>
                                     <div className="gallery-box">
                                     <div className="row">
-                                        <span className="col-sm-3"><img src={imgGalleryOne}/></span>
-                                        <span className="col-sm-3"><img src={imgGalleryTwo}/></span>
-                                        <span className="col-sm-3"><img src={imgGalleryThree}/></span>
-                                        <span className="col-sm-3"><img src={imgGalleryFour}/></span>
+                                    <span className="col-sm-1 col-1"> <i className="material-icons arrows">arrow_back_ios</i></span>
+                                        {/*<span className="col-sm-1"><img src={imgGalleryOne}/></span>*/}
+                                        <span className="col-sm-3 col-3"><img src={imgGalleryTwo}/></span>
+                                        <span className="col-sm-3 col-3"><img src={imgGalleryThree}/></span>
+                                        <span className="col-sm-3 col-3"><img src={imgGalleryFour}/></span>
+                                        <span className="col-sm-2 col-2"> <i className="material-icons arrows">arrow_forward_ios</i></span>
                                     </div>
                                     </div>
                                 </div>
                             </section>
                         </section>
 
-                        <section style={{marginTop:"30px"}} className="col-md-4">
+                        <section className="col-md-4 related_crafters">
 
-                             <div style={{height:"96%"}} className="card">
-                                <h6 style={{color:"#EA5800",textAlign:"center"}}>Related Crafter</h6>
+                             <div className="card">
+                                <h6>Related Crafters</h6>
                                   {relatedCrafters}
                              </div>
 
                         </section>
                     </section>
 
-              <section  style={{marginLeft:"-30px",paddingBottom:"30px"}}  className="row">
-                 <section  className="col-md-4">
-                      <div style={{height:"200px",padding:"20px"}} className="card profile-page">
+              <section className="row courses">
+                 <section  className="col-md-4 ">
+                      <div className="card profile-page">
                             <h3 >Courses</h3>
                       </div>
                  </section>
                
                  <section className="col-md-8">
-                    <div style={{height:"200px",padding:"20px"}} className="card">
-                     
+                    <div className="card">
+                   
                      </div>
                 </section>
 
               </section>
-            
+              <section className=" related_crafters2">
+
+                <div className="card">
+                <h6>Related Crafters</h6>
+                    {relatedCrafters}
+                </div>
+
+</section>
             </section>
          
         }
