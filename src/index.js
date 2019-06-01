@@ -8,5 +8,5 @@ import { unregister } from './registerServiceWorker';
 
 //require('dotenv').config();
 
-ReactDOM.render( <App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 unregister();

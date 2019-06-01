@@ -2,22 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  return(
+  return (
     <section className="footer-section">
       <div className="container">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-3 col-lg-3">
             <h3>Community</h3>
             <ul className="footer-items">
               <li><Link to='/about'>About Us</Link></li>
-              <li>Join a discussion</li>
+              {/* <li>Join a discussion</li> */}
               <li>Connect with crafters</li>
-              <li>Refer a friend</li>
-              <li>Subscriptions</li>
-              <li>Free Classes</li>
+              {/* <li>Refer a friend</li> */}
+              {/* <li>Subscriptions</li> */}
+              {/* <li>Free Classes</li> */}
             </ul>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-3 col-lg-3">
             <h3>Blog</h3>
             <ul className="footer-items">
               <li><Link to="https://thetccmagazine.com/" target="_blank">TCC Magazine</Link></li>
@@ -27,17 +27,7 @@ const Footer = () => {
               <li>Top Stories</li>
             </ul>
           </div>
-          <div className="col-md-3">
-            <h3>Collaborators</h3>
-            <ul className="footer-items">
-              <li>Invest with us</li>
-              <li>Invite us for a tour</li>
-              <li>Advertise</li>
-              <li>Hire a crafter</li>
-              <li>Get hired</li>
-            </ul>
-          </div>
-          <div className="col-md-3">
+          <div className="col-md-3 col-lg-3">
             <h3>Social Media</h3>
             <ul className="footer-items">
               <li><Link to="https://web.facebook.com/thecraftersc/" target="_blank">Facebook</Link></li>
@@ -47,12 +37,12 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <br/>
+        <br />
         <div className="copyright">
-          The Crafters Connect | &copy; 2018
+          The Crafters Connect | &copy; 2019
         </div>
-        <br/>
-        <br/>
+        <br />
+        <br />
       </div>
     </section>
   );

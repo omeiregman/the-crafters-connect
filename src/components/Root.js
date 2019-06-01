@@ -18,9 +18,12 @@ import Events from './EventComponent/Event';
 import SingleEvent from './EventComponent/SingleEvent';
 import CraftersDashboard from './CraftersComponent/CraftersDashboard';
 import EditCrafter from './CraftersComponent/EditCrafter';
-import AdminDashboard from './AdminDashboard/AdminDashboard';
 import CraftersProfileLink from './CraftersComponent/CraftersProfileLink';
+<<<<<<< HEAD
 import Teaser from './HomeScreen/Teaser.js';
+=======
+import AdminDashboard from './AdminDashboard/AdminDashboard';
+>>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
 
 
 
@@ -29,10 +32,14 @@ const Root = () => {
   return(
     <div>
       <Switch>
+<<<<<<< HEAD
       <Route exact path='/' component={Teaser}/>
       {/*  <Route exact path='/' component={Home}/>
 
 
+=======
+        <Route exact path='/' component={Home}/>
+>>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
         <Route exact path='/about' component={About}/>
         <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
         <Route path="/about/executive-founder" component={FounderTwo} />
@@ -54,7 +61,11 @@ const Root = () => {
         <Route exact path="/events" component={Events} />
         <Route exact path="/events/:name" render={ props => <SingleEvent {...props} /> }/>
 
+<<<<<<< HEAD
   <PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} /> */}
+=======
+  *<PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} />}
+>>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
       </Switch>
     </div>
   );

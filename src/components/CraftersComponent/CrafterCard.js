@@ -21,7 +21,7 @@ const CrafterCard = ({
     profileImage
 }) => {
     return( 
-        <div>
+        <section>
         <div className="row crafter-card">
             <div className="col-sm-2">
                 <img className="profile-image" src={profileImage} alt="profile" />
@@ -43,7 +43,7 @@ const CrafterCard = ({
                 <Link to={`/crafter/${url}`}><input className="profile-btn" type="submit" value="View Profile" /></Link>
             </div>  
         </div>
-        </div>
+        </section>
     )
 }
 

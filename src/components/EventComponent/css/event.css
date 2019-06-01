@@ -113,3 +113,20 @@
   color: #EA5800;
   font-size: 18px;
 }
+.back{
+  color:#EA5800;
+  font-family:Ubuntu;
+  margin-left: 45px !important;
+  padding: 0px;
+  width: 100%;
+}
+
+.btn-white{
+  color: #EA5800;
+  background: #fff;
+  transition: background 1s;
+}
+.btn-white:hover{
+  background: rgb(212, 123, 67);
+  color: #Ffff;
+}
