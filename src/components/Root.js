@@ -20,7 +20,7 @@ import CraftersDashboard from './CraftersComponent/CraftersDashboard';
 import EditCrafter from './CraftersComponent/EditCrafter';
 import CraftersProfileLink from './CraftersComponent/CraftersProfileLink';
 import AdminDashboard from './AdminDashboard/AdminDashboard';
-import Craftconfrenceregistration from './Modalpages/Craftconfrence/Craftconfrenceregistration';
+
 
 
 
@@ -29,7 +29,6 @@ const Root = () => {
     <div>
       <Switch>
         <Route exact path='/' component={Home}/>
-        <Route exact path='/confrence' component={Craftconfrenceregistration}/>
         <Route exact path='/about' component={About}/>
         <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
         <Route path="/about/executive-founder" component={FounderTwo} />
