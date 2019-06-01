@@ -54,7 +54,7 @@ export const getAllCrafters = () => dispatch => {
 //GET CRAFTER FROM HANDLE
 export const getCrafterFromHandle = (crafterHandle) => dispatch => {
   dispatch(setCrafterLoading());
-  axios.get(`${BASE_URL}api/crafters/handle/${crafterHandle}`)
+  axios.get(`${BASE_URL}crafters/handle/${crafterHandle}`)
   .then(res => {
     dispatch({
       type: GET_CRAFTER_FROM_HANDLE,

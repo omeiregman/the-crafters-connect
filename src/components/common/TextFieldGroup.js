@@ -11,11 +11,13 @@ const TextFieldGroup = ({
   info,
   type,
   onChange,
-  disabled
+  disabled,
+  style
 }) => {
   return(
     <div>
       <input className={classnames('', {'input-invalid': error})}
+        style={style}
         type={type}
         placeholder={placeholder}
         name={name}

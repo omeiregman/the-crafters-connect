@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 
 
-import EventDashboard from './EventDashboard';
+// import EventDashboard from './EventDashboard';
 
 
 
 class AdminDashboard extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
 
     }
 
     render() {
-        return(
+        return (
             <section>
                 <div className="container">
-                <h1>Admin Dashboard</h1>
-                <EventDashboard />
+                    <h1>Admin Dashboard</h1>
+                    {/* <EventDashboard /> */}
                 </div>
-                
+
             </section>
         )
     }

@@ -8,15 +8,14 @@ a {
 
 /**HOMESCREEN HEADER**/
 
-header {
-    background: linear-gradient(rgba(250, 150, 32, 0.41), rgba(250, 150, 32, 0.41)), url(../images/header.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    z-index: 2;
-    width: 100%;
-    height: 60vh;
-    padding-top: 0.5%;
+.home-slider {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: bottom;
+  z-index: 2;
+  width: 100%;
+  height: 60vh;
+  padding-top: 0.5%;
 }
 
 .header-hero {
@@ -36,7 +35,7 @@ header {
 }
 
 .hero-text p {
-  padding-top : 3%;
+  padding-top: 3%;
   padding-right: 20%;
   padding-left: 20%;
   text-align: center;
@@ -52,11 +51,13 @@ header {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
+
   .header-hero {
     margin-top: 15%;
     text-align: center;
     font-size: 3em;
   }
+
   .hero-text h3 {
     text-align: center;
     font-size: 1.2em;
@@ -114,11 +115,11 @@ header {
 /**HOMESCREEN CRAFTERS AND THEIR CRAFT**/
 .crafters-craft {
   margin-top: 4%;
-  background: linear-gradient(rgba(122, 73, 16, 0.7), rgba(122, 73, 16, 0.6)), url(../images/crafters-craft.jpg);
+  background: linear-gradient(rgba(122, 73, 16, 0.3), rgba(122, 73, 16, 0.4)), url(../images/crafters-craft.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  height: 400px;
+  height: 500px;
   width: 100%;
 }
 
@@ -144,6 +145,7 @@ header {
     padding-top: 10%;
     font-size: 2em;
   }
+
   .crafters-craft p {
     margin-top: 10%;
     font-size: 1.5em;
@@ -169,6 +171,7 @@ header {
   background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
   height: 300px;
 }
+
 .craft-star-info {
   margin-top: 7%;
   padding: 5%;
@@ -177,9 +180,7 @@ header {
   font-size: 1em;
 }
 
-.craft-star-img {
-
-}
+.craft-star-img {}
 
 .craft-star-img img {
   max-width: 300px;
@@ -270,13 +271,19 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
-  background-position: bottom 30px;;
+  background-position: bottom 30px;
   width: 100%;
+
+}
+
+.upcoming-events .row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .upcoming-details {
   background: linear-gradient(270deg, rgba(45, 156, 219, 0.3933) 71.59%, rgba(196, 196, 196, 0) 88.75%);
-  margin-top: 1%;
+  margin-top: 5px;
   margin-right: 0px;
 }
 
@@ -285,7 +292,7 @@ header {
   color: #fff;
 }
 
-.event-date{
+.event-date {
   text-align: center;
   background-color: #FD4E14;
   width: 17%;
@@ -298,8 +305,7 @@ header {
   font-weight: 400;
 }
 
-.event-date p {
-}
+.event-date p {}
 
 .event-info {
   margin-left: 2%;
@@ -317,9 +323,7 @@ header {
   font-weight: lighter;
 }
 
-.event-info h3 {
-
-}
+.event-info h3 {}
 
 
 /**Media Query for Upcoming Events**/
@@ -329,7 +333,8 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     height: 500px;
-    background-position: bottom 30px;;
+    background-position: bottom 30px;
+    ;
     width: 100%;
   }
 
@@ -344,7 +349,7 @@ header {
     color: #fff;
   }
 
-  .event-date{
+  .event-date {
     text-align: center;
     background-color: #FD4E14;
     width: 25%;
@@ -422,7 +427,7 @@ header {
 }
 
 .service-support h2 {
-  font-family: 'Ubuntu' sans-serif;
+  font-family: 'Ubuntu'sans-serif;
   padding: 2%;
   text-align: center;
   color: #333;
@@ -434,6 +439,7 @@ header {
   .service-support {
     text-align: center;
   }
+
   .service-support img {
     text-align: center;
     padding: 2%;
