@@ -6,13 +6,15 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentCrafter } from './actions/crafterActions';
-
 import Nav from './components/NavComponent/Nav';
 import Root from './components/Root';
 import Footer from './components/Footer';
 import './index.css';
 
+<<<<<<< HEAD
 //require('dotenv').config();
+=======
+>>>>>>> c863a133f67c7ebdbeacf3db498ac65bc79be493
 
 //check for Token
 if(localStorage.jwtToken) {

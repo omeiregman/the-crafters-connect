@@ -35,7 +35,7 @@ class Event extends Component {
                   name={event.name}
                   startDate={event.startDate}
                   location={event.location}
-                  eventImage={`https://thecraftersconnectapi.herokuapp.com/${event.eventImage}`}/>
+                  eventImage={event.eventImage}/>
         })
       }
     }

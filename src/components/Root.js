@@ -18,10 +18,14 @@ import Events from './EventComponent/Event';
 import SingleEvent from './EventComponent/SingleEvent';
 import CraftersDashboard from './CraftersComponent/CraftersDashboard';
 import EditCrafter from './CraftersComponent/EditCrafter';
-import AdminDashboard from './AdminDashboard/AdminDashboard';
 import CraftersProfileLink from './CraftersComponent/CraftersProfileLink';
+<<<<<<< HEAD
 import Teaser from './HomeScreen/Teaser.js';
 
+=======
+import AdminDashboard from './AdminDashboard/AdminDashboard';
+import Craftconfrenceregistration from './Modalpages/Craftconfrence/Craftconfrenceregistration';
+>>>>>>> c863a133f67c7ebdbeacf3db498ac65bc79be493
 
 
 
@@ -29,10 +33,15 @@ const Root = () => {
   return(
     <div>
       <Switch>
+<<<<<<< HEAD
       <Route exact path='/' component={Teaser}/>
       {/*  <Route exact path='/' component={Home}/>
 
 
+=======
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/confrence' component={Craftconfrenceregistration}/>
+>>>>>>> c863a133f67c7ebdbeacf3db498ac65bc79be493
         <Route exact path='/about' component={About}/>
         <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
         <Route path="/about/executive-founder" component={FounderTwo} />
@@ -54,7 +63,11 @@ const Root = () => {
         <Route exact path="/events" component={Events} />
         <Route exact path="/events/:name" render={ props => <SingleEvent {...props} /> }/>
 
+<<<<<<< HEAD
   <PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} /> */}
+=======
+  *<PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} />}
+>>>>>>> c863a133f67c7ebdbeacf3db498ac65bc79be493
       </Switch>
     </div>
   );

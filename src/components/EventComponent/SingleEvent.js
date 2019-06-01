@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getEvents } from '../../actions/eventActions';
 import { PulseLoader } from 'react-spinners';
+import SingleEventCard from './SingleEventCard';//this constains the template for the single event
+import EventCard from './EventCard';
 
 
 class SingleEvent extends Component {
@@ -24,9 +26,24 @@ class SingleEvent extends Component {
     const selectedEventUrl = this.props.match.params.name;
 
     const { events, loading } = this.props.events
-    let selectedEventData;
-    let startDate;
-
+    console.log("this event", events)
+     
+    let selectedEventData, eventImage , name , startDate ,time ,location, Data, info ,eventsView;
+ 
+        //console.log("wow",events[2]);
+      if (events.length>0) {
+        eventsView = events.slice(0, 3).map(event =>{
+          return <EventCard 
+                  key={event._id}
+                  url={event.url}
+                  name={event.name}
+                  startDate={event.startDate}
+                  location={event.location}
+                  eventImage={event.eventImage}/>
+        });
+    }
+   
+    
     if (loading || events.length === 0) {
       return (<div className="event-loader">
         <span><PulseLoader
@@ -39,40 +56,48 @@ class SingleEvent extends Component {
       if (events.length>0) {
         const findData = (event) => {
           const isEvent = t => t.url === selectedEventUrl;
+          console.log("this is the event ",events.find(isEvent))
           return events.find(isEvent);
         }
         selectedEventData = findData(selectedEventUrl);
         console.log(selectedEventData.startDate);
-        startDate = selectedEventData[startDate];
+        startDate = selectedEventData.startDate;
+        eventImage=selectedEventData.eventImage;
+        name=selectedEventData.name;
+        time=selectedEventData.time;
+        location=selectedEventData.location;
+        info = selectedEventData.info;
+      }
+      Data={
+        startDate:startDate,
+        eventImage:eventImage,
+        name:name,
+        time:time,
+        location:location,
+        info:info
       }
       console.log("New: ",startDate);
 
-    return(
-      <section>
-        <Link to='/events'>Back to Events</Link>
-        <header className="single-event-header">
-          <div className="row">
-            <div className="col-md-8"></div>
-            <div className="col-md-4">
-              <h3></h3>
-              <h4></h4>
-            </div>
-          </div>
-        </header>
-        <div className="">
 
+
+
+    return(
+      <div className="event-section">
+      <div className="row pt-md-3  pl-md-5">
+        <div className="col-md-12">
+        <Link style={{color:"#EA5800",fontFamily:"Ubuntu"}}  to='/events'>Back to Events</Link>
         </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        {/* <h2>{console.log(selectedEventData.name)}</h2> */}
-        <h3>
-          {/* {selectedEventData.url} */}
-        </h3>
-        <br></br>
-        <br></br>
-        <br></br>
-      </section>
+      </div>
+        <SingleEventCard data={Data}/>
+        <section className="pl-md-5 pr-md-5 pt-md-5">
+        <header>
+          <h4 style={{color:'#EA5800'}} className="m-md-3">Other Events</h4>
+        </header>
+         <div className="row">
+             {eventsView}
+          </div>
+       </section>
+      </div>
     );
     }
   }
