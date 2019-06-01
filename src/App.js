@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { Provider } from 'react-redux';
@@ -11,13 +11,10 @@ import Root from './components/Root';
 import Footer from './components/Footer';
 import './index.css';
 
-<<<<<<< HEAD
 //require('dotenv').config();
-=======
->>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
 
 //check for Token
-if(localStorage.jwtToken) {
+if (localStorage.jwtToken) {
   //Set auth token header auth
   setAuthToken(localStorage.jwtToken);
   //Decode token and get user info and expiration
@@ -27,7 +24,7 @@ if(localStorage.jwtToken) {
 
   //Check for expired Token
   const currentTime = Date.now() / 1000;
-  if(decoded.exp < currentTime) {
+  if (decoded.exp < currentTime) {
     //Logout user
     store.dispatch(logoutUser());
     //clear current crafter
@@ -43,11 +40,11 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={ store }>
+      <Provider store={store}>
         <Router>
           <div>
-          <Root/>
-           {/*} <Nav />
+            <Root />
+            {/*} <Nav />
     <Footer /> */}
           </div>
         </Router>

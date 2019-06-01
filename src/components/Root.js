@@ -21,10 +21,18 @@ import EditCrafter from './CraftersComponent/EditCrafter';
 import CraftersProfileLink from './CraftersComponent/CraftersProfileLink';
 <<<<<<< HEAD
 import Teaser from './HomeScreen/Teaser.js';
+<<<<<<< HEAD
 =======
 import AdminDashboard from './AdminDashboard/AdminDashboard';
 >>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
 
+=======
+
+=======
+import AdminDashboard from './AdminDashboard/AdminDashboard';
+import Craftconfrenceregistration from './Modalpages/Craftconfrence/Craftconfrenceregistration';
+>>>>>>> c863a133f67c7ebdbeacf3db498ac65bc79be493
+>>>>>>> 3cbb6257d7754d5a72cb6a71b8ea4b8256dd6864
 
 
 
@@ -39,7 +47,12 @@ const Root = () => {
 
 =======
         <Route exact path='/' component={Home}/>
+<<<<<<< HEAD
 >>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
+=======
+        <Route exact path='/confrence' component={Craftconfrenceregistration}/>
+>>>>>>> c863a133f67c7ebdbeacf3db498ac65bc79be493
+>>>>>>> 3cbb6257d7754d5a72cb6a71b8ea4b8256dd6864
         <Route exact path='/about' component={About}/>
         <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
         <Route path="/about/executive-founder" component={FounderTwo} />
@@ -65,7 +78,11 @@ const Root = () => {
   <PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} /> */}
 =======
   *<PrivateRoute exact path="/admindashboard/34a2b1a302705439fc563394038662a42bf14756" component={AdminDashboard} />}
+<<<<<<< HEAD
 >>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
+=======
+>>>>>>> c863a133f67c7ebdbeacf3db498ac65bc79be493
+>>>>>>> 3cbb6257d7754d5a72cb6a71b8ea4b8256dd6864
       </Switch>
     </div>
   );
