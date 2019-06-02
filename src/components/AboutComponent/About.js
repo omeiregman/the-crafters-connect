@@ -111,18 +111,19 @@ const About = () => {
           </div>
         </div>
 
-        <div className="about-section-five">
+       {/* <div className="about-section-five">
           <div className="container">
             <div>
               <h3 className="about-section-header">Brains Behind TCC</h3>
               <div className="row">
                 <div className="col-sm-4 col-md-3 col-lg-3 col-xs-6">
-                  {/* <img src={} alt=""/> */}
+                   <img src={} alt=""/>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+  </div>  
+   */}
 
         <div className="about-section-six">
           <div className="container">

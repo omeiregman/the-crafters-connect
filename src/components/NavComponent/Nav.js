@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component ,Fragment} from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -29,13 +29,14 @@ class Nav extends Component {
       </div>
 
     );
-
-    const guestLinks = (
+   
+    const guestLinks = ("")/* (
       <div className="auth-nav-items">
         <Link to='/signin' className="auth-nav-item">Sign In</Link>
         <Link to='/signup' className="auth-nav-item auth-signup">Sign Up</Link>
       </div>
-    );
+    );*///temporarily commented out
+
 
     let heroText;
     if (isAuthenticated) {
@@ -46,7 +47,7 @@ class Nav extends Component {
 
 
     return (
-      <div>
+      <Fragment>
         <nav className="main-nav navbar navbar-expand-lg navbar-light">
           <div>
             <Link to='/' className="nav-brand nav-link"><img src={img_logo} width="100" height="30" alt="" />{heroText}</Link>
@@ -68,7 +69,7 @@ class Nav extends Component {
             </div>
           </div>
         </nav>
-      </div>
+      </Fragment>
     );
   }
 }

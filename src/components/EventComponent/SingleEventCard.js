@@ -3,18 +3,29 @@ import {Link} from 'react-router-dom';
 
 export default class SingleEventCard extends Component {
   render() {
+<<<<<<< HEAD
+=======
+   
+>>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
       const {data} =this.props;
       const style={
           color:" #A97C6C",
           fontFamily:"Ubuntu",
           fontSize:"24px"
       }
+<<<<<<< HEAD
+=======
+     //console.log(data);
+>>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
     return (
         <div>
         <section className=" pl-md-5 pr-md-5 pt-md-3"> 
         <header className="single-event-header">
         <div className="row">
+<<<<<<< HEAD
        
+=======
+>>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
         <div className="col-md-12 ">
          <div style={{overflow:"hidden"}} className="card"> 
           <div className="row">
@@ -26,9 +37,16 @@ export default class SingleEventCard extends Component {
                 <h4>{data.name}</h4>
                 <h6>{data.startDate}</h6>
                 <p>{data.time}</p>
+<<<<<<< HEAD
               </div>
                 <aside><i className="material-icons">location_on</i>{data.location}</aside>
                
+=======
+               
+              </div>
+                <aside><i className="material-icons">location_on</i>{data.location}</aside>
+                {data.registration?<p>{this.props.button}</p>:("")}
+>>>>>>> a87e360100bc8ab697226d97ecf0db78053ba747
             </div>
           </div>
           <div className="row">

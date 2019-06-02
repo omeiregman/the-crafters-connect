@@ -23,12 +23,12 @@ import AdminDashboard from './AdminDashboard/AdminDashboard';
 
 
 
+
 const Root = () => {
   return(
     <div>
       <Switch>
         <Route exact path='/' component={Home}/>
-
         <Route exact path='/about' component={About}/>
         <Route path="/about/executive-creative-director" component={ExecutiveFounder} />
         <Route path="/about/executive-founder" component={FounderTwo} />
