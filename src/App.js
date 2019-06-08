@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import { Provider } from 'react-redux';
@@ -13,7 +13,7 @@ import './index.css';
 
 
 //check for Token
-if(localStorage.jwtToken) {
+if (localStorage.jwtToken) {
   //Set auth token header auth
   setAuthToken(localStorage.jwtToken);
   //Decode token and get user info and expiration
@@ -23,13 +23,14 @@ if(localStorage.jwtToken) {
 
   //Check for expired Token
   const currentTime = Date.now() / 1000;
-  if(decoded.exp < currentTime) {
+  if (decoded.exp < currentTime) {
     //Logout user
     store.dispatch(logoutUser());
     //clear current crafter
     store.dispatch(clearCurrentCrafter());
     //redirect to login
-    window.location.href = '/signin';
+    // window.location.href = '/signin';
+    window.location.href = '/';
   }
 }
 
@@ -39,11 +40,11 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={ store }>
+      <Provider store={store}>
         <Router>
           <div>
             <Nav />
-            <Root/>
+            <Root />
             <Footer />
           </div>
         </Router>

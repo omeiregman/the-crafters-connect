@@ -1,4 +1,4 @@
-import React, { Component ,Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -29,7 +29,7 @@ class Nav extends Component {
       </div>
 
     );
-   
+
     const guestLinks = ("")/* (
       <div className="auth-nav-items">
         <Link to='/signin' className="auth-nav-item">Sign In</Link>
@@ -59,13 +59,14 @@ class Nav extends Component {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="nav-items navbar-nav">
               <Link to='/about' className="nav-item nav-link">About</Link>
-              <Link to='/craftersandcrafts' className="nav-item nav-link">Crafters</Link>
+              {/* <Link to='/craftersandcrafts' className="nav-item nav-link">Crafters</Link> */}
               {/* <Link to='/' className="nav-item nav-link">Courses</Link> */}
               <Link to='/events' className="nav-item nav-link">Events</Link>
               <Link className="nav-item nav-link" to="https://thetccmagazine.com/" target="_blank">Magazine</Link>
+              <Link to='/' className="nav-item nav-link">Contact</Link>
               {/* <Link to='/' className="nav-item nav-link">Gallery</Link> */}
 
-              {isAuthenticated ? authLinks : guestLinks}
+              {/* {isAuthenticated ? authLinks : guestLinks} */}
             </div>
           </div>
         </nav>
