@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getEvents, registerEvent } from '../../actions/eventActions';
 import { PulseLoader } from 'react-spinners';
-import SingleEventCard from './SingleEventCard';//this constains the template for the single event
 import EventCard from './EventCard';
 import EventRegistration from '../Modalpages/events/EventRegistration';
+import SingleEventHead from './SingleEventHead';
+import SingleEventDetails from './SingleEventDetails';
 
 
 class SingleEvent extends Component {
@@ -35,7 +36,7 @@ class SingleEvent extends Component {
       eventId: this.state.eventId,
       eventName: this.state.eventName
     })
-
+    //console.log(newRegister);
     this.props.registerEvent(newRegister);
     this.onCloseclick();
 
@@ -108,23 +109,25 @@ class SingleEvent extends Component {
       }
 
 
-      const button = (<button className="btn btn-white" onClick={this.onCloseclick}>Register</button>);
+      const button = (<button className="btn btn-white" onClick={this.onCloseclick}>Register Event</button>);
 
       return (
-        <Fragment>
+        <div className="secont">
           {this.state.closeModal ? <EventRegistration onSubmit={(data) => this.onSubmit(data)} onClick={this.onCloseclick} /> : ("")}
-          <div className="container">
+          <div className="container secont">
             <br />
             <div className="row">
               <div className="col-md-4">
-                <Link className="back" to='/events'>Back to Events</Link>
+                <Link className=" back" to='/events'>Back to Events</Link>
               </div>
+              <div className="col-md-8"></div>
 
             </div>
             <div className="row">
-              <div className="col-md-12">
-                <SingleEventCard button={button} data={Data} />
-              </div>
+              <SingleEventHead button={button} data={Data} />
+            </div>
+            <div className="row">
+              <SingleEventDetails data={Data} />
             </div>
             <div className="row">
               <div className="col-md-12">
@@ -140,7 +143,7 @@ class SingleEvent extends Component {
 
             </div>
           </div>
-        </Fragment>
+        </div>
       );
     }
   }

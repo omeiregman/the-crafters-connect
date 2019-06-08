@@ -14,18 +14,17 @@ const TextFieldGroup = ({
   disabled,
   style
 }) => {
-  return(
+  return (
     <div>
-      <input className={classnames('form-control', {'input-invalid': error})}
-        style={style}
+      <input className={classnames({ 'input-invalid': error }, 'form-control')}
         type={type}
         placeholder={placeholder}
         name={name}
         value={value}
         onChange={onChange}
-        disabled={disabled}/>
-        {error && (<div className="invalid-response">{error}</div>)}
-        {info && <small className="form-text text-muted">{info}</small>}
+        disabled={disabled} />
+      {error && (<div className="invalid-response">{error}</div>)}
+      {info && <small className="form-text text-muted">{info}</small>}
     </div>
   );
 }
