@@ -4,7 +4,7 @@ import { Layout, Menu, Icon } from 'antd';
 
 import './css/dashboard.css';
 import CrafterDashboard from './CrafterDashboard';
-import EventDashboard from './EventDashboard';
+import EventDashboard from './Events/EventDashboard';
 import UserDashboard from './UserDashboard';
 import DashboardOverview from './DashboardOverview';
 import LandingPageDashboard from './LandingPageDashboard';
