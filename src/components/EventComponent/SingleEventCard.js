@@ -20,7 +20,7 @@ export default class SingleEventCard extends Component {
                 <div style={{ overflow: "hidden" }} className="card">
                   <div className="row">
                     <div style={{ padding: "0px" }} className="col-lg-8 col-sm-8">
-                      <img style={{ width: "100%", height: "auto" }} src={data.eventImage} />
+                      <img style={{ width: "100%", height: "auto" }} src={data.eventBanner} />
                     </div>
                     <div style={{ backgroundColor: "rgb(254, 123, 44)", paddingTop: "130px", fontFamily: " Ubuntu" }} className="col-lg-4 col-sm-4 ">
                       <div style={{ color: "#fff" }}>

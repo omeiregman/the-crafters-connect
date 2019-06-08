@@ -51,7 +51,7 @@ class SingleEvent extends Component {
 
     const { events, loading } = this.props.events
 
-    let selectedEventData, eventId, eventImage, registration, name, startDate, time, location, Data, info, eventsView;
+    let selectedEventData, eventId, eventBanner, eventThumbnail, registration, name, startDate, time, location, Data, info, eventsView;
 
     if (events.length > 0) {
       eventsView = events.slice(0, 3).map(event => {
@@ -63,7 +63,7 @@ class SingleEvent extends Component {
             name={event.name}
             startDate={event.startDate}
             location={event.location}
-            eventImage={event.eventImage} />
+            eventThumbnail={event.eventThumbnail} />
 
         )
       });
@@ -86,7 +86,8 @@ class SingleEvent extends Component {
         }
         selectedEventData = findData(selectedEventUrl);
         startDate = selectedEventData.startDate;
-        eventImage = selectedEventData.eventImage;
+        eventBanner = selectedEventData.eventBanner;
+        eventThumbnail = selectedEventData.eventThumbnail;
         name = selectedEventData.name;
         time = selectedEventData.time;
         location = selectedEventData.location;
@@ -100,7 +101,8 @@ class SingleEvent extends Component {
       //alert(selectedEventData.registration);
       Data = {
         startDate: startDate,
-        eventImage: eventImage,
+        eventBanner: eventBanner,
+        eventThumbnail: eventThumbnail,
         name: name,
         time: time,
         location: location,
