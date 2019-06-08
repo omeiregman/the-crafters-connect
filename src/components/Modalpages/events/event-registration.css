@@ -88,12 +88,20 @@
         top: 25%;
         left: 30%;
     }
+
+    .event-registration-card {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:560px) {
     .center {
         top: 25%;
         left: 25%;
+    }
+
+    .event-registration-card {
+        width: 100%;
     }
 }
 
