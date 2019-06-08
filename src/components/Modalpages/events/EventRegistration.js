@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import TextFieldGroup from '../../common/TextFieldGroup'
-import './event-registration.css';
+import '../Modal.css';
 
-export default class EventRegistration extends Component {
+class EventRegistration extends Component {
     state = {
         name: "",
         email: "",
@@ -31,7 +31,7 @@ export default class EventRegistration extends Component {
                             <br />
                             <TextFieldGroup onChange={this.onChange} name="address" type="text" placeholder="Address" value={this.state.address} />
                             <br />
-                            <button type="submit" className="btn btn-primary btn-block">Register</button>
+                            <button type="submit" className="btn btn-custom btn-block">Register</button>
                         </form>
                     </div>
                 </div>
@@ -43,3 +43,5 @@ export default class EventRegistration extends Component {
         )
     }
 }
+
+export default EventRegistration;
