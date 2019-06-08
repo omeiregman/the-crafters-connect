@@ -15,6 +15,9 @@ class EventDashboard extends Component {
         super(props);
 
         this.state = {
+            startValue: null,
+            endValue: null,
+            endOpen: false,
             name: '',
             startDate: '',
             endDate: '',
@@ -23,135 +26,196 @@ class EventDashboard extends Component {
             description: '',
             info: '',
             location: '',
-            eventImage: '',
-            file: ''
+            banner: '',
+            thumbnail: ''
         }
 
-
-
-        this.onChange = this.onChange.bind(this);
+        this.onInputChange = this.onInputChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-        this.upload = this.upload.bind(this);
 
+    }
+
+    onInputChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    disabledStartDate = startValue => {
+        const endValue = this.state.endValue;
+        if (!startValue || !endValue) {
+            return false;
+        }
+        return startValue.valueOf() > endValue.valueOf();
+    };
+
+    disabledEndDate = endValue => {
+        const startValue = this.state.startValue;
+        if (!endValue || !startValue) {
+            return false;
+        }
+        return endValue.valueOf() <= startValue.valueOf();
+    };
+
+    onChange = (field, value) => {
+        this.setState({
+            [field]: value,
+        });
+    };
+
+    onStartChange = value => {
+        console.log("Start data val: ", value);
+        this.onChange('startValue', value);
+    };
+
+    onEndChange = value => {
+        this.onChange('endValue', value);
+    };
+
+    handleStartOpenChange = open => {
+        if (!open) {
+            this.setState({ endOpen: true });
+        }
+    };
+
+    handleEndOpenChange = open => {
+        this.setState({ endOpen: open });
+    };
+
+
+    handleChange(value) {
+        this.setState({
+            searchType: `Search By ${value}`
+        })
+    }
+
+    handleStatusChange(value) {
+        this.setState({
+            transactionStatus: value
+        });
+    }
+
+    onSubmit() {
+        console.log("Submitted");
     }
 
     componentDidMount() {
         this.props.getEvents();
     }
 
-
-    upload(e) {
-        this.setState({
-            file: e.target.files[0]
-        })
-    }
-
-    onChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    }
-
-    onSubmit(e) {
-        e.preventDefault();
-
-
-    }
-
     render() {
+
+        const { startValue, endValue, endOpen } = this.state;
         return (
             <section>
-                <h2>Event</h2>
+                <Row gutter={20}>
+
+                    <Col className="gutter-row" span={10}>
+                        <Input
+                            name="name"
+                            placeholder="Event Name"
+                            value={this.state.name}
+                            onChange={this.onInputChange}
+                        />
+                    </Col>
+
+                    <Col className="gutter-row" span={11}>
+                        <Input
+                            name="description"
+                            placeholder="Short Event Description"
+                            value={this.state.description}
+                            onChange={this.onInputChange}
+                        />
+                    </Col>
+
+                </Row>
                 <br></br>
-                <div className="row">
-                    <div className="col-md-6">
-                        <h2>EventList</h2>
-
-                    </div>
-                    <div className="col-md-6">
-                        <h3>Create New Event</h3>
-                        <form>
-                            <div className="form-group">
-                                <label>Event Name  (Required)</label>
-                                <TextFieldGroup
-                                    name="name"
-                                    value={this.state.name}
-                                    onChange={this.onChange}
-
-                                    info="Enter Name of Event" />
-                            </div>
-                            <div className="form-group">
-                                <label>Location (Required)</label>
-                                <TextFieldGroup
-                                    name="location"
-                                    value={this.state.location}
-                                    onChange={this.onChange}
-
-                                    info="Enter a date in this format (10th November 2018, 2nd Week of August)" />
-                            </div>
-                            <div className="form-group">
-                                <label>Start Date (Required)</label>
-                                <TextFieldGroup
-                                    name="startDate"
-                                    value={this.state.startDate}
-                                    onChange={this.onChange}
-
-                                    info="Enter a date in this format (10th November 2018, 2nd Week of August)" />
-                            </div>
-                            <div className="form-group">
-                                <label>End Date (Optional)</label>
-                                <TextFieldGroup
-                                    name="endDate"
-                                    value={this.state.endDate}
-                                    onChange={this.onChange}
-
-                                    info="Enter a date in this format (10th November 2018, 2nd Week of August)" />
-                            </div>
-                            <div className="form-group">
-                                <label>Time (Required)</label>
-                                <TextFieldGroup
-                                    name="time"
-                                    value={this.state.time}
-                                    onChange={this.onChange}
-
-                                    info="Event time in this format (9am, 2:30pm - 5pm)" />
-                            </div>
-
-                            <div className="form-group">
-                                <label>Description</label>
-                                <TextAreaFieldGroup
-                                    name="description"
-                                    value={this.state.description}
-                                    onChange={this.onChange}
-
-                                    info="A short description about the event. Description must be between 20 to 50 characters" />
-                            </div>
-
-                            <div className="form-group">
-                                <label>Event Information</label>
-                                <TextAreaFieldGroup
-                                    name="info"
-                                    value={this.state.info}
-                                    onChange={this.onChange}
-
-                                    info="A long description about the event. Description must be between 50 to 500 characters" />
-                            </div>
-
-                            <input type="file" onChange={this.upload} />
-                            <br></br>
-                            <br></br>
-                            <br></br>
-
-
-                            <button className="btn btn-primary" onClick={this.onSubmit}>Create New Event</button>
-                        </form>
-                    </div>
-                </div>
-
+                <Row>
+                    <Col className="gutter-row" span={3}>
+                        <DatePicker
+                            disabledDate={this.disabledStartDate}
+                            format="YYYY-MM-DD"
+                            value={startValue}
+                            placeholder="Start Date"
+                            onChange={this.onStartChange}
+                            onOpenChange={this.handleStartOpenChange}
+                        />
+                    </Col>
+                    <Col className="gutter-row" span={3}>
+                        <DatePicker
+                            disabledDate={this.disabledEndDate}
+                            format="YYYY-MM-DD"
+                            value={endValue}
+                            placeholder="End Date"
+                            onChange={this.onEndChange}
+                            open={endOpen}
+                            onOpenChange={this.handleEndOpenChange}
+                        />
+                    </Col >
+                    <Col className="gutter-row" span={8}>
+                        <Input
+                            name="time"
+                            placeholder="Event Time"
+                            value={this.state.time}
+                            onChange={this.onInputChange}
+                        />
+                    </Col>
+                    <Col className="gutter-row" span={8}>
+                        <Input
+                            name="location"
+                            placeholder="Event Loaction"
+                            value={this.state.location}
+                            onChange={this.onInputChange}
+                        />
+                    </Col>
+                </Row>
                 <br></br>
+                <Row gutter={22}>
+                    <Col className="gutter-row" span={24}>
+                        <Input.TextArea
+                            name="info"
+                            placeholder="Detailed information about event"
+                            value={this.state.info}
+                            onChange={this.onInputChange}
+                            autosize={{ minRows: 4 }}
+                        />
+                    </Col>
+                </Row>
                 <br></br>
+                <Row gutter={24}>
+
+                    <Col className="gutter-row" span={12}>
+                        <Input
+                            name="banner"
+                            placeholder="Event Banner URL (Large)"
+                            value={this.state.banner}
+                            onChange={this.onInputChange}
+                        />
+                    </Col>
+
+                    <Col className="gutter-row" span={12}>
+                        <Input
+                            name="thumbnail"
+                            placeholder="Event Thumbnail URL (Small)"
+                            value={this.state.thumbnail}
+                            onChange={this.onInputChange}
+                        />
+                    </Col>
+
+                </Row>
                 <br></br>
+                <Row>
+                    Does this event require users to register?
+                </Row>
                 <br></br>
+                <Row>
+                    <Col className="gutter-row" span={4}>
+                        <Button type="primary" style={{ width: 300 }} onClick={this.onSubmit}>
+                            Add New Event
+                        </Button>
+                    </Col>
+                </Row>
+
             </section>
         )
     }
