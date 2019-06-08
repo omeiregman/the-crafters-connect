@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getEvents } from '../../actions/eventActions';
-import { Input, Select, Row, Col, DatePicker, Button } from 'antd';
 
-import TextFieldGroup from '../common/TextFieldGroup';
-import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
+import { Input, Row, Col, DatePicker, Button } from 'antd';
 
 
-
-
-class EventDashboard extends Component {
+class AddEvent extends Component {
     constructor(props) {
         super(props);
 
@@ -97,10 +90,6 @@ class EventDashboard extends Component {
 
     onSubmit() {
         console.log("Submitted");
-    }
-
-    componentDidMount() {
-        this.props.getEvents();
     }
 
     render() {
@@ -221,13 +210,4 @@ class EventDashboard extends Component {
     }
 }
 
-EventDashboard.propTypes = {
-    getEvents: PropTypes.func.isRequired,
-    events: PropTypes.object.isRequired
-}
-
-const mapStateToProps = (state) => ({
-    events: state.events
-})
-
-export default connect(mapStateToProps, { getEvents })(EventDashboard);
+export default AddEvent;
