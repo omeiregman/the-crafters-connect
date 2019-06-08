@@ -1,4 +1,4 @@
-import { GET_EVENTS, EVENT_LOADING } from '../actions/types';
+import { GET_EVENTS, EVENT_LOADING,REGISTER_FOR_EVENT,EVENT_REGISTRATION_FAILED } from '../actions/types';
 
 const initialState = {
   events: {},
@@ -18,6 +18,18 @@ export default function(state = initialState, action) {
       events: action.payload,
       loading: false
     };
+    case REGISTER_FOR_EVENT:
+    return {
+      ...state,
+      eventregistered: action.payload,
+      loading:false
+    }
+    case EVENT_REGISTRATION_FAILED:
+    return{
+      ...state,
+      registerfailed:action.payload,
+      loading:false
+    }
     default:
     return state;
   }
