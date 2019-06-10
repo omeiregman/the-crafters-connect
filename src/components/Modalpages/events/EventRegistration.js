@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import TextFieldGroup from '../../common/TextFieldGroup'
-import '../Modal.css';
+import '../modal.css';
 
 class EventRegistration extends Component {
     state = {
@@ -21,6 +21,8 @@ class EventRegistration extends Component {
             <Fragment>
                 <div className="center">
                     <div className="card form-card event-registration-card">
+                        <div>Enter Details to Register for this Event</div>
+                        <br></br>
                         <form onSubmit={this.props.onSubmit(this.state)} >
                             <TextFieldGroup onChange={this.onChange} name="name" type="text" placeholder="Name" value={this.state.name} />
                             <br />
