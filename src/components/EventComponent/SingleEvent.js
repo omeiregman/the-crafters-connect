@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getEvents, registerEvent } from '../../actions/eventActions';
 import { PulseLoader } from 'react-spinners';
 import EventCard from './EventCard';
-import EventRegistration from '../Modalpages/events/EventRegistration';
+import EventRegistration from '../ModalPages/events/EventRegistration';
 import SingleEventHead from './SingleEventHead';
 import SingleEventDetails from './SingleEventDetails';
 
@@ -115,7 +115,7 @@ class SingleEvent extends Component {
 
       return (
         <div className="secont">
-          {this.state.closeModal ? <EventRegistration onSubmit={(data) => this.onSubmit(data)} onClick={this.onCloseclick} /> : ("")}
+          {this.state.closeModal ? <EventRegistration onSubmit={(data) => this.onSubmit(data)} onClick={this.onCloseclick} name={this.state.eventName} /> : ("")}
           <div className="container secont">
             <br />
             <div className="row">
