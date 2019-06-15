@@ -6,93 +6,74 @@ import { Button, Table} from 'antd'
 
 
 class EventList extends Component {
-
+      state={
+            events:[]
+      }
     componentDidMount(){
        this.props.getEvents();
        
     }
+    componentWillReceiveProps(nextprops){
+        this.setState({events:nextprops.events.events})
+    }
+
     render() {
+        let dataSource = [];
+          const {events}=this.state;
+                 try {
+                    events.map(event=>{
+                      dataSource.push(
+                          {
+                            datecreated:event.createdDate,
+                            Eventname:event.name,
+                            description:event.description,
+                            location:event.location,
+                            startdate:event.startDate,
+                            action:<select key={event._id} name={event._id}>
+                                <option value='delete'>None</option>
+                                <option value='delete'>Delete</option>
+                                <option value='edit'>Edit</option>
+                            </select>
+                          }
+                      )
+                    }) 
+                 } catch (error) {
+                     console.log('er')
+                 }
+            const columns = [
+                {
+                    title: 'Date Created',
+                    dataIndex: 'datecreated',
+                    key: 'datecreated',
+                },
+                {
+                title: 'Event Name',
+                dataIndex: 'Eventname',
+                key: 'Eventname',
+                },
 
-          
-          
-        const dataSource = [
-           
-            {
-                key: '154',
-                datecreated: 'Mike',
-                age: 32,
-                address: '10 Downing Street',
-              },
-          /*    {
-                key: '243',
-                dataIndex: 'John',
-                age: 42,
-                address: '10 Downing Street',
-              },
-            {
-                key: '144',
-                name: 'Mike',
-                age: 32,
-                address: '10 Downing Street',
-              },
-              {
-                key: '23',
-                name: 'John',
-                age: 42,
-                address: '10 Downing Street',
-              },
-            {
-              key: '1',
-              name: 'Mike',
-              age: 32,
-              address: '10 Downing Street',
-            },
-            {
-              key: '2',
-              name: 'John',
-              age: 42,
-              address: '10 Downing Street',
-            },*/
-          ];
-          const columns = [
-            {
-                title: 'Date Created',
-                 dataIndex: 'datecreated',
-                 key: 'datecreated',
-               },
-            {
-              title: 'Event Name',
-              dataIndex: 'Eventname',
-              key: 'Eventname',
-            },
+                {
+                title: 'Event Description',
+                dataIndex: 'description',
+                key: 'description',
+                },
+                {
+                title: 'Event Location',
+                dataIndex: 'location',
+                key: 'location',
+                },
+                {
+                    title: 'Event Date',
+                    dataIndex: 'startdate',
+                    key: 'startdate',
+                },
 
-            {
-              title: 'Event Description',
-              dataIndex: 'description',
-              key: 'description',
-            },
-            {
-              title: 'Event Location',
-              dataIndex: 'location',
-              key: 'location',
-            },
-            {
-                title: 'Event Date',
-                dataIndex: 'startdate',
-                key: 'startdate',
-              },
-
-              {
-                title: 'Action',
-                dataIndex: 'action',
-                key: 'action',
-              },
-          ];
-     /*     name(pin): "The Crafters Conference"
-description(pin): "An annual event for crafters"
-location(pin): "Lagos"
-startDate(pin): "38th Week of 2018"
-time(pin): "9am"*/
+                {
+                    title: 'Action',
+                    dataIndex: 'action',
+                    key: 'action',
+                },
+            ];
 
         return (
             <div>
