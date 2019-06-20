@@ -24,21 +24,21 @@ export const getEvents = () => dispatch => {
     );
 }
 export const registerEvent = (eventData) => dispatch => {
-  dispatch(setEventLoading());
+  //dispatch(setEventLoading());
   axios.post(`${BASE_URL}events/register`, eventData)
     .then(res => {
       dispatch({
         type: REGISTER_FOR_EVENT,
         payload: res.data
       });
-      alert(res.data.message)
+      
     }
     ).catch(err => {
       dispatch({
         type: EVENT_REGISTRATION_FAILED,
         payload: err.response.data
       })
-      alert(err.response.data.error)
+     // alert(err.response.data.error)
     }
     );
 }

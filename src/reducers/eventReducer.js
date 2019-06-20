@@ -2,7 +2,8 @@ import { GET_EVENTS, EVENT_LOADING,REGISTER_FOR_EVENT,EVENT_REGISTRATION_FAILED 
 
 const initialState = {
   events: {},
-  loading: false
+  loading: false,
+  eventregistered:''
 }
 
 export default function(state = initialState, action) {
@@ -21,13 +22,13 @@ export default function(state = initialState, action) {
     case REGISTER_FOR_EVENT:
     return {
       ...state,
-      eventregistered: action.payload,
+      eventregistered: action.payload.message,
       loading:false
     }
     case EVENT_REGISTRATION_FAILED:
     return{
       ...state,
-      registerfailed:action.payload,
+      eventregistered:action.payload.error,
       loading:false
     }
     default:

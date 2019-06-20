@@ -18,16 +18,29 @@ class SingleEvent extends Component {
       selectedEvent: {},
       closeModal: false,
       eventId: '',
-      eventName: ''
+      eventName: '',
+      registerationAction:{
+          registerLoading:false,
+          registrationForm:true,
+          submited:false,
+         registerationMessage:''
+      }
     }
   }
 
   onCloseclick = () => {
-    this.setState({ closeModal: !this.state.closeModal });
+    this.setState({ closeModal: !this.state.closeModal, registerationAction:{registrationForm:true, submited:false, registerLoading:false,registerationMessage:''} });
   }
   onSubmit = ({ ...data }) => e => {
     e.preventDefault();
-
+     this.setState({
+          registerationAction:{
+            registerLoading:true,
+            registrationForm:false,
+            submited:true,
+           registerationMessage:''
+        }
+     })
     const newRegister = ({
       name: data.name,
       email: data.email,
@@ -38,12 +51,23 @@ class SingleEvent extends Component {
     })
     //console.log(newRegister);
     this.props.registerEvent(newRegister);
-    this.onCloseclick();
+    //this.onCloseclick();
 
   }
   componentWillMount() {
     this.props.getEvents();
   }
+    componentWillReceiveProps(nextProps){
+      //console.log(nextProps.eventregistered)
+      this.setState({
+         registerationAction:{
+          registerLoading:false,
+          registrationForm:false,
+          submited:true,
+          registerationMessage:nextProps.eventregistered
+      }
+   })
+    }
 
   render() {
 
@@ -115,7 +139,7 @@ class SingleEvent extends Component {
 
       return (
         <div className="secont">
-          {this.state.closeModal ? <EventRegistration onSubmit={(data) => this.onSubmit(data)} onClick={this.onCloseclick} name={this.state.eventName} /> : ("")}
+          {this.state.closeModal ? <EventRegistration registerationAction={this.state.registerationAction} onSubmit={(data) => this.onSubmit(data)} onClick={this.onCloseclick} name={this.state.eventName} /> : ("")}
           <div className="container secont">
             <br />
             <div className="row">
@@ -154,11 +178,13 @@ class SingleEvent extends Component {
 Event.propTypes = {
   getEvents: PropTypes.func.isRequired,
   events: PropTypes.object.isRequired,
-  registerEvent: PropTypes.func.isRequired
+  registerEvent: PropTypes.func.isRequired,
+  eventregistered:PropTypes.string.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  events: state.events
+  events: state.events,
+  eventregistered:state.events.eventregistered
 })
 
 export default connect(mapStateToProps, { getEvents, registerEvent })(SingleEvent);
