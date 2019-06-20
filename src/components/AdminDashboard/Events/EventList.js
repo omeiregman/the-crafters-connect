@@ -1,5 +1,5 @@
 import React, { Component ,Fragment} from 'react';
-import {getEvents} from '../../../actions/eventActions';
+import {getEvents} from '../../../actions/adminActions';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import { Button, Table} from 'antd'
@@ -33,12 +33,13 @@ class EventList extends Component {
                                 <option value='delete'>None</option>
                                 <option value='delete'>Delete</option>
                                 <option value='edit'>Edit</option>
-                            </select>
+                            </select>,
+                            key:event._id
                           }
                       )
                     }) 
                  } catch (error) {
-                     console.log('er')
+                     //console.log('er')
                  }
             const columns = [
                 {
@@ -88,6 +89,6 @@ EventList.propTypes={
     getEvents:PropTypes.func.isRequired
 }
 const mapStateToProps =(state)=>({
-events:state.events
+events:state.admin
 })
 export default connect(mapStateToProps,{getEvents})(EventList);

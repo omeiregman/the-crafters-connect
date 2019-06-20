@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Input, Modal, Row, Radio, Col,DatePicker, Button } from 'antd';
+import { Input,Form, Modal, Row, Radio, Col,DatePicker, Icon } from 'antd';
 
 
-export default class AddEventModal extends Component {
+ class AddEventModal extends Component {
     state = {
         startValue: null,
         endValue: null,
@@ -65,229 +65,198 @@ export default class AddEventModal extends Component {
 
     handleEndOpenChange = open => {
         this.setState({ endOpen: open });
+        console.log(this.props);
     };
-
+    onSubmit=(e)=>{
+        e.preventDefault();
+        this.props.form.validateFields((err, values) => {
+          if (!err) {
+            //console.log('Received values of form: ', values);
+            this.props.onSubmit(values)
+          }
+        });
+    }
+   
 
 
     render() {
+        const { getFieldDecorator } = this.props.form;
         return (
         <Modal
           title="New Event"
           visible={this.props.visible}
-          onOk={()=>this.props.onSubmit(this.state)}
+          onOk={this.onSubmit}
           confirmLoading={this.props.confirmLoading}
           onCancel={this.props.handleCancel}
+          destroyOnClose={true}
+          maskClosable={false}
+         style={{top:10}}
+        
         >
+        <Form className="login-form">
          <Row gutter={20}>
-
             <Col className="gutter-row" span={12}>
-                <Input
-                    name="name"
-                    placeholder="Event Name"
-                    value={this.state.name}
-                    onChange={this.onInputChange} 
-                />
+               
+                <Form.Item>
+                    {getFieldDecorator('name', {
+                    rules: [{ required: true, message: 'Please Enter the Event Name!' }],
+                      })(
+                        <Input
+                        name="name"
+                        placeholder="Event Name"
+                        onChange={this.onInputChange} 
+                    />,
+                    )}
+                </Form.Item>
             </Col>
 
             <Col className="gutter-row" span={12}>
-                <Input
-                    name="description"
-                    placeholder="Short Event Description"
-                    value={this.state.description}
-                    onChange={this.onInputChange}
-                />
+            <Form.Item>
+                    {getFieldDecorator('description', {
+                    rules: [{ required: true, message: 'Please Enter the Event Description!' }],
+                      })(
+                        <Input
+                        name="description"
+                        placeholder="Short Event Description"
+                        onChange={this.onInputChange}
+                    />,
+                    )}
+                </Form.Item>
             </Col>
 
             </Row>
-            <br></br>
-            <Row gutter={22}>
+                        
+            <Row gutter={20}>
             <Col className="gutter-row" span={12}>
-                <DatePicker
-                    disabledDate={this.disabledStartDate}
-                    format="YYYY-MM-DD"
-                    value={this.state.startValue}
-                    placeholder="Start Date"
-                    onChange={this.onStartChange}
-                    onOpenChange={this.handleStartOpenChange}
-                />
+            <Form.Item>
+                    {getFieldDecorator('time', {
+                    rules: [{ required: true, message: 'Please Enter the Event Time!' }],
+                      })(
+                  <Input
+                    name="time"
+                    placeholder="Event Time"
+                    onChange={this.onInputChange}
+                />,
+                    )}
+                </Form.Item>
             </Col>
             <Col className="gutter-row" span={12}>
-                <DatePicker
+            <Form.Item>
+                    {getFieldDecorator('location', {
+                    rules: [{ required: true, message: 'Please Enter the Event Loaction!' }],
+                      })(
+                        <Input
+                        name="location"
+                        placeholder="Event Loaction"
+                        onChange={this.onInputChange}
+                    />,
+                    )}
+                </Form.Item>
+               
+            </Col>
+            </Row>
+           
+            <Row gutter={22}>
+            <Col className="gutter-row" span={12}>
+            <Form.Item>
+                    {getFieldDecorator('startDate', {
+                    rules: [{ required: true, message: 'Please Enter the Event Start Date!' }],
+                      })(
+                        <DatePicker
+                        disabledDate={this.disabledStartDate}
+                        format="YYYY-MM-DD"
+                        placeholder="Start Date"
+                        onChange={this.onStartChange}
+                        onOpenChange={this.handleStartOpenChange}
+                    />,
+                    )}
+                </Form.Item>
+            </Col>
+            <Col className="gutter-row" span={12}>
+            <Form.Item>
+                    {getFieldDecorator('endValue', {
+                    rules: [{ required: true, message: 'Please Enter the Event End Date!' }],
+                      })(
+                        <DatePicker
                     disabledDate={this.disabledEndDate}
                     format="YYYY-MM-DD"
-                    value={this.state.endValue}
                     placeholder="End Date"
                     onChange={this.onEndChange}
                     open={this.state.endOpen}
                     onOpenChange={this.handleEndOpenChange}
-                />
+                />,
+                    )}
+                </Form.Item>
             </Col >
             </Row>
-            <br/>
-            <Row gutter={20}>
-            <Col className="gutter-row" span={12}>
-                <Input
-                    name="time"
-                    placeholder="Event Time"
-                    value={this.state.time}
-                    onChange={this.onInputChange}
-                />
-            </Col>
-            <Col className="gutter-row" span={12}>
-                <Input
-                    name="location"
-                    placeholder="Event Loaction"
-                    value={this.state.location}
-                    onChange={this.onInputChange}
-                />
-            </Col>
-            </Row>
-            <br></br>
             <Row gutter={22}>
             <Col className="gutter-row" span={24}>
-                <Input.TextArea
+            <Form.Item>
+                    {getFieldDecorator('info', {
+                    rules: [{ required: true, message: 'Please Enter a Detailed information about event!' }],
+                      })(
+                 <Input.TextArea
                     name="info"
                     placeholder="Detailed information about event"
-                    value={this.state.info}
                     onChange={this.onInputChange}
                     autosize={{ minRows: 4 }}
-                />
+                />,
+                    )}
+                </Form.Item>
             </Col>
             </Row>
-            <br></br>
+            
             <Row gutter={24}>
 
             <Col className="gutter-row" span={12}>
-                <Input
-                    name="banner"
-                    placeholder="Event Banner URL (Large)"
-                    value={this.state.banner}
-                    onChange={this.onInputChange}
-                />
+            <Form.Item>
+                    {getFieldDecorator('banner', {
+                    rules: [{ required: true, message: 'Please Enter the Event Banner URL (Large)!' }],
+                      })(
+                   <Input
+                        name="banner"
+                        placeholder="Event Banner URL (Large)"
+                        onChange={this.onInputChange}
+                    />,
+                    )}
+                </Form.Item>
             </Col>
-
             <Col className="gutter-row" span={12}>
-                <Input
-                    name="thumbnail"
-                    placeholder="Event Thumbnail URL (Small)"
-                    value={this.state.thumbnail}
-                    onChange={this.onInputChange}
-                />
+            <Form.Item>
+                    {getFieldDecorator('thumbnail', {
+                    rules: [{ required: true, message: 'Please Enter the Event Thumbnail URL (Small)!' }],
+                      })(
+                        <Input
+                        name="thumbnail"
+                        placeholder="Event Thumbnail URL (Small)"
+                        onChange={this.onInputChange}
+                    />,
+                    )}
+                </Form.Item>
             </Col>
-
             </Row>
-            <br></br>
             <Row>
             Does this event require users to register?
-           <span> <Radio.Group name="queryRegister" onChange={this.onInputChange} value={this.state.queryRegister}>
-               <Radio value={true}>Yes</Radio>
-               <Radio value={false}>No</Radio>
-              </Radio.Group></span>
+           <span> 
+           <Form.Item>
+                    {getFieldDecorator('queryRegister', {
+                    rules: [{  required: true, message: 'Please answer the question Above' }],
+                      })(
+                        <Radio.Group name="queryRegister" value='yes' onChange={this.onInputChange} >
+                        <Radio value='yes' checked>Yes</Radio>
+                        <Radio value='no'>No</Radio>
+                       </Radio.Group>,
+                    )}
+                </Form.Item>
+              </span>
             </Row>
+            </Form>
         </Modal>
       
         )
     }
 }
-/*
 
-                <Row gutter={20}>
+const AddEventModalForm = Form.create({ name: 'normal_login' })(AddEventModal);
 
-                    <Col className="gutter-row" span={10}>
-                        <Input
-                            name="name"
-                            placeholder="Event Name"
-                            value={this.state.name}
-                            onChange={this.onInputChange}
-                        />
-                    </Col>
-
-                    <Col className="gutter-row" span={11}>
-                        <Input
-                            name="description"
-                            placeholder="Short Event Description"
-                            value={this.state.description}
-                            onChange={this.onInputChange}
-                        />
-                    </Col>
-
-                </Row>
-                <br></br>
-                <Row>
-                    <Col className="gutter-row" span={3}>
-                        <DatePicker
-                            disabledDate={this.disabledStartDate}
-                            format="YYYY-MM-DD"
-                            value={startValue}
-                            placeholder="Start Date"
-                            onChange={this.onStartChange}
-                            onOpenChange={this.handleStartOpenChange}
-                        />
-                    </Col>
-                    <Col className="gutter-row" span={3}>
-                        <DatePicker
-                            disabledDate={this.disabledEndDate}
-                            format="YYYY-MM-DD"
-                            value={endValue}
-                            placeholder="End Date"
-                            onChange={this.onEndChange}
-                            open={endOpen}
-                            onOpenChange={this.handleEndOpenChange}
-                        />
-                    </Col >
-                    <Col className="gutter-row" span={8}>
-                        <Input
-                            name="time"
-                            placeholder="Event Time"
-                            value={this.state.time}
-                            onChange={this.onInputChange}
-                        />
-                    </Col>
-                    <Col className="gutter-row" span={8}>
-                        <Input
-                            name="location"
-                            placeholder="Event Loaction"
-                            value={this.state.location}
-                            onChange={this.onInputChange}
-                        />
-                    </Col>
-                </Row>
-                <br></br>
-                <Row gutter={22}>
-                    <Col className="gutter-row" span={24}>
-                        <Input.TextArea
-                            name="info"
-                            placeholder="Detailed information about event"
-                            value={this.state.info}
-                            onChange={this.onInputChange}
-                            autosize={{ minRows: 4 }}
-                        />
-                    </Col>
-                </Row>
-                <br></br>
-                <Row gutter={24}>
-
-                    <Col className="gutter-row" span={12}>
-                        <Input
-                            name="banner"
-                            placeholder="Event Banner URL (Large)"
-                            value={this.state.banner}
-                            onChange={this.onInputChange}
-                        />
-                    </Col>
-
-                    <Col className="gutter-row" span={12}>
-                        <Input
-                            name="thumbnail"
-                            placeholder="Event Thumbnail URL (Small)"
-                            value={this.state.thumbnail}
-                            onChange={this.onInputChange}
-                        />
-                    </Col>
-
-                </Row>
-                <br></br>
-                <Row>
-                    Does this event require users to register?
-                </Row>
-*/
+export default AddEventModalForm;

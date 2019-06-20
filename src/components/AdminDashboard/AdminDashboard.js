@@ -60,7 +60,7 @@ class AdminDashboard extends React.Component {
 
         const { selected } = this.state;
 
-        console.log("Props: ", this.props);
+        //console.log("Props: ", this.props);
         return (
             <Layout className="layout-style">
                 <Sider trigger={null} collapsible collapsed={this.state.collapsed}>

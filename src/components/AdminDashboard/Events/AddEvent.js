@@ -29,7 +29,7 @@ class AddEvent extends Component {
       };
 
       onSubmit = (data) => {
-          console.log(data);
+          console.log(data,'yes');
         this.setState({
           ModalText: 'The modal will be closed after two seconds',
           confirmLoading: true,
