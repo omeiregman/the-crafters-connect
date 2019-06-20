@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getEvents, registerEvent } from '../../actions/eventActions';
 import { PulseLoader } from 'react-spinners';
 import EventCard from './EventCard';
-import EventRegistration from '../ModalPages/events/EventRegistration';
+import EventRegistration from './EventRegistration';
 import SingleEventHead from './SingleEventHead';
 import SingleEventDetails from './SingleEventDetails';
 
