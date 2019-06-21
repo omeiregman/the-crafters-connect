@@ -12,7 +12,8 @@ const TextFieldGroup = ({
   type,
   onChange,
   disabled,
-  style
+  style,
+  require
 }) => {
   return (
     <div>
@@ -22,7 +23,9 @@ const TextFieldGroup = ({
         name={name}
         value={value}
         onChange={onChange}
-        disabled={disabled} />
+        disabled={disabled} 
+         required={require}
+        />
       {error && (<div className="invalid-response">{error}</div>)}
       {info && <small className="form-text text-muted">{info}</small>}
     </div>

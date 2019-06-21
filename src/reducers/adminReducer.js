@@ -1,4 +1,4 @@
-import { GET_EVENTS, EVENT_LOADING,REGISTER_FOR_EVENT,EVENT_REGISTRATION_FAILED } from '../actions/types';
+import { GET_EVENTS, EVENT_LOADING,REGISTER_FOR_EVENT,EVENT_REGISTRATION_FAILED } from '../actions/adminTypes';
 
 const initialState = {
   events: {},
