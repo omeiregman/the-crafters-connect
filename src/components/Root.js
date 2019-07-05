@@ -20,7 +20,7 @@ import CraftersDashboard from './CraftersComponent/CraftersDashboard';
 import EditCrafter from './CraftersComponent/EditCrafter';
 import CraftersProfileLink from './CraftersComponent/CraftersProfileLink';
 import AdminDashboard from './AdminDashboard/AdminDashboard';
-
+import Contact from './ContactComponent/Contact';
 
 
 
@@ -34,6 +34,7 @@ const Root = () => {
         <Route path="/about/executive-founder" component={FounderTwo} />
 
         <Route exact path="/craftersandcrafts" component={Crafters} />
+
         <Route exact path="/crafter/:handle" component={CraftersProfileLink} />
         <PrivateRoute exact path="/crafters/register" component={RegisterCrafter} />
         <PrivateRoute exact path="/crafters/dashboard" component={CraftersDashboard} />
@@ -41,6 +42,8 @@ const Root = () => {
 
         <Route path="/gallery" component={Gallery} />
         <Route path="/courses" component={Courses} />
+
+        <Route path="/contact" component={Contact} />
 
         <Route exact path="/signin" component={SignIn} />
         <Route exact path="/crafters/signin" component={SignIn} />

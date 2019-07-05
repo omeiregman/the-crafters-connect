@@ -1,0 +1,138 @@
+.contact-head{
+    color:rgb(36, 139, 153) !important;
+}
+.large-col,.col2-row2{
+    background:#eaeaea;
+}
+.large-col{
+    margin: 5px;
+}
+.small-col{
+    margin: 5px;
+}
+.col1-row2{
+    background:rgba(2, 13, 29, 0.856);
+   
+    background:
+    -moz-linear-gradient(45deg,  transparent 0px, rgba(47,51,54,1) 0px),
+    -moz-linear-gradient(135deg, transparent 7px, rgba(47,51,54,1) 7px),
+    -moz-linear-gradient(225deg, transparent 7px, rgba(47,51,54,1) 7px),
+    -moz-linear-gradient(315deg, transparent 0px, rgba(47,51,54,1) 0px);
+background:
+    -o-linear-gradient(45deg,  transparent 0px, rgba(47,51,54,1) 0px),
+    -o-linear-gradient(135deg, transparent 7px, rgba(47,51,54,1) 7px),
+    -o-linear-gradient(225deg, transparent 7px, rgba(47,51,54,1) 7px),
+    -o-linear-gradient(315deg, transparent 0px, rgba(47,51,54,1) 0px);
+background:
+    -webkit-linear-gradient(45deg,  transparent 0px, rgba(47,51,54,1) 0px),
+    -webkit-linear-gradient(135deg, transparent 7px, rgba(47,51,54,1) 7px),
+    -webkit-linear-gradient(225deg, transparent 7px, rgba(47,51,54,1) 7px),
+    -webkit-linear-gradient(315deg, transparent 0px, rgba(47,51,54,1) 0px);
+xbackground:
+    linear-gradient(45deg,  transparent 0px, rgba(47,51,54,1) 0px),
+    linear-gradient(135deg, transparent 7px, rgba(47,51,54,1) 7px),
+    linear-gradient(225deg, transparent 7px, rgba(47,51,54,1) 7px),
+    linear-gradient(315deg, transparent 0px, rgba(47,51,54,1) 0px);
+
+
+    background-position: bottom left, bottom right, top right, top left;
+    -moz-background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+
+}
+.btn-support{
+    color:#ffffff !important;
+    background:#EA5800 !important;
+
+    background:
+    -o-linear-gradient(45deg,  transparent 0px, #EA5800 0px),
+    -o-linear-gradient(135deg, transparent 0px, #EA5800 0px),
+    -o-linear-gradient(225deg, transparent 7px, #EA5800 7px),
+    -o-linear-gradient(315deg, transparent 0px, #EA5800 0px) !important;
+background:
+    -webkit-linear-gradient(45deg,  transparent 0px, #EA5800 0px),
+    -webkit-linear-gradient(135deg, transparent 0px, #EA5800 0px),
+    -webkit-linear-gradient(225deg, transparent 6px, #EA5800 6px),
+    -webkit-linear-gradient(315deg, transparent 0px, #EA5800 0px) !important;
+xbackground:
+    linear-gradient(45deg,  transparent 0px, rgba(47,51,54,1) 0px),
+    linear-gradient(135deg, transparent 7px, rgba(47,51,54,1) 7px),
+    linear-gradient(225deg, transparent 7px, rgba(47,51,54,1) 7px),
+    linear-gradient(315deg, transparent 0px, rgba(47,51,54,1) 0px) !important;
+
+
+    background-position: bottom left, bottom right, top right, top left !important;
+    -moz-background-size: 55% 55% !important;
+    -webkit-background-size: 55% 55% !important;
+    background-size: 55% 55% !important;
+    background-repeat: no-repeat !important;
+   
+}
+.btn-support:hover{
+    background:rgb(218, 118, 57) !important;
+}
+.col2-row2{
+    background:
+    -o-linear-gradient(45deg,  transparent 0px, #eaeaea 0px),
+    -o-linear-gradient(135deg, transparent 0px, #eaeaea 0px),
+    -o-linear-gradient(225deg, transparent 7px, #eaeaea 7px),
+    -o-linear-gradient(315deg, transparent 0px, #eaeaea 0px) !important;
+background:
+    -webkit-linear-gradient(45deg,  transparent 0px, #eaeaea 0px),
+    -webkit-linear-gradient(135deg, transparent 0px, #eaeaea 0px),
+    -webkit-linear-gradient(225deg, transparent 7px, #eaeaea 7px),
+    -webkit-linear-gradient(315deg, transparent 0px, #eaeaea 0px) !important;
+xbackground:
+    linear-gradient(45deg,  transparent 0px, #eaeaea 0px),
+    linear-gradient(135deg, transparent 7px, #eaeaea 7px),
+    linear-gradient(225deg, transparent 7px, #eaeaea 7px),
+    linear-gradient(315deg, transparent 0px, #eaeaea 0px) !important;
+
+
+    background-position: bottom left, bottom right, top right, top left !important;
+    -moz-background-size: 55% 55% !important;
+    -webkit-background-size: 55% 55% !important;
+    background-size: 55% 55% !important;
+    background-repeat: no-repeat !important;
+}
+.paragraph{
+    color: #ffffff
+}
+.icon1{
+    color: #EA5800;
+    font-size: 3em;
+    font-weight: 0
+}
+.contacth{
+    padding: 25px
+}
+.smallcolrow{
+    margin-bottom: 10px;
+}
+.ulist{
+    list-style-type: none;
+    padding: 15px;
+    
+}
+.ulist li{
+    margin-bottom: -25px !important;
+    margin-left: 0;
+    padding-left: 0;
+
+}
+.icontact{
+color: #EA5800;
+font-size: 35px;
+width: 50px;
+}
+.contain{
+    margin-bottom: 60px
+}
+.contacttext{
+   margin-left: 10px
+}
+.breaks{
+    margin-left: 60px
+}
