@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contact.css';
-
+import image from './image/contact.jpg';
 const Contact=() =>{
     return (
             <div className='container contain'>
@@ -9,7 +9,7 @@ const Contact=() =>{
                 </div>
                 <div className='row'>
                     <div className='col-md-6 large-col'>
-                       
+                       <img style={{width:'100%',marginTop:'20px'}} src={image} alt='Contact Image'/>
                     </div>
                     <div className='col-md-5 small-col'>
                         <div className='row smallcolrow'>
@@ -33,35 +33,35 @@ const Contact=() =>{
                                    <ul className='ulist'>
                                        <li>
                                           <span>
-                                              <i className="fas fa-phone-volume icontact"></i>
+                                          <i class="fab fa-whatsapp icontact"></i>
                                               <span className='contacttext'>
-                                                  <b>CALL SALES NOW</b> <p className='breaks'> +23470948897524</p>
+                                                  <b>WHATSAPP</b> <p className='breaks'> +23470948897524</p>
                                               </span>
-                                          </span>
-                                       </li>
-                                       <li>
-                                       <span>
-                                             <i className="far fa-clock icontact"></i>
-                                             <span className='contacttext'>
-                                             <b>CALL Hours</b> <p className='breaks'> 8:00AM - 5:00Pm,<br/> Mondays to Saturdays</p>
-                                                 
-                                              </span>
-                                          </span>
-                                       </li>
-                                       <li>
-                                       <span>
-                                            <i className="far fa-address-card icontact"></i>
-                                            <span className='contacttext'>
-                                              <b>OFFICE ADDRESS</b> <p className='breaks'> 7 Olawaele Street <br/> Banana island Lagos</p>
-                                            </span>
                                           </span>
                                        </li>
                                        <li>
                                        <span>
                                               <i className="far fa-envelope-open icontact"></i>
                                               <span className='contacttext'>
-                                                  <b>CALL SALES NOW</b> <p className='breaks'> +23470948897524</p>
+                                                  <b>Email</b> <p className='breaks'> thecraftersconnect@gmail.com</p>
                                               </span>
+                                          </span>
+                                       </li>
+                                       <li>
+                                       <span>
+                                             <i class="fab fa-instagram icontact"></i>
+                                             <span className='contacttext'>
+                                             <b>INSTAGRAM</b> <p className='breaks'>@thecraftersconnect</p>
+                                                 
+                                              </span>
+                                          </span>
+                                       </li>
+                                       <li>
+                                       <span>
+                                       <i class="fab fa-facebook icontact"></i>
+                                            <span className='contacttext'>
+                                              <b>FACEBOOK</b> <p className='breaks'> The Crafters Connect</p>
+                                            </span>
                                           </span>
                                        </li>
                                    </ul>
