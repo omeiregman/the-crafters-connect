@@ -1,9 +1,10 @@
-import { GET_EVENTS, EVENT_LOADING,REGISTER_FOR_EVENT,EVENT_REGISTRATION_FAILED } from '../actions/adminTypes';
+import { GET_EVENTS, EVENT_LOADING,REGISTER_FOR_EVENT,EVENT_REGISTRATION_FAILED ,DELETE_EVENT_SUCCESS,DELETE_EVENT_FAILED} from '../actions/adminTypes';
 
 const initialState = {
   events: {},
   loading: false,
-  eventregistered:''
+  eventregistered:'',
+  deleted:''
 }
 
 export default function(state = initialState, action) {
@@ -31,6 +32,18 @@ export default function(state = initialState, action) {
       eventregistered:action.payload.error,
       loading:false
     }
+    case DELETE_EVENT_SUCCESS:
+      return{
+        ...state,
+        deleted:action.payload.message,
+        loading:false
+      }
+      case DELETE_EVENT_FAILED:
+        return{
+          ...state,
+          deleted:action.payload.error,
+          loading:false
+        }
     default:
     return state;
   }
