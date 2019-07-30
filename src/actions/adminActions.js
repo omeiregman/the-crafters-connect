@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_EVENTS, EVENT_LOADING, REGISTER_FOR_EVENT, EVENT_REGISTRATION_FAILED } from './adminTypes';
+import { GET_EVENTS, EVENT_LOADING, REGISTER_FOR_EVENT, EVENT_REGISTRATION_FAILED ,DELETE_EVENT_SUCCESS,DELETE_EVENT_FAILED} from './adminTypes';
 
 const BASE_URL = "https://thecraftersconnectapi.herokuapp.com/api/";
 
@@ -41,6 +41,23 @@ export const registerEvent = (eventData) => dispatch => {
      // alert(err.response.data.error)
     }
     );
+}
+export const deleteEvent=(id)=>dispatch=>{
+  axios.delete(`${BASE_URL}events/${id}`)
+  .then(res=>{
+    getEvents();
+    return dispatch({
+    type:DELETE_EVENT_SUCCESS,
+    payload:res.data,
+   
+  })}
+  )
+  .catch(err=>{
+    dispatch({
+      type:DELETE_EVENT_FAILED,
+      payload:err.response.data
+    })
+  })
 }
 //Event Loading
 export const setEventLoading = () => {
